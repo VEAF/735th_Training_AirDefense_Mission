@@ -65,7 +65,7 @@ options =
         ["enable"] = true,
         ["prefer_built_in_audio"] = true,
         ["box_mouse_cursor"] = true,
-        ["pixel_density"] = 1,
+        ["pixel_density"] = 2,
     }, -- end of ["VR"]
     ["graphics"] = 
     {
@@ -119,6 +119,22 @@ options =
             ["PPA_TOTPAR"] = false,
             ["UNI_NODRIFT"] = false,
         }, -- end of ["M-2000C"]
+        ["Tacview"] = 
+        {
+            ["tacviewProfilingPeriod"] = 600,
+            ["tacviewHostTelemetryPassword"] = "",
+            ["tacviewRemoteControlPort"] = "42675",
+            ["tacviewDataRecordingEnabled"] = true,
+            ["tacviewTerrainExport"] = 0,
+            ["tacviewRecordClientsSessionsEnabled"] = false,
+            ["tacviewPlaybackDelay"] = 600,
+            ["tacviewRealTimeTelemetryPort"] = "42674",
+            ["tacviewBookmarkShortcut"] = 0,
+            ["tacviewCompressionLevel"] = 1,
+            ["tacviewDebugModeEnabled"] = false,
+            ["tacviewClientTelemetryPassword"] = "",
+            ["tacviewRemoteControlPassword"] = "",
+        }, -- end of ["Tacview"]
         ["CaptoGlove"] = 
         {
             ["enable"] = false,
@@ -141,22 +157,11 @@ options =
             ["CPLocalList"] = "default",
             ["autoRudder"] = false,
         }, -- end of ["TF-51D"]
-        ["Tacview"] = 
+        ["F-16C"] = 
         {
-            ["tacviewProfilingPeriod"] = 600,
-            ["tacviewHostTelemetryPassword"] = "",
-            ["tacviewRemoteControlPort"] = "42675",
-            ["tacviewDataRecordingEnabled"] = true,
-            ["tacviewTerrainExport"] = 0,
-            ["tacviewRecordClientsSessionsEnabled"] = false,
-            ["tacviewPlaybackDelay"] = 600,
-            ["tacviewRealTimeTelemetryPort"] = "42674",
-            ["tacviewBookmarkShortcut"] = 0,
-            ["tacviewCompressionLevel"] = 1,
-            ["tacviewDebugModeEnabled"] = false,
-            ["tacviewClientTelemetryPassword"] = "",
-            ["tacviewRemoteControlPassword"] = "",
-        }, -- end of ["Tacview"]
+            ["abDetent"] = 0,
+            ["hmdEye"] = 1,
+        }, -- end of ["F-16C"]
         ["LotAtc"] = 
         {
             ["approachallairports"] = 1,
@@ -174,22 +179,22 @@ options =
     ["sound"] = 
     {
         ["hear_in_helmet"] = false,
-        ["headphones"] = 100,
-        ["cockpit"] = 100,
-        ["world"] = 100,
+        ["headphones"] = 50,
+        ["cockpit"] = 50,
+        ["world"] = 52,
         ["radioSpeech"] = true,
         ["GBreathEffect"] = true,
         ["volume"] = 49,
         ["headphones_on_external_views"] = true,
         ["music"] = 7,
         ["subtitles"] = true,
-        ["gui"] = 100,
+        ["gui"] = 50,
     }, -- end of ["sound"]
     ["views"] = 
     {
         ["cockpit"] = 
         {
-            ["mirrors"] = false,
+            ["mirrors"] = true,
             ["reflections"] = false,
             ["avionics"] = 1,
         }, -- end of ["cockpit"]
