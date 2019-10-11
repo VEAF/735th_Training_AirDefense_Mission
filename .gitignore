@@ -4,3 +4,7 @@ mission/*
 mission/
 *.miz
 
+
+setup_zip_production.cmd
+
+setup_zip.cmd
