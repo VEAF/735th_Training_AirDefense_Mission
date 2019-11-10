@@ -24795,7 +24795,7 @@ mission =
                                         ["psi"] = -3.0568911745466,
                                         ["parking_id"] = "30",
                                         ["x"] = -317688.125,
-                                        ["name"] = "Shell21",
+                                        ["name"] = "Shell11",
                                         ["payload"] =
                                         {
                                             ["pylons"] =
@@ -24813,14 +24813,14 @@ mission =
                                             [1] = 3,
                                             [2] = 2,
                                             [3] = 1,
-                                            ["name"] = "Shell21",
+                                            ["name"] = "Shell11",
                                         }, -- end of ["callsign"]
                                         ["onboard_num"] = 10,
                                     }, -- end of [1]
                                 }, -- end of ["units"]
                                 ["y"] = 636897.0625,
                                 ["x"] = -317688.125,
-                                ["name"] = "Shell2",
+                                ["name"] = "Shell1",
                                 ["communication"] = true,
                                 ["start_time"] = 0,
                                 ["modulation"] = 0,
