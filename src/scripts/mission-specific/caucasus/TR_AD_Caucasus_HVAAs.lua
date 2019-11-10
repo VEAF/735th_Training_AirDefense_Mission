@@ -3,13 +3,12 @@
 -- Author: Couby Stark
 -- Date Edited: 3 september 2019
 
--- ======================================
---  Tankers tasking and management
--- ======================================
+-- =============================================
+--  Tankers and AWACS tasking and management
+-- =============================================
 
--- Blue tankers and AWACS
 do
-
+-- Blue tankers and AWACS
   -- Texaco1 KC-135MPRS
   Spawn_Texaco1 = SPAWN
     :New("Texaco1")
@@ -19,7 +18,7 @@ do
 
   -- Texaco2 KC-135
   Spawn_Texaco2 = SPAWN
-    :New("Texaco2")
+    :New("Shell2")
     :InitLimit( 1, 5 )
     :InitRepeatOnEngineShutDown()
     :SpawnScheduled(60,0)
@@ -31,11 +30,8 @@ do
     :InitRepeatOnEngineShutDown()
     :SpawnScheduled(60,0)
 
-end
 
 -- Red tankers and AWACS
-do
-
   -- Texaco3 IL-78
   Spawn_Texaco3 = SPAWN
     :New("Texaco3")

@@ -187,9 +187,9 @@ mission =
     }, -- end of ["triggers"]
     ["map"] = 
     {
-        ["centerY"] = 561594.80561652,
-        ["zoom"] = 2127719.9789756,
-        ["centerX"] = -152670.46916031,
+        ["centerY"] = 637301.06348113,
+        ["zoom"] = 7251.2996613931,
+        ["centerX"] = -317999.93088544,
     }, -- end of ["map"]
     ["coalitions"] = 
     {
@@ -24477,7 +24477,7 @@ mission =
                                                 }, -- end of ["params"]
                                             }, -- end of ["task"]
                                             ["type"] = "Turning Point",
-                                            ["ETA"] = 104.81210471061,
+                                            ["ETA"] = 104.81210471062,
                                             ["ETA_locked"] = false,
                                             ["y"] = 639919.44103467,
                                             ["x"] = -353285.46346125,
@@ -24780,7 +24780,7 @@ mission =
                                     }, -- end of ["points"]
                                 }, -- end of ["route"]
                                 ["groupId"] = 99924,
-                                ["hidden"] = true,
+                                ["hidden"] = false,
                                 ["units"] = 
                                 {
                                     [1] = 
@@ -27274,8 +27274,8 @@ mission =
                                         ["alt"] = 320,
                                         ["alt_type"] = "BARO",
                                         ["livery_id"] = "RF Air Force",
-                                        ["skill"] = "High",
-                                        ["parking"] = "1",
+                                        ["skill"] = "Excellent",
+                                        ["parking"] = 1,
                                         ["speed"] = 138.88888888889,
                                         ["type"] = "A-50",
                                         ["unitId"] = 99995,
@@ -27324,10 +27324,10 @@ mission =
                                     {
                                         [1] = 
                                         {
-                                            ["alt"] = 319.7352,
+                                            ["alt"] = 320,
                                             ["action"] = "From Parking Area",
                                             ["alt_type"] = "BARO",
-                                            ["speed"] = 154.33333333333,
+                                            ["speed"] = 138.88888888889,
                                             ["task"] = 
                                             {
                                                 ["id"] = "ComboTask",
@@ -27338,9 +27338,19 @@ mission =
                                                         [1] = 
                                                         {
                                                             ["enabled"] = true,
+                                                            ["auto"] = true,
+                                                            ["id"] = "Tanker",
+                                                            ["number"] = 1,
+                                                            ["params"] = 
+                                                            {
+                                                            }, -- end of ["params"]
+                                                        }, -- end of [1]
+                                                        [2] = 
+                                                        {
+                                                            ["enabled"] = true,
                                                             ["auto"] = false,
                                                             ["id"] = "WrappedAction",
-                                                            ["number"] = 1,
+                                                            ["number"] = 2,
                                                             ["params"] = 
                                                             {
                                                                 ["action"] = 
@@ -27354,13 +27364,6 @@ mission =
                                                                     }, -- end of ["params"]
                                                                 }, -- end of ["action"]
                                                             }, -- end of ["params"]
-                                                        }, -- end of [1]
-                                                        [2] = 
-                                                        {
-                                                            ["number"] = 2,
-                                                            ["auto"] = true,
-                                                            ["id"] = "Tanker",
-                                                            ["enabled"] = true,
                                                         }, -- end of [2]
                                                     }, -- end of ["tasks"]
                                                 }, -- end of ["params"]
@@ -27368,8 +27371,8 @@ mission =
                                             ["type"] = "TakeOffParking",
                                             ["ETA"] = 0,
                                             ["ETA_locked"] = true,
-                                            ["y"] = 707408.6369389,
-                                            ["x"] = -52094.74702807,
+                                            ["y"] = 706026.1875,
+                                            ["x"] = -51823.8046875,
                                             ["name"] = "Mineralnye Vody",
                                             ["formation_template"] = "",
                                             ["airdromeId"] = 26,
@@ -27380,7 +27383,7 @@ mission =
                                             ["alt"] = 6096,
                                             ["action"] = "Turning Point",
                                             ["alt_type"] = "BARO",
-                                            ["speed"] = 154.33333333333,
+                                            ["speed"] = 208.63888888889,
                                             ["task"] = 
                                             {
                                                 ["id"] = "ComboTask",
@@ -27416,7 +27419,7 @@ mission =
                                                 }, -- end of ["params"]
                                             }, -- end of ["task"]
                                             ["type"] = "Turning Point",
-                                            ["ETA"] = 893.35311166954,
+                                            ["ETA"] = 655.12513505041,
                                             ["ETA_locked"] = false,
                                             ["y"] = 607102.55276153,
                                             ["x"] = 42498.986678158,
@@ -27429,10 +27432,7 @@ mission =
                                             ["alt"] = 6096,
                                             ["action"] = "Turning Point",
                                             ["alt_type"] = "BARO",
-                                            ["properties"] = 
-                                            {
-                                            }, -- end of ["properties"]
-                                            ["speed"] = 154.33333333333,
+                                            ["speed"] = 208.63888888889,
                                             ["task"] = 
                                             {
                                                 ["id"] = "ComboTask",
@@ -27444,7 +27444,7 @@ mission =
                                                 }, -- end of ["params"]
                                             }, -- end of ["task"]
                                             ["type"] = "Turning Point",
-                                            ["ETA"] = 2686,
+                                            ["ETA"] = 1102.9880453017,
                                             ["ETA_locked"] = false,
                                             ["y"] = 698902.38241328,
                                             ["x"] = 25059.731579071,
@@ -27457,10 +27457,7 @@ mission =
                                             ["alt"] = 457.2,
                                             ["action"] = "Landing",
                                             ["alt_type"] = "RADIO",
-                                            ["properties"] = 
-                                            {
-                                            }, -- end of ["properties"]
-                                            ["speed"] = 154.33333333333,
+                                            ["speed"] = 205.55555555556,
                                             ["task"] = 
                                             {
                                                 ["id"] = "ComboTask",
@@ -27472,7 +27469,7 @@ mission =
                                                 }, -- end of ["params"]
                                             }, -- end of ["task"]
                                             ["type"] = "Land",
-                                            ["ETA"] = 6786,
+                                            ["ETA"] = 1614.6929803259,
                                             ["ETA_locked"] = false,
                                             ["y"] = 707408.6369389,
                                             ["x"] = -52094.74702807,
@@ -27489,36 +27486,36 @@ mission =
                                 {
                                     [1] = 
                                     {
-                                        ["alt"] = 319.7352,
+                                        ["alt"] = 320,
                                         ["alt_type"] = "BARO",
                                         ["livery_id"] = "RF Air Force",
-                                        ["skill"] = "High",
-                                        ["parking"] = 3,
-                                        ["speed"] = 154.33333333333,
+                                        ["skill"] = "Excellent",
+                                        ["parking"] = "12",
+                                        ["speed"] = 138.88888888889,
                                         ["type"] = "IL-78M",
                                         ["unitId"] = 99996,
-                                        ["psi"] = 0.81469893795897,
-                                        ["parking_id"] = "25",
-                                        ["x"] = -52055.515625,
+                                        ["psi"] = 0.80920183451384,
+                                        ["parking_id"] = "16",
+                                        ["x"] = -51823.8046875,
                                         ["name"] = "Texaco31",
                                         ["payload"] = 
                                         {
                                             ["pylons"] = 
                                             {
                                             }, -- end of ["pylons"]
-                                            ["fuel"] = 90000,
+                                            ["fuel"] = "90000",
                                             ["flare"] = 96,
                                             ["chaff"] = 96,
                                             ["gun"] = 100,
                                         }, -- end of ["payload"]
-                                        ["y"] = 706514,
-                                        ["heading"] = -0.81469893795897,
-                                        ["callsign"] = 133,
+                                        ["y"] = 706026.1875,
+                                        ["heading"] = -0.80920183451384,
+                                        ["callsign"] = 127,
                                         ["onboard_num"] = 10,
                                     }, -- end of [1]
                                 }, -- end of ["units"]
-                                ["y"] = 707408.6369389,
-                                ["x"] = -52094.74702807,
+                                ["y"] = 706026.1875,
+                                ["x"] = -51823.8046875,
                                 ["name"] = "Texaco3",
                                 ["communication"] = true,
                                 ["start_time"] = 0,
@@ -27542,10 +27539,10 @@ mission =
                                     {
                                         [1] = 
                                         {
-                                            ["alt"] = 319.7352,
+                                            ["alt"] = 320,
                                             ["action"] = "From Parking Area",
                                             ["alt_type"] = "BARO",
-                                            ["speed"] = 154.33333333333,
+                                            ["speed"] = 138.88888888889,
                                             ["task"] = 
                                             {
                                                 ["id"] = "ComboTask",
@@ -27556,9 +27553,19 @@ mission =
                                                         [1] = 
                                                         {
                                                             ["enabled"] = true,
+                                                            ["auto"] = true,
+                                                            ["id"] = "Tanker",
+                                                            ["number"] = 1,
+                                                            ["params"] = 
+                                                            {
+                                                            }, -- end of ["params"]
+                                                        }, -- end of [1]
+                                                        [2] = 
+                                                        {
+                                                            ["enabled"] = true,
                                                             ["auto"] = false,
                                                             ["id"] = "WrappedAction",
-                                                            ["number"] = 1,
+                                                            ["number"] = 2,
                                                             ["params"] = 
                                                             {
                                                                 ["action"] = 
@@ -27572,13 +27579,6 @@ mission =
                                                                     }, -- end of ["params"]
                                                                 }, -- end of ["action"]
                                                             }, -- end of ["params"]
-                                                        }, -- end of [1]
-                                                        [2] = 
-                                                        {
-                                                            ["number"] = 2,
-                                                            ["auto"] = true,
-                                                            ["id"] = "Tanker",
-                                                            ["enabled"] = true,
                                                         }, -- end of [2]
                                                     }, -- end of ["tasks"]
                                                 }, -- end of ["params"]
@@ -27586,8 +27586,8 @@ mission =
                                             ["type"] = "TakeOffParking",
                                             ["ETA"] = 0,
                                             ["ETA_locked"] = true,
-                                            ["y"] = 707408.6369389,
-                                            ["x"] = -52094.74702807,
+                                            ["y"] = 705917.75,
+                                            ["x"] = -51772.2421875,
                                             ["name"] = "Mineralnye Vody",
                                             ["formation_template"] = "",
                                             ["airdromeId"] = 26,
@@ -27598,7 +27598,7 @@ mission =
                                             ["alt"] = 7620,
                                             ["action"] = "Turning Point",
                                             ["alt_type"] = "BARO",
-                                            ["speed"] = 154.33333333333,
+                                            ["speed"] = 224.05555555556,
                                             ["task"] = 
                                             {
                                                 ["id"] = "ComboTask",
@@ -27634,7 +27634,7 @@ mission =
                                                 }, -- end of ["params"]
                                             }, -- end of ["task"]
                                             ["type"] = "Turning Point",
-                                            ["ETA"] = 893.35311166954,
+                                            ["ETA"] = 609.53866028783,
                                             ["ETA_locked"] = false,
                                             ["y"] = 607102.55276153,
                                             ["x"] = 42498.986678158,
@@ -27647,10 +27647,7 @@ mission =
                                             ["alt"] = 7620,
                                             ["action"] = "Turning Point",
                                             ["alt_type"] = "BARO",
-                                            ["properties"] = 
-                                            {
-                                            }, -- end of ["properties"]
-                                            ["speed"] = 154.33333333333,
+                                            ["speed"] = 224.05555555556,
                                             ["task"] = 
                                             {
                                                 ["id"] = "ComboTask",
@@ -27662,7 +27659,7 @@ mission =
                                                 }, -- end of ["params"]
                                             }, -- end of ["task"]
                                             ["type"] = "Turning Point",
-                                            ["ETA"] = 2686,
+                                            ["ETA"] = 1026.5853152466,
                                             ["ETA_locked"] = false,
                                             ["y"] = 698902.38241328,
                                             ["x"] = 25059.731579071,
@@ -27675,10 +27672,7 @@ mission =
                                             ["alt"] = 457.2,
                                             ["action"] = "Landing",
                                             ["alt_type"] = "RADIO",
-                                            ["properties"] = 
-                                            {
-                                            }, -- end of ["properties"]
-                                            ["speed"] = 154.33333333333,
+                                            ["speed"] = 205.55555555556,
                                             ["task"] = 
                                             {
                                                 ["id"] = "ComboTask",
@@ -27690,7 +27684,7 @@ mission =
                                                 }, -- end of ["params"]
                                             }, -- end of ["task"]
                                             ["type"] = "Land",
-                                            ["ETA"] = 6786,
+                                            ["ETA"] = 1496.5983790791,
                                             ["ETA_locked"] = false,
                                             ["y"] = 707408.6369389,
                                             ["x"] = -52094.74702807,
@@ -27707,36 +27701,36 @@ mission =
                                 {
                                     [1] = 
                                     {
-                                        ["alt"] = 319.7352,
+                                        ["alt"] = 320,
                                         ["alt_type"] = "BARO",
                                         ["livery_id"] = "RF Air Force",
-                                        ["skill"] = "High",
-                                        ["parking"] = 4,
-                                        ["speed"] = 154.33333333333,
+                                        ["skill"] = "Excellent",
+                                        ["parking"] = "14",
+                                        ["speed"] = 138.88888888889,
                                         ["type"] = "IL-78M",
                                         ["unitId"] = 99997,
-                                        ["psi"] = 0.81469893795897,
-                                        ["parking_id"] = "24",
-                                        ["x"] = -52029.734375,
+                                        ["psi"] = 0.80892715970856,
+                                        ["parking_id"] = "14",
+                                        ["x"] = -51772.2421875,
                                         ["name"] = "Texaco41",
                                         ["payload"] = 
                                         {
                                             ["pylons"] = 
                                             {
                                             }, -- end of ["pylons"]
-                                            ["fuel"] = 90000,
+                                            ["fuel"] = "90000",
                                             ["flare"] = 96,
                                             ["chaff"] = 96,
                                             ["gun"] = 100,
                                         }, -- end of ["payload"]
-                                        ["y"] = 706459.75,
-                                        ["heading"] = -0.81469893795897,
-                                        ["callsign"] = 134,
+                                        ["y"] = 705917.75,
+                                        ["heading"] = -0.80892715970856,
+                                        ["callsign"] = 126,
                                         ["onboard_num"] = 10,
                                     }, -- end of [1]
                                 }, -- end of ["units"]
-                                ["y"] = 707408.6369389,
-                                ["x"] = -52094.74702807,
+                                ["y"] = 705917.75,
+                                ["x"] = -51772.2421875,
                                 ["name"] = "Texaco4",
                                 ["communication"] = true,
                                 ["start_time"] = 0,
@@ -31720,7 +31714,7 @@ mission =
             ["comment"] = "Init scripts VEAF",
         }, -- end of [3]
     }, -- end of ["trigrules"]
-    ["currentKey"] = 96216,
+    ["currentKey"] = 100374,
     ["start_time"] = 43200,
     ["forcedOptions"] = 
     {
