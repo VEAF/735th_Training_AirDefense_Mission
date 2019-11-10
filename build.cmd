@@ -24,28 +24,8 @@ echo ------------------------------
 
 set VERSION=caucasus
 
-rem -- default options values
-IF [%DEBUG_FLAG%] == [] GOTO DefineDefaultDEBUG_FLAG
-goto DontDefineDefaultDEBUG_FLAG
-:DefineDefaultDEBUG_FLAG
-set DEBUG_FLAG=true
-:DontDefineDefaultDEBUG_FLAG
-echo DEBUG_FLAG = %DEBUG_FLAG%
-
-IF [%MISSION_FILE_SUFFIX%] == [] GOTO DefineDefaultMISSION_FILE_SUFFIX
-goto DontDefineDefaultMISSION_FILE_SUFFIX
-:DefineDefaultMISSION_FILE_SUFFIX
-set MISSION_FILE_SUFFIX=%date:~-4,4%%date:~-7,2%%date:~-10,2%
-:DontDefineDefaultMISSION_FILE_SUFFIX
 set MISSION_FILE=.\build\TR_AD_%VERSION%_%MISSION_FILE_SUFFIX%
 echo MISSION_FILE = %MISSION_FILE%.miz
-
-IF ["%SEVENZIP%"] == [] GOTO DefineDefaultSEVENZIP
-goto DontDefineDefaultSEVENZIP
-:DefineDefaultSEVENZIP
-set SEVENZIP=7za
-:DontDefineDefaultSEVENZIP
-echo SEVENZIP = %SEVENZIP%
 
 rem -- copy all the source mission files
 xcopy /y /e src\%VERSION% .\build\tempsrc\ >nul 2>&1
@@ -82,6 +62,9 @@ powershell -Command "(gc .\build\tempsrc\l10n\Default\veaf.lua) -replace 'veaf.D
 
 rem -- compile the mission
 "%SEVENZIP%" a -r -tzip %MISSION_FILE%.miz .\build\tempsrc\* -mem=AES256 >nul 2>&1
+
+rem -- delete temporary folder
+rd /s /q .\build\tempsrc
 
 rem -- done !
 echo Built %MISSION_FILE%.miz
