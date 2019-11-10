@@ -99,9 +99,9 @@ CAPZone4 = ZONE_POLYGON:New( "Red FAOR4", GROUP:FindByName( "Red FAOR4" ) )
 A2ADispatcher:SetSquadronCap( "Mineralnye2", CAPZone4, 6095, 10670, 800, 900, 1020, 2030 ) -- 6095m = 20 000ft / 10670m = 35000ft / 800km/h = M0.8 / 2030km/h = M1.8
 A2ADispatcher:SetSquadronCapInterval( "Mineralnye2", 1, 30, 60, 1 )
 
-CAPZone5 = ZONE_POLYGON:New( "Red FAOR5", GROUP:FindByName( "Red FAOR5" ) )
-A2ADispatcher:SetSquadronCap( "Nalchik", CAPZone5, 6095, 10670, 800, 900, 1020, 2030 ) -- 6095m = 20 000ft / 10670m = 35000ft / 800km/h = M0.8 / 2030km/h = M1.8
-A2ADispatcher:SetSquadronCapInterval( "Nalchik", 1, 30, 60, 1 )
+-- CAPZone5 = ZONE_POLYGON:New( "Red FAOR5", GROUP:FindByName( "Red FAOR5" ) )
+-- A2ADispatcher:SetSquadronCap( "Nalchik", CAPZone5, 6095, 10670, 800, 900, 1020, 2030 ) -- 6095m = 20 000ft / 10670m = 35000ft / 800km/h = M0.8 / 2030km/h = M1.8
+-- A2ADispatcher:SetSquadronCapInterval( "Nalchik", 1, 30, 60, 1 )
 
 CAPZone6 = ZONE_POLYGON:New( "Red FAOR6", GROUP:FindByName( "Red FAOR6" ) )
 A2ADispatcher:SetSquadronCap( "Mozdok", CAPZone6, 6095, 10670, 800, 900, 1020, 2480 ) -- 6095m = 20 000ft / 10670m = 35000ft / 800km/h = M0.8 / 2480km/h = M2.2
