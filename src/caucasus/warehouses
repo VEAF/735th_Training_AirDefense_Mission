@@ -6044,6 +6044,17 @@ warehouses =
                     }, -- end of ["wsType"]
                     ["initialAmount"] = 0,
                 }, -- end of [408]
+                [409] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 37,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [409]
             }, -- end of ["weapons"]
             ["OperatingLevel_Fuel"] = 10,
             ["unlimitedAircrafts"] = false,
@@ -11786,6 +11797,17 @@ warehouses =
                     }, -- end of ["wsType"]
                     ["initialAmount"] = 0,
                 }, -- end of [408]
+                [409] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 37,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [409]
             }, -- end of ["weapons"]
             ["OperatingLevel_Fuel"] = 0,
             ["unlimitedAircrafts"] = false,
@@ -16312,6 +16334,17 @@ warehouses =
                     }, -- end of ["wsType"]
                     ["initialAmount"] = 0,
                 }, -- end of [408]
+                [409] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 37,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [409]
             }, -- end of ["weapons"]
             ["OperatingLevel_Fuel"] = 10,
             ["unlimitedAircrafts"] = true,
@@ -20838,6 +20871,17 @@ warehouses =
                     }, -- end of ["wsType"]
                     ["initialAmount"] = 0,
                 }, -- end of [408]
+                [409] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 37,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [409]
             }, -- end of ["weapons"]
             ["OperatingLevel_Fuel"] = 10,
             ["unlimitedAircrafts"] = true,
@@ -25364,6 +25408,17 @@ warehouses =
                     }, -- end of ["wsType"]
                     ["initialAmount"] = 0,
                 }, -- end of [408]
+                [409] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 37,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [409]
             }, -- end of ["weapons"]
             ["OperatingLevel_Fuel"] = 10,
             ["unlimitedAircrafts"] = true,
@@ -30042,6 +30097,17 @@ warehouses =
                     }, -- end of ["wsType"]
                     ["initialAmount"] = 0,
                 }, -- end of [408]
+                [409] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 37,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [409]
             }, -- end of ["weapons"]
             ["OperatingLevel_Fuel"] = 10,
             ["unlimitedAircrafts"] = true,
@@ -34685,6 +34751,17 @@ warehouses =
                     }, -- end of ["wsType"]
                     ["initialAmount"] = 0,
                 }, -- end of [408]
+                [409] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 37,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [409]
             }, -- end of ["weapons"]
             ["OperatingLevel_Fuel"] = 10,
             ["unlimitedAircrafts"] = true,
