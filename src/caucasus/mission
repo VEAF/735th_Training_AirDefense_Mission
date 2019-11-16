@@ -187,9 +187,9 @@ mission =
     }, -- end of ["triggers"]
     ["map"] = 
     {
-        ["centerY"] = 537747.63293886,
-        ["zoom"] = 1899044.7789256,
-        ["centerX"] = -298340.1981475,
+        ["centerY"] = 838455.01484984,
+        ["zoom"] = 944751.06381254,
+        ["centerX"] = -306653.07956037,
     }, -- end of ["map"]
     ["coalitions"] = 
     {
@@ -34469,7 +34469,7 @@ mission =
             ["comment"] = "Init scripts VEAF",
         }, -- end of [3]
     }, -- end of ["trigrules"]
-    ["currentKey"] = 113362,
+    ["currentKey"] = 117742,
     ["start_time"] = 43200,
     ["forcedOptions"] = 
     {
