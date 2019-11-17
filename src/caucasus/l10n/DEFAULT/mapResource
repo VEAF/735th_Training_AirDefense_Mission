@@ -1,12 +1,12 @@
 mapResource = 
 {
     ["ResKey_Action_54"] = "veafRadio.lua",
-    ["ResKey_Action_55"] = "veafCarrierOperations.lua",
+    ["ResKey_Action_53"] = "veaf.lua",
     ["ResKey_ImageBriefing_2"] = "Default20190830150754.png",
-    ["ResKey_Action_17"] = "TR_AD_Caucasus_RedAirs.lua",
+    ["ResKey_Action_52"] = "mist_4_3_74.lua",
     ["ResKey_ImageBriefing_1"] = "DefaultRed20190830150754.png",
     ["ResKey_Action_16"] = "Moose.lua",
-    ["ResKey_Action_53"] = "veaf.lua",
-    ["ResKey_Action_52"] = "mist_4_3_74.lua",
+    ["ResKey_Action_55"] = "veafCarrierOperations.lua",
+    ["ResKey_Action_17"] = "TR_AD_Caucasus_RedAirs.lua",
     ["ResKey_Action_57"] = "TR_AD_Caucasus_HVAAs.lua",
 } -- end of mapResource
