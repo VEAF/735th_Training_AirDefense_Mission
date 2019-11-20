@@ -1,0 +1,15 @@
+{
+  "name": "@veaf/735th_training_airdefense_mission",
+  "version": "1.0.0",
+  "description": "Training mission",
+  "main": "",
+  "author": "Couby",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VEAF/735th_Training_AirDefense_Mission.git"
+  },
+  "dependencies": {
+    "@veaf/veaf-open-training-mission": "1.0.0"
+  }
+}
