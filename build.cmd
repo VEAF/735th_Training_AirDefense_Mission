@@ -37,6 +37,9 @@ echo SEVENZIP = %SEVENZIP%
 rem -- copy all the source mission files
 xcopy /y /e src\%VERSION% .\build\tempsrc\ >nul 2>&1
 
+rem -- copy the documentation images to the kneeboard
+xcopy /y /e doc\*.png .\build\tempsrc\KNEEBOARD\IMAGES >nul 2>&1
+
 rem -- copy all the community scripts
 copy .\src\scripts\community\Moose.lua .\build\tempsrc\l10n\Default  >nul 2>&1
 copy .\src\scripts\community\mist_4_3_74.lua .\build\tempsrc\l10n\Default  >nul 2>&1
