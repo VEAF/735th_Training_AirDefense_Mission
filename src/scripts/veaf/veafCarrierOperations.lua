@@ -11,6 +11,7 @@
 -- ------------
 -- * This script requires DCS 2.5.1 or higher and MIST 4.3.74 or higher.
 -- * It also requires the base veaf.lua script library (version 1.0 or higher)
+-- * It also requires the base veafRadio.lua script library (version 1.0 or higher)
 --
 -- Load the script:
 -- ----------------
@@ -23,9 +24,11 @@
 --     * ACTION "DO SCRIPT FILE"
 --     * OPEN --> Browse to the location of veaf.lua and click OK.
 --     * ACTION "DO SCRIPT FILE"
+--     * OPEN --> Browse to the location of veafRadio.lua and click OK.
+--     * ACTION "DO SCRIPT FILE"
 --     * OPEN --> Browse to the location of this script and click OK.
 --     * ACTION "DO SCRIPT"
---     * set the script command to "veafCarrierOperations.initialize()" and click OK.
+--     * set the script command to "veafRadio.initialize();veafCarrierOperations.initialize()" and click OK.
 -- 4.) Save the mission and start it.
 -- 5.) Have fun :)
 --
@@ -45,7 +48,7 @@ veafCarrierOperations = {}
 veafCarrierOperations.Id = "CARRIER - "
 
 --- Version.
-veafCarrierOperations.Version = "1.3.0"
+veafCarrierOperations.Version = "1.4.1"
 
 --- All the carrier groups must comply with this name
 veafCarrierOperations.CarrierGroupNamePattern = "^CSG-.*$"
@@ -62,7 +65,7 @@ veafCarrierOperations.AllCarriers =
 veafCarrierOperations.ALT_FOR_MEASURING_WIND = 30 -- wind is measured at 30 meters, 10 meters above deck
 veafCarrierOperations.ALIGNMENT_MANOEUVER_SPEED = 8 -- carrier speed when not yet aligned to the wind (in m/s)
 veafCarrierOperations.MAX_OPERATIONS_DURATION = 45 -- operations are stopped after
-veafCarrierOperations.SCHEDULER_INTERVAL = 2 -- scheduler runs every 2 minutes -- TODO reset
+veafCarrierOperations.SCHEDULER_INTERVAL = 2 -- scheduler runs every 2 minutes
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Do not change anything below unless you know what you are doing!
@@ -611,10 +614,10 @@ end
 
 --- Gets informations about current carrier operations
 function veafCarrierOperations.atcForCarrierOperations(parameters)
-    local groupName, groupId = unpack(parameters)
+    local groupName, unitName = unpack(parameters)
     veafCarrierOperations.logDebug("atcForCarrierOperations(".. groupName .. ")")
     local text = veafCarrierOperations.getAtcForCarrierOperations(groupName)
-    trigger.action.outTextForGroup(groupId, text, 15)
+    veaf.outTextForUnit(unitName, text, 15)
 end
 
 --- Ends carrier operations ; changes the radio menu item to START and send the carrier back to its starting point
@@ -703,23 +706,23 @@ function veafCarrierOperations.rebuildRadioMenu()
             -- add the stop menu
             carrier.stopMenuName = name .. " - End air operations"
             veafCarrierOperations.logTrace("add carrier.stopMenuName="..carrier.stopMenuName)
-            veafRadio.addCommandToSubmenu(carrier.stopMenuName, veafCarrierOperations.rootPath, veafCarrierOperations.stopCarrierOperations, name)
+            veafRadio.addSecuredCommandToSubmenu(carrier.stopMenuName, veafCarrierOperations.rootPath, veafCarrierOperations.stopCarrierOperations, name)
         else
             -- add the "start for veafCarrierOperations.MAX_OPERATIONS_DURATION" menu
             carrier.startMenuName1 = name .. " - Start carrier air operations for " .. veafCarrierOperations.MAX_OPERATIONS_DURATION .. " minutes"
             veafCarrierOperations.logTrace("add carrier.startMenuName1="..carrier.startMenuName1)
-            veafRadio.addCommandToSubmenu(carrier.startMenuName1, veafCarrierOperations.rootPath, veafCarrierOperations.startCarrierOperations, { name, veafCarrierOperations.MAX_OPERATIONS_DURATION })
+            veafRadio.addSecuredCommandToSubmenu(carrier.startMenuName1, veafCarrierOperations.rootPath, veafCarrierOperations.startCarrierOperations, { name, veafCarrierOperations.MAX_OPERATIONS_DURATION })
 
             -- add the "start for veafCarrierOperations.MAX_OPERATIONS_DURATION * 2" menu
             carrier.startMenuName2 = name .. " - Start carrier air operations for " .. veafCarrierOperations.MAX_OPERATIONS_DURATION * 2 .. " minutes"
             veafCarrierOperations.logTrace("add carrier.startMenuName2="..carrier.startMenuName2)
-            veafRadio.addCommandToSubmenu(carrier.startMenuName2, veafCarrierOperations.rootPath, veafCarrierOperations.startCarrierOperations, { name, veafCarrierOperations.MAX_OPERATIONS_DURATION * 2 })
+            veafRadio.addSecuredCommandToSubmenu(carrier.startMenuName2, veafCarrierOperations.rootPath, veafCarrierOperations.startCarrierOperations, { name, veafCarrierOperations.MAX_OPERATIONS_DURATION * 2 })
         end
 
         -- add the ATC menu (by player group)
         carrier.getInfoMenuName = name .. " - ATC - Request informations"
         veafCarrierOperations.logTrace("add carrier.getInfoMenuName="..carrier.getInfoMenuName)
-        veafRadio.addCommandToSubmenu(carrier.getInfoMenuName, veafCarrierOperations.rootPath, veafCarrierOperations.atcForCarrierOperations, name, true)
+        veafRadio.addCommandToSubmenu(carrier.getInfoMenuName, veafCarrierOperations.rootPath, veafCarrierOperations.atcForCarrierOperations, name, veafRadio.USAGE_ForGroup)
 
         veafRadio.refreshRadioMenu()
     end
@@ -732,12 +735,12 @@ function veafCarrierOperations.buildRadioMenu()
     veafCarrierOperations.rootPath = veafRadio.addSubMenu(veafCarrierOperations.RadioMenuName)
 
     -- build HELP menu for each group
-    veafRadio.addCommandToSubmenu("HELP", veafCarrierOperations.rootPath, veafCarrierOperations.help, true)
+    veafRadio.addCommandToSubmenu("HELP", veafCarrierOperations.rootPath, veafCarrierOperations.help, nil, veafRadio.USAGE_ForGroup)
 
     veafCarrierOperations.rebuildRadioMenu()
 end
 
-function veafCarrierOperations.help()
+function veafCarrierOperations.help(unitName)
     local text =
         'Use the radio menus to start and end carrier operations\n' ..
         'START: carrier will find out the wind and set sail at optimum speed to achieve a 25kn headwind\n' ..
@@ -745,7 +748,7 @@ function veafCarrierOperations.help()
         'END  : carrier will go back to its starting point (where it was when the START command was issued)\n' ..
         'RESET: carrier will go back to where it was when the mission started'
 
-    trigger.action.outText(text, 30)
+    veaf.outTextForUnit(unitName, text, 30)
 end
 
 function veaf.findInTable(data, key)

@@ -33,10 +33,11 @@ veaf = {}
 veaf.Id = "VEAF - "
 
 --- Version.
-veaf.Version = "1.2.0"
+veaf.Version = "1.2.1"
 
 --- Development version ?
 veaf.Development = true
+veaf.SecurityDisabled = true
 
 --- Enable logDebug ==> give more output to DCS log file.
 veaf.Debug = veaf.Development
@@ -138,7 +139,7 @@ function veaf.vecToString(vec)
     return result
 end
 
-function veaf.discover(o)
+function veaf.discoverMetadata(o)
     local text = ""
     for key,value in pairs(getmetatable(o)) do
        text = text .. " - ".. key.."\n";
@@ -146,13 +147,38 @@ function veaf.discover(o)
 	return text
 end
 
-function veaf.discoverTable(o)
-    local text = ""
-    for key,value in pairs(o) do
-       text = text .. " - ".. key.."\n";
-    end
-	return text
+function veaf.discover(o)
+    return veaf._discover(o, 0)
 end
+
+function veaf.p(o, level)
+    if level == nil then level = 0 end
+      local text = ""
+      if (type(o) == "table") then
+          text = "\n"
+          for key,value in pairs(o) do
+              for i=0, level do
+                  text = text .. " "
+              end
+              text = text .. ".".. key.."="..veaf.p(value, level+1);
+          end
+      elseif (type(o) == "function") then
+          text = text .. "[function]".."\n";
+      elseif (type(o) == "boolean") then
+          if o == true then 
+              text = text .. "[true]".."\n";
+          else
+              text = text .. "[false]".."\n";
+          end
+      else
+          if o == nil then
+              text = text .. "[nil]" .."\n";    
+          else
+              text = text .. o .."\n";
+          end
+      end
+      return text
+  end
 
 --- Simple round
 function veaf.round(num, numDecimalPlaces)
@@ -670,9 +696,11 @@ function veaf.getGroupData(groupIdent)
 end
 
 function veaf.getTankerData(tankerGroupName)
-    local result = {}
+    veaf.logTrace("getTankerData " .. tankerGroupName)
+    local result = nil
     local tankerData = veaf.getGroupData(tankerGroupName)
     if tankerData then
+        result = {}
         -- find callsign
         local units = veaf.findInTable(tankerData, "units")
         if units and units[1] then 
@@ -731,6 +759,23 @@ function veaf.getTankerData(tankerGroupName)
     end
     return result
 end
+
+function veaf.outTextForUnit(unitName, message, duration)
+    local groupId = nil
+    local unit = Unit.getByName(unitName)
+    if unit then 
+        local group = unit:getGroup()
+        if group then 
+            groupId = group:getID()
+        end
+    end
+    if groupId then 
+        trigger.action.outTextForGroup(groupId, message, duration)
+    else
+        trigger.action.outText(message, duration)
+    end
+end
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- initialisation
 -------------------------------------------------------------------------------------------------------------------------------------------------------------

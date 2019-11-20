@@ -45,8 +45,9 @@ veafGrass = {}
 veafGrass.Id = "GRASS - "
 
 --- Version.
-veafGrass.Version = "1.0.3"
+veafGrass.Version = "1.1.1"
 
+veafGrass.DelayForStartup = 3
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Utility methods
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -69,9 +70,11 @@ end
 -- @param runwayOrigin a static unit object (right side)
 -- @return nil
 ------------------------------------------------------------------------------
-function veafGrass.buildGrassRunway(runwayOrigin)
+function veafGrass.buildGrassRunway(name, runwayOrigin)
 	veafGrass.logInfo("Building grass runway for unit " .. runwayOrigin.unitName)
-
+	local tower = true
+	local endMarkers = false
+	
 	-- runway length in meters
 	local length = 600;
 	-- a plot each XX meters
@@ -82,7 +85,7 @@ function veafGrass.buildGrassRunway(runwayOrigin)
 	-- nb plots
 	local nbPlots = math.ceil(length / space);
 
-	local angle = mist.utils.toDegree(runwayOrigin.heading);
+	local angle = math.floor(mist.utils.toDegree(runwayOrigin.heading)+0.5);
 
 	-- create left origin from right origin
 	local leftOrigin = {
@@ -119,9 +122,64 @@ function veafGrass.buildGrassRunway(runwayOrigin)
 		local rightPlot = mist.utils.deepCopy(template)
 		rightPlot.x = leftOrigin.x + i * space * math.cos(mist.utils.toRadian(angle))
 		rightPlot.y = leftOrigin.y + i * space * math.sin(mist.utils.toRadian(angle))
-        mist.dynAddStatic(rightPlot)
-		
+        mist.dynAddStatic(rightPlot)		
 	end
+	
+	if (endMarkers) then
+		-- close the runway with optional markers (airshow cones)
+		template = {
+			["category"] = "Fortifications",
+			["categoryStatic"] = runwayOrigin.categoryStatic,
+			["coalition"] = runwayOrigin.coalition,
+			["country"] = runwayOrigin.country,
+			["countryId"] = runwayOrigin.countryId,
+			["heading"] = runwayOrigin.heading,
+			["shape_name"] =  "Comp_cone",
+			["type"] = "Airshow_Cone",
+		}
+		-- right plot
+		local leftPlot = mist.utils.deepCopy(template)
+		leftPlot.x = runwayOrigin.x + (nbPlots+1) * space * math.cos(mist.utils.toRadian(angle))
+		leftPlot.y = runwayOrigin.y + (nbPlots+1) * space * math.sin(mist.utils.toRadian(angle))
+		mist.dynAddStatic(leftPlot)
+		
+		-- right plot
+		local rightPlot = mist.utils.deepCopy(template)
+		rightPlot.x = leftOrigin.x + (nbPlots+1) * space * math.cos(mist.utils.toRadian(angle))
+		rightPlot.y = leftOrigin.y + (nbPlots+1) * space * math.sin(mist.utils.toRadian(angle))
+		mist.dynAddStatic(rightPlot)
+	end
+	
+	if (tower) then
+		-- optionally add a tower at the start of the runway
+		template = {
+			["category"] = "Fortifications",
+			["categoryStatic"] = runwayOrigin.categoryStatic,
+			["coalition"] = runwayOrigin.coalition,
+			["country"] = runwayOrigin.country,
+			["countryId"] = runwayOrigin.countryId,
+			["heading"] = runwayOrigin.heading,
+			["type"] = "house2arm",
+		}
+		
+		-- tower
+		local tower = mist.utils.deepCopy(template)
+		tower.x = leftOrigin.x-20 + (nbPlots+1.2) * space * math.cos(mist.utils.toRadian(angle))
+		tower.y = leftOrigin.y-20 + (nbPlots+1.2) * space * math.sin(mist.utils.toRadian(angle))
+		mist.dynAddStatic(tower)
+	end
+
+	-- add the runway to the named points
+	local point = {
+		x = runwayOrigin.x+20 + (nbPlots+1) * space * math.cos(mist.utils.toRadian(angle)) + width/2 * math.cos(mist.utils.toRadian(angle-90)),
+		y = math.floor(land.getHeight(leftOrigin) + 1),
+		z = runwayOrigin.y+20 + (nbPlots+1) * space * math.sin(mist.utils.toRadian(angle)) + width/2 * math.cos(mist.utils.toRadian(angle-90)),
+		atc = true,
+		runways = { 
+			{ hdg = (angle + 180) % 360, flare = "red"}
+		}
+	}
+	veafNamedPoints.addPoint(name:gsub("GRASS_RUNWAY","Grass strip"), point)
 end
 
 ------------------------------------------------------------------------------
@@ -133,7 +191,7 @@ function veafGrass.buildGrassRunways()
 
 	for name, unit in pairs(mist.DBs.unitsByName) do
 		if string.find(name, 'GRASS_RUNWAY') then		
-            veafGrass.buildGrassRunway(unit)
+            veafGrass.buildGrassRunway(name, unit)
         end
 	end
 end
@@ -310,6 +368,15 @@ function veafGrass.buildFarpUnits(farp)
 
 	mist.dynAdd(farpEscortGroup)
 	
+	-- add the FARP to the named points
+	local point = {
+		x = farp.x,
+		y = math.floor(land.getHeight(farp) + 1),
+		z = farp.y,
+		atc = true,
+		runways = {}
+	}
+	veafNamedPoints.addPoint(farp.unitName, point)
 end
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -317,11 +384,14 @@ end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 function veafGrass.initialize()
+	-- delay all these functions 30 seconds (to ensure that the other modules are loaded)
+	
 	-- auto generate FARP units
-	veafGrass.buildFarpsUnits()
-
+	mist.scheduleFunction(veafGrass.buildFarpsUnits,{},timer.getTime()+veafGrass.DelayForStartup)
+	
 	-- auto generate GRASS RUNWAY
-	veafGrass.buildGrassRunways()
+	mist.scheduleFunction(veafGrass.buildGrassRunways,{},timer.getTime()+veafGrass.DelayForStartup)
+
 end
 
 veafGrass.logInfo(string.format("Loading version %s", veafGrass.Version))

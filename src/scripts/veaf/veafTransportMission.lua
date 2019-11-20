@@ -49,7 +49,7 @@ veafTransportMission = {}
 veafTransportMission.Id = "TRANSPORT MISSION - "
 
 --- Version.
-veafTransportMission.Version = "1.2"
+veafTransportMission.Version = "1.3.1"
 
 --- Key phrase to look for in the mark text which triggers the command.
 veafTransportMission.Keyphrase = "_transport"
@@ -163,6 +163,8 @@ function veafTransportMission.onEventMarkChange(eventPos, event)
         if options then
             -- Check options commands
             if options.transportmission then
+                -- check security
+                if not veafSecurity.checkSecurity_L1(options.password) then return end
                 -- create the mission
                 veafTransportMission.generateTransportMission(eventPos, options.size, options.defense, options.blocade, options.from)
             end
@@ -200,6 +202,9 @@ function veafTransportMission.markTextAnalysis(text)
     -- start position, named point
     switch.from = veafTransportMission.DefaultStartPosition
 
+    -- password
+    switch.password = nil
+
     -- Check for correct keywords.
     if text:lower():find(veafTransportMission.Keyphrase) then
         switch.transportmission = true
@@ -215,6 +220,12 @@ function veafTransportMission.markTextAnalysis(text)
         local str = veaf.breakString(veaf.trim(keyphrase), " ")
         local key = str[1]
         local val = str[2]
+
+        if key:lower() == "password" then
+            -- Unlock the command
+            veafSpawn.logDebug(string.format("Keyword password", val))
+            switch.password = val
+        end
 
         if switch.transportmission and key:lower() == "size" then
             -- Set size.
@@ -454,10 +465,10 @@ function veafTransportMission.generateTransportMission(targetSpot, size, defense
     end
 
     -- add radio menu for drop zone information (by player group)
-    veafRadio.addCommandToSubmenu('Drop zone information', veafTransportMission.rootPath, veafTransportMission.reportTargetInformation, nil, true)
+    veafRadio.addCommandToSubmenu('Drop zone information', veafTransportMission.rootPath, veafTransportMission.reportTargetInformation, nil, veafRadio.USAGE_ForGroup)
 
     -- add radio menus for commands
-    veafRadio.addCommandToSubmenu('Skip current objective', veafTransportMission.rootPath, veafTransportMission.skip)
+    veafRadio.addSecuredCommandToSubmenu('Skip current objective', veafTransportMission.rootPath, veafTransportMission.skip)
     veafTransportMission.targetMarkersPath = veafRadio.addSubMenu("Drop zone markers", veafTransportMission.rootPath)
     veafRadio.addCommandToSubmenu('Request smoke on drop zone', veafTransportMission.targetMarkersPath, veafTransportMission.smokeTarget)
     veafRadio.addCommandToSubmenu('Request illumination flare over drop zone', veafTransportMission.targetMarkersPath, veafTransportMission.flareTarget)
@@ -483,7 +494,7 @@ function veafTransportMission.friendlyGroupWatchdog()
     end
 end
 
-function veafTransportMission.reportTargetInformation(groupId)
+function veafTransportMission.reportTargetInformation(unitName)
     -- generate information dispatch
     local nbVehicles, nbInfantry = veafUnits.countInfantryAndVehicles(veafTransportMission.BlueGroupName)
 
@@ -526,8 +537,8 @@ function veafTransportMission.reportTargetInformation(groupId)
     end
     message = message .. 'WIND OVER DROP ZONE : ' .. windText
 
-    -- send message only for the group
-    trigger.action.outTextForGroup(groupId, message, 30)
+    -- send message only for the unit
+    veaf.outTextForUnit(unitName, message, 30)
 end
 
 --- add a smoke marker over the drop zone
@@ -652,12 +663,12 @@ end
 function veafTransportMission.buildRadioMenu()
 
     veafTransportMission.rootPath = veafRadio.addSubMenu(veafTransportMission.RadioMenuName)
-    veafRadio.addCommandToSubmenu("HELP", veafTransportMission.rootPath, veafTransportMission.help, nil, true)
+    veafRadio.addCommandToSubmenu("HELP", veafTransportMission.rootPath, veafTransportMission.help, nil, veafRadio.USAGE_ForGroup)
     -- TODO add this command when the respawn will work (see veafTransportMission.resetAllCargoes)
     -- missionCommands.addCommand('Respawn all cargoes', veafTransportMission.rootPath, veafTransportMission.resetAllCargoes)
 end
 
-function veafTransportMission.help(groupId)
+function veafTransportMission.help(unitName)
     local text =
         'Create a marker and type "_transport" in the text\n' ..
         'This will create a default friendly group awaiting cargo that you need to transport\n' ..
@@ -671,7 +682,7 @@ function veafTransportMission.help(groupId)
         '   "size [1-5]" to change the number of cargo items to be transported (1 per participating helo, usually)\n' ..
         '   "blocade [0-5]" to specify enemy blocade around the drop zone (1 = light, 5 = heavy)'
 
-    trigger.action.outTextForGroup(groupId, text, 30)
+    veaf.outTextForUnit(unitName, text, 30)
 end
 
 

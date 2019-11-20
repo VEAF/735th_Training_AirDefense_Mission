@@ -24,7 +24,7 @@ veafAssets = {}
 veafAssets.Id = "ASSETS - "
 
 --- Version.
-veafAssets.Version = "1.1.0"
+veafAssets.Version = "1.2.2"
 
 veafAssets.Assets = {
     -- list the assets common to all missions below
@@ -63,15 +63,15 @@ end
 function veafAssets._buildAssetRadioMenu(menu, asset)
     if asset.disposable or asset.information then -- in this case we need a submenu
         local radioMenu = veafRadio.addSubMenu(asset.description, menu)
-        veafRadio.addCommandToSubmenu("Respawn "..asset.description, radioMenu, veafAssets.respawn, asset.name, false)
+        veafRadio.addSecuredCommandToSubmenu("Respawn "..asset.description, radioMenu, veafAssets.respawn, asset.name, veafRadio.USAGE_ForAll)
         if asset.information then
-            veafRadio.addCommandToSubmenu("Get info on "..asset.description, radioMenu, veafAssets.info, asset.name, true)
+            veafRadio.addCommandToSubmenu("Get info on "..asset.description, radioMenu, veafAssets.info, asset.name, veafRadio.USAGE_ForGroup)
         end
         if asset.disposable then
-            veafRadio.addCommandToSubmenu("Dispose of "..asset.description, radioMenu, veafAssets.dispose, asset.name, false)
+            veafRadio.addSecuredCommandToSubmenu("Dispose of "..asset.description, radioMenu, veafAssets.dispose, asset.name, veafRadio.USAGE_ForAll)
         end
     else
-        veafRadio.addCommandToSubmenu("Respawn "..asset.description, menu, veafAssets.respawn, asset.name, false)
+        veafRadio.addSecuredCommandToSubmenu("Respawn "..asset.description, menu, veafAssets.respawn, asset.name, veafRadio.USAGE_ForAll)
     end
 end
 
@@ -103,18 +103,32 @@ end
 --- Build the initial radio menu
 function veafAssets.buildRadioMenu()
     veafAssets.rootPath = veafRadio.addSubMenu(veafAssets.RadioMenuName)
-    veafRadio.addCommandToSubmenu("HELP", veafAssets.rootPath, veafAssets.help, nil, true)
+    veafRadio.addCommandToSubmenu("HELP", veafAssets.rootPath, veafAssets.help, nil, veafRadio.USAGE_ForGroup)
+
     names = {}
+    sortedAssets = {}
     for _, asset in pairs(veafAssets.assets) do
-        table.insert(names, asset.name)
+        table.insert(sortedAssets, {name=asset.name, sort=asset.sort})
     end
-    table.sort(names)
+    function compare(a,b)
+        return a["sort"] < b["sort"]
+    end     
+    table.sort(sortedAssets, compare)
+    for i = 1, #sortedAssets do
+        table.insert(names, sortedAssets[i].name)
+    end
+
+    veaf.logTrace("veafAssets.buildRadioMenu() - dumping names")
+    for i = 1, #names do
+        veaf.logTrace("veafAssets.buildRadioMenu().names -> " .. names[i])
+    end
+
     veafAssets._buildAssetsRadioMenuPage(veafAssets.rootPath, names, 9, 1)
     veafRadio.refreshRadioMenu()
 end
 
 function veafAssets.info(parameters)
-    local name, groupId = unpack(parameters)
+    local name, unitName = unpack(parameters)
     veafAssets.logDebug("veafAssets.info "..name)
     local theAsset = nil
     for _, asset in pairs(veafAssets.assets) do
@@ -146,7 +160,7 @@ function veafAssets.info(parameters)
                 end
             end
         end 
-        trigger.action.outTextForGroup(groupId, text, 30)
+        veaf.outTextForUnit(unitName, text, 30)
     end
 end
 
@@ -191,11 +205,11 @@ function veafAssets.respawn(name)
 end
 
 
-function veafAssets.help(groupId)
+function veafAssets.help(unitName)
     local text =
         'The radio menu lists all the assets, friendly or enemy\n' ..
         'Use these menus to respawn the assets when needed\n'
-    trigger.action.outTextForGroup(groupId, text, 30)
+    veaf.outTextForUnit(unitName, text, 30)
 end
 
 

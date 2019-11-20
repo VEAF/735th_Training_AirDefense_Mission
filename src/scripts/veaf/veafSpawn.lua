@@ -66,7 +66,7 @@ veafSpawn = {}
 veafSpawn.Id = "SPAWN - "
 
 --- Version.
-veafSpawn.Version = "1.6"
+veafSpawn.Version = "1.7.1"
 
 --- Key phrase to look for in the mark text which triggers the spawn command.
 veafSpawn.SpawnKeyphrase = "_spawn"
@@ -98,6 +98,10 @@ veafSpawn.rootPath = nil
 -- counts the units generated 
 veafSpawn.spawnedUnitsCounter = 0
 
+-- store all the convoys spawned
+veafSpawn.spawnedConvoys = {}
+
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Utility methods
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -114,6 +118,10 @@ function veafSpawn.logTrace(message)
     veaf.logTrace(veafSpawn.Id .. message)
 end
 
+function veafSpawn.logError(message)
+    veaf.logError(veafSpawn.Id .. message)
+end
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Event handler functions.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -127,23 +135,40 @@ function veafSpawn.onEventMarkChange(eventPos, event)
         local options = veafSpawn.markTextAnalysis(event.text)
 
         if options then
+
             -- Check options commands
             if options.unit then
+                -- check security
+                if not veafSecurity.checkSecurity_L9(options.password) then return end
                 veafSpawn.spawnUnit(eventPos, options.name, options.country, options.speed, options.altitude, options.heading, options.unitName, options.role, options.laserCode)
             elseif options.group then
+                -- check security
+                if not veafSecurity.checkSecurity_L9(options.password) then return end
                 veafSpawn.spawnGroup(eventPos, options.name, options.country, options.speed, options.altitude, options.heading, options.spacing, options.isConvoy, options.patrol, options.offroad, options.destination)
             elseif options.convoy then
+                -- check security
+                if not veafSecurity.checkSecurity_L9(options.password) then return end
                 veafSpawn.spawnConvoy(eventPos, options.country, options.patrol, options.offroad, options.destination, options.defense, options.transports, options.armor)
             elseif options.cargo then
+                -- check security
+                if not veafSecurity.checkSecurity_L9(options.password) then return end
                 veafSpawn.spawnCargo(eventPos, options.cargoType, options.cargoSmoke, options.unitName, false)
             elseif options.logistic then
+                -- check security
+                if not veafSecurity.checkSecurity_L9(options.password) then return end
                 veafSpawn.spawnLogistic(eventPos)
             elseif options.destroy then
+                -- check security
+                if not veafSecurity.checkSecurity_L1(options.password) then return end
                 veafSpawn.destroy(eventPos, options.radius, options.unitName)
             elseif options.teleport then
+                -- check security
+                if not veafSecurity.checkSecurity_L1(options.password) then return end
                 veafSpawn.teleport(eventPos, options.name)
             elseif options.bomb then
-                veafSpawn.spawnBomb(eventPos, options.bombPower, options.unlock)
+                -- check security
+                if not veafSecurity.checkSecurity_L1(options.password) then return end
+                veafSpawn.spawnBomb(eventPos, options.bombPower, options.password)
             elseif options.smoke then
                 veafSpawn.spawnSmoke(eventPos, options.smokeColor)
             elseif options.flare then
@@ -235,7 +260,7 @@ function veafSpawn.markTextAnalysis(text)
     -- flare agl altitude (meters)
     switch.alt = veafSpawn.IlluminationFlareAglAltitude
 
-    switch.unlock = nil
+    switch.password = nil
 
     -- Check for correct keywords.
     if text:lower():find(veafSpawn.SpawnKeyphrase .. " unit") then
@@ -354,10 +379,10 @@ function veafSpawn.markTextAnalysis(text)
             switch.country = val:upper()
         end
         
-        if key:lower() == "unlock" then
-            -- Unlock the bomb power
-            veafSpawn.logDebug(string.format("Keyword unlock", val))
-            switch.unlock = val:upper()
+        if key:lower() == "password" then
+            -- Unlock the command
+            veafSpawn.logDebug(string.format("Keyword password", val))
+            switch.password = val
         end
 
         if key:lower() == "power" then
@@ -456,8 +481,9 @@ function veafSpawn.doSpawnGroup(spawnSpot, groupDefinition, country, speed, alt,
     veafSpawn.spawnedUnitsCounter = veafSpawn.spawnedUnitsCounter + 1
 
     if type(groupDefinition) == "string" then
+        local name = groupDefinition
         -- find the desired group in the groups database
-        groupDefinition = veafUnits.findGroup(groupDefinition)
+        groupDefinition = veafUnits.findGroup(name)
         if not(groupDefinition) then
             veafSpawn.logInfo("cannot find group "..name)
             if not(silent) then
@@ -642,6 +668,7 @@ function veafSpawn.spawnConvoy(spawnSpot, country, patrol, offroad, destination,
     controller:setOption(AI.Option.Ground.id.DISPERSE_ON_ATTACK, true) -- set disperse on attack according to the option
 
     local route = veaf.generateVehiclesRoute(spawnSpot, destination, not offroad)
+    veafSpawn.spawnedConvoys[groupName] = route
 
     --  make the group go to destination
     veafSpawn.logDebug("make the group go to destination : ".. groupName)
@@ -656,6 +683,8 @@ function veafSpawn.spawnConvoy(spawnSpot, country, patrol, offroad, destination,
         
         -- mist.ground.patrol(groupName, 'doubleBack')
     end
+
+    trigger.action.outText("Spawned convoy "..groupName, 5)
 end
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -957,10 +986,11 @@ end
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 --- trigger an explosion at the marker area
-function veafSpawn.spawnBomb(spawnSpot, power, unlock)
+function veafSpawn.spawnBomb(spawnSpot, power, password)
     veafSpawn.logDebug("spawnBomb(power=" .. power ..")")
     veafSpawn.logDebug(string.format("spawnBomb: spawnSpot  x=%.1f y=%.1f, z=%.1f", spawnSpot.x, spawnSpot.y, spawnSpot.z))
-    if not(unlock) or unlock ~= "IVEGOTTHEPOWER" then
+    -- check security
+    if not veafSecurity.checkPassword_L0(password) then
         if power > 1000 then power = 1000 end
     end
 
@@ -1041,6 +1071,94 @@ function veafSpawn.teleport(spawnSpot, name)
         trigger.action.outText("Cannot teleport group : "..name, 5) 
     end
 end
+
+function veafSpawn.markClosestConvoyWithSmoke(unitName)
+    return veafSpawn._markClosestConvoyWithSmoke(unitName, false)
+end
+
+function veafSpawn.markClosestConvoyRouteWithSmoke(unitName)
+    return veafSpawn._markClosestConvoyWithSmoke(unitName, true)
+end
+
+function veafSpawn._markClosestConvoyWithSmoke(unitName, markRoute)
+    veafSpawn.logDebug(string.format("veafSpawn.markClosestConvoyWithSmoke(unitName=%s)",unitName))
+    local closestConvoyName = nil
+    local minDistance = 99999999
+    local unit = Unit.getByName(unitName)
+    if unit then
+        for name, _ in pairs(veafSpawn.spawnedConvoys) do
+            local averageGroupPosition = veaf.getAveragePosition(name)
+            distanceFromPlayer = ((averageGroupPosition.x - unit:getPosition().p.x)^2 + (averageGroupPosition.z - unit:getPosition().p.z)^2)^0.5
+            veafSpawn.logTrace(string.format("distanceFromPlayer = %d",distanceFromPlayer))
+            if distanceFromPlayer < minDistance then
+                minDistance = distanceFromPlayer
+                closestConvoyName = name
+                veafSpawn.logTrace(string.format("convoy %s is closest",closestConvoyName))
+            end
+        end
+    end
+    if closestConvoyName then
+        if markRoute then
+            local route = veafSpawn.spawnedConvoys[closestConvoyName]
+            local startPoint = veaf.placePointOnLand({x = route[1].x, y = 0, z = route[1].y})
+            local endPoint = veaf.placePointOnLand({x = route[2].x, y = 0, z = route[2].y})
+            trigger.action.smoke(startPoint, trigger.smokeColor.Green)
+            trigger.action.smoke(endPoint, trigger.smokeColor.Red)
+            veaf.outTextForUnit(unitName, closestConvoyName .. " is going from green to red smoke", 10)
+        else
+            local averageGroupPosition = veaf.getAveragePosition(closestConvoyName)
+            trigger.action.smoke(averageGroupPosition, trigger.smokeColor.White)
+            veaf.outTextForUnit(unitName, closestConvoyName .. " marked with white smoke", 10)
+        end
+    else
+        veaf.outTextForUnit(unitName, "No convoy found", 10)
+    end
+end
+
+function veafSpawn.infoOnAllConvoys(unitName)
+    veafSpawn.logDebug(string.format("veafSpawn.infoOnAllConvoys(unitName=%s)",unitName))
+    local text = ""
+    for name, _ in pairs(veafSpawn.spawnedConvoys) do
+        local nbVehicles, nbInfantry = veafUnits.countInfantryAndVehicles(name)
+        if nbVehicles > 0 then
+            local averageGroupPosition = veaf.getAveragePosition(name)
+            local lat, lon = coord.LOtoLL(averageGroupPosition)
+            local llString = mist.tostringLL(lat, lon, 0, true)
+            text = text .. " - " .. name .. ", " .. nbVehicles .. " vehicles : " .. llString
+        else
+            text = text .. " - " .. name .. "has been destroyed"
+            -- convoy has been dispatched, remove it from the convoys list
+            veafSpawn.spawnedConvoys[name] = nil
+        end
+    end
+    if text == "" then
+        veaf.outTextForUnit(unitName, "No convoy found", 10)
+    else
+        veaf.outTextForUnit(unitName, text, 30)
+    end
+end
+
+function veafSpawn.cleanupAllConvoys()
+    veafSpawn.logDebug("veafSpawn.cleanupAllConvoys()")
+    local foundOne = false
+    for name, _ in pairs(veafSpawn.spawnedConvoys) do
+        foundOne = true
+        local nbVehicles, nbInfantry = veafUnits.countInfantryAndVehicles(name)
+        if nbVehicles > 0 then
+            local group = Group.getByName(name)
+            if group then
+                Group.destroy(group)
+            end
+        end
+        -- convoy has been dispatched, remove it from the convoys list
+        veafSpawn.spawnedConvoys[name] = nil
+    end
+    if foundOne then
+        trigger.action.outText("All convoys cleaned up", 10)
+    else
+        trigger.action.outText("No convoy found", 10)
+    end
+end    
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Radio menu and help
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1048,14 +1166,20 @@ end
 --- Build the initial radio menu
 function veafSpawn.buildRadioMenu()
     veafSpawn.rootPath = veafRadio.addSubMenu(veafSpawn.RadioMenuName)
-    veafRadio.addCommandToSubmenu("HELP", veafSpawn.rootPath, veafSpawn.help, nil, true)
-    veafRadio.addCommandToSubmenu("HELP - all units", veafSpawn.rootPath, veafSpawn.helpAllUnits, nil, true)
-    veafRadio.addCommandToSubmenu("HELP - all groups", veafSpawn.rootPath, veafSpawn.helpAllGroups, nil, true)
-    veafRadio.addCommandToSubmenu("HELP - all cargoes", veafSpawn.rootPath, veafSpawn.helpAllCargoes, nil, true)
+    veafRadio.addCommandToSubmenu("HELP", veafSpawn.rootPath, veafSpawn.help, nil, veafRadio.USAGE_ForGroup)
+    veafRadio.addCommandToSubmenu("HELP - all units", veafSpawn.rootPath, veafSpawn.helpAllUnits, nil, veafRadio.USAGE_ForGroup)
+    veafRadio.addCommandToSubmenu("HELP - all groups", veafSpawn.rootPath, veafSpawn.helpAllGroups, nil, veafRadio.USAGE_ForGroup)
+    veafRadio.addCommandToSubmenu("HELP - all cargoes", veafSpawn.rootPath, veafSpawn.helpAllCargoes, nil, veafRadio.USAGE_ForGroup)
+    veafRadio.addCommandToSubmenu("Info on all convoys", veafSpawn.rootPath, veafSpawn.infoOnAllConvoys, nil, veafRadio.USAGE_ForGroup)
+    local infoOnClosestConvoyPath = veafRadio.addSubMenu("Mark closest convoy route", veafSpawn.rootPath)
+    veafRadio.addCommandToSubmenu("Mark closest convoy route" , infoOnClosestConvoyPath, veafSpawn.markClosestConvoyRouteWithSmoke, nil, veafRadio.USAGE_ForUnit)    
+    local infoOnClosestConvoyPath = veafRadio.addSubMenu("Mark closest convoy", veafSpawn.rootPath)
+    veafRadio.addCommandToSubmenu("Mark closest convoy" , infoOnClosestConvoyPath, veafSpawn.markClosestConvoyWithSmoke, nil, veafRadio.USAGE_ForUnit)    
+    veafRadio.addSecuredCommandToSubmenu('Cleanup all convoys', veafSpawn.rootPath, veafSpawn.cleanupAllConvoys)
     veafRadio.refreshRadioMenu()
 end
 
-function veafSpawn.help(groupId)
+function veafSpawn.help(unitName)
     local text = 
         'Create a marker and type "_spawn <unit|group|convoy|cargo|bomb|logistic|smoke|flare|jtac> " in the text\n' ..
         'This will spawn the requested object in the DCS world\n' ..
@@ -1090,14 +1214,14 @@ function veafSpawn.help(groupId)
         '"_spawn jtac" spawns a humvee with JTAC capacity\n' ..
         '"_destroy" will destroy the units around the marker\n' ..
         '   "radius <radius in meters>" specifies the destruction radius\n' ..
-        '   "unit <unit name>" specifies the name of the unit to destroy' ..
+        '   "unit <unit name>" specifies the name of the unit to destroy\n' ..
         '"_teleport" will teleport a group to the marker\n' ..
-        '   "name <group name>" specifies the name of the group to teleport' ..
+        '   "name <group name>" specifies the name of the group to teleport' 
             
-    trigger.action.outTextForGroup(groupId, text, 30)
+    veaf.outTextForUnit(unitName, text, 30)
 end
 
-function veafSpawn.helpAllGroups(groupId)
+function veafSpawn.helpAllGroups(unitName)
     local text = 'List of all groups defined in dcsUnits :\n'
             
     for _, g in pairs(veafUnits.GroupsDatabase) do
@@ -1108,10 +1232,10 @@ function veafSpawn.helpAllGroups(groupId)
         end
         text = text .. "\n"
     end
-    trigger.action.outTextForGroup(groupId, text, 30)
+    veaf.outTextForUnit(unitName, text, 30)
 end
 
-function veafSpawn.helpAllUnits(groupId)
+function veafSpawn.helpAllUnits(unitName)
     local text = 'List of all units defined in dcsUnits :\n'
             
     for _, u in pairs(veafUnits.UnitsDatabase) do
@@ -1122,10 +1246,10 @@ function veafSpawn.helpAllUnits(groupId)
         end
         text = text .. "\n"
     end
-    trigger.action.outTextForGroup(groupId, text, 30)
+    veaf.outTextForUnit(unitName, text, 30)
 end
 
-function veafSpawn.helpAllCargoes(groupId)
+function veafSpawn.helpAllCargoes(unitName)
     local text = 'List of all cargoes defined in dcsUnits :\n'
             
     for name, unit in pairs(dcsUnits.DcsUnitsDatabase) do
@@ -1139,7 +1263,7 @@ function veafSpawn.helpAllCargoes(groupId)
             text = text .."\n"
         end
     end
-    trigger.action.outTextForGroup(groupId, text, 30)
+    veaf.outTextForUnit(unitName, text, 30)
 end
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------

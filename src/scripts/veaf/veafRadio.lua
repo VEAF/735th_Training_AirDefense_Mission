@@ -45,18 +45,23 @@ veafRadio = {}
 veafRadio.Id = "RADIO - "
 
 --- Version.
-veafRadio.Version = "1.0.3"
+veafRadio.Version = "1.1.2"
 
 veafRadio.RadioMenuName = "VEAF (" .. veaf.Version .. " - radio " .. veafRadio.Version .. ")"
 
 --- Number of seconds between each automatic rebuild of the radio menu
 veafRadio.SecondsBetweenRadioMenuAutomaticRebuild = 600 -- 10 minutes ; should not be necessary as the menu is refreshed when a human enters a unit
 
+-- constants used to determine how the radio menu is set up
+veafRadio.USAGE_ForAll   = 0
+veafRadio.USAGE_ForGroup = 1
+veafRadio.USAGE_ForUnit  = 2
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Do not change anything below unless you know what you are doing!
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
---- Humans Groups (associative array groupId => group)
+--- Humans Units (associative array unitName => unit)
+veafRadio.humanUnits = {}
 veafRadio.humanGroups = {}
 
 --- This structure contains all the radio menus
@@ -125,6 +130,19 @@ end
 -- Radio menu methods
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+function veafRadio._proxyMethod(parameters)
+  veafRadio.logTrace("parameters="..veaf.p(parameters))  
+  local realMethod, realParameters = unpack(parameters)
+  veafRadio.logTrace("realMethod="..veaf.p(realMethod))  
+  veafRadio.logTrace("realParameters="..veaf.p(realParameters))  
+  if veafSecurity.isAuthenticated() then
+    realMethod(realParameters)
+  else
+    veafRadio.logError("Your radio has to be authenticated for '+'' commands")
+    trigger.action.outText("Your radio has to be authenticated for '+'' commands", 5) 
+  end  
+end
+
 --- Refresh the radio menu, based on stored information
 --- This is called from another method that has first changed the radio menu information by adding or removing elements
 function veafRadio.refreshRadioMenu()
@@ -141,8 +159,42 @@ function veafRadio.refreshRadioMenu()
   veafRadio.refreshRadioSubmenu(nil, veafRadio.radioMenu)        
 end
 
+function veafRadio._addCommand(groupId, title, menu, command, parameters, trace)
+  if not command.method then
+    veafRadio.logError("ERROR - missing method for command " .. title)
+  end
+  local _title = title
+  local _method = command.method
+  local _parameters = parameters
+
+  if command.isSecured then
+    if trace then veafRadio.logTrace("adding secured command") end
+    
+    _method = veafRadio._proxyMethod
+    _parameters = {command.method, command.parameters}
+
+    if veafSecurity.isAuthenticated() then
+      _title = "-" .. title
+    else
+      _title = "+" .. title
+    end
+  end
+
+  if groupId then
+    if trace then veafRadio.logTrace("adding for group") end
+    missionCommands.addCommandForGroup(groupId, _title, menu, _method, _parameters)
+  else
+    if trace then veafRadio.logTrace("adding for all") end
+    missionCommands.addCommand(_title, menu, _method, _parameters)
+  end
+
+end
+
 function veafRadio.refreshRadioSubmenu(parentRadioMenu, radioMenu)
   veafRadio.logTrace("veafRadio.refreshRadioSubmenu "..radioMenu.title)
+  
+  local trace1 = false
+
   -- create the radio menu in DCS
   if parentRadioMenu then
     radioMenu.dcsRadioMenu = missionCommands.addSubMenu(radioMenu.title, parentRadioMenu.dcsRadioMenu)
@@ -153,26 +205,40 @@ function veafRadio.refreshRadioSubmenu(parentRadioMenu, radioMenu)
   -- create the commands in the radio menu
   for count = 1,#radioMenu.commands do
     local command = radioMenu.commands[count]
-    if command.isForGroup then
-      -- build menu for each player
-      for groupId, group in pairs(veafRadio.humanGroups) do
-          -- add radio command by player group
+    if not command.usage then
+      command.usage = veafRadio.USAGE_ForAll
+    end
+    if command.usage ~= veafRadio.USAGE_ForAll then
+      
+      -- build menu for each player group
+      local alreadyDoneGroups = {}
+      for groupId, groupData in pairs(veafRadio.humanGroups) do
+        for _, callsign in pairs(groupData.callsigns) do
+          local unitData = groupData.units[callsign]
+          local unitName = unitData.name
+
+          -- add radio command by player unit or group
           local parameters = command.parameters
           if parameters == nil then
-            parameters = groupId
+            parameters = unitName
           else
             parameters = { command.parameters }
-            table.insert(parameters, groupId)
+            table.insert(parameters, unitName)
           end 
-          missionCommands.addCommandForGroup(groupId, command.title, radioMenu.dcsRadioMenu, command.method, parameters)
+          local _title = command.title
+          if command.usage == veafRadio.USAGE_ForUnit then
+            _title = callsign .. " - " .. command.title
+          end
+          if alreadyDoneGroups[groupId] == nil or command.usage == veafRadio.USAGE_ForUnit then
+            veafRadio._addCommand(groupId, _title, radioMenu.dcsRadioMenu, command, parameters, trace)
+          end
+          alreadyDoneGroups[groupId] = true
+        end
       end
     else
-      if not command.method then
-        veafRadio.logError("ERROR - missing method for command " .. command.title)
-      end
-      missionCommands.addCommand(command.title, radioMenu.dcsRadioMenu, command.method, command.parameters)
+      veafRadio._addCommand(nil, command.title, radioMenu.dcsRadioMenu, command, command.parameters, trace)
     end
-  end
+  end  
   
   -- recurse to create the submenus in the radio menu
   for count = 1,#radioMenu.subMenus do
@@ -182,15 +248,33 @@ function veafRadio.refreshRadioSubmenu(parentRadioMenu, radioMenu)
 end
 
 function veafRadio.addCommandToMainMenu(title, method)
-  return veafRadio.addCommandToSubmenu(title, nil, method)
+  return veafRadio._addCommandToMainMenu(title, method, false)
+end
+
+function veafRadio.addSecuredCommandToMainMenu(title, method)
+  return veafRadio._addCommandToMainMenu(title, method, true)
+end
+
+function veafRadio._addCommandToMainMenu(title, method, isSecured)
+  return veafRadio._addCommandToSubmenu(title, nil, method, nil, nil, isSecured)
 end
   
-function veafRadio.addCommandToSubmenu(title, radioMenu, method, parameters, isForGroup)
+function veafRadio.addCommandToSubmenu(title, radioMenu, method, parameters, usage)
+  return veafRadio._addCommandToSubmenu(title, radioMenu, method, parameters, usage, false)
+end
+
+function veafRadio.addSecuredCommandToSubmenu(title, radioMenu, method, parameters, usage)
+  return veafRadio._addCommandToSubmenu(title, radioMenu, method, parameters, usage, true)
+end
+
+function veafRadio._addCommandToSubmenu(title, radioMenu, method, parameters, usage, isSecured)
     local command = {}
     command.title = title
     command.method = method
     command.parameters = parameters
-    command.isForGroup = isForGroup
+    command.isSecured = isSecured
+    command.usage = usage
+    if command.usage == nil then command.usage = veafRadio.USAGE_ForAll end
     local menu = veafRadio.radioMenu
     if radioMenu then
        menu = radioMenu 
@@ -256,18 +340,34 @@ function veafRadio.delSubmenu(subMenu, radioMenu)
   end);
 end
 
--- prepare humans groups
-function veafRadio.buildHumanGroups() -- TODO make this player-centric, not group-centric
+-- prepare humans units
+function veafRadio.buildHumanUnits()
 
-    veafRadio.humanGroups = {}
+    veafRadio.humanUnits = {}
 
     -- build menu for each player
     for name, unit in pairs(mist.DBs.humansByName) do
-        -- not already in groups list ?
-        if veafRadio.humanGroups[unit.groupName] == nil then
-            veafRadio.logTrace(string.format("human player found name=%s, groupName=%s", name, unit.groupName))
-            veafRadio.humanGroups[unit.groupId] = unit.groupName
+        -- not already in units list ?
+        if veafRadio.humanUnits[unit.unitName] == nil then
+            veafRadio.logTrace(string.format("human player found name=%s, unitName=%s, groupId=%s", name, unit.unitName,unit.groupId))
+            local callsign = unit.callsign
+            if type(callsign) == "table" then callsign = callsign["name"] end
+            if type(callsign) == "number" then callsign = "" .. callsign end
+            local unitObject = {name=unit.unitName, groupId=unit.groupId, callsign=callsign}
+            veafRadio.humanUnits[unit.unitName] = unitObject
+            if not veafRadio.humanGroups[unit.groupId] then 
+              veafRadio.humanGroups[unit.groupId] = {}
+              veafRadio.humanGroups[unit.groupId].callsigns = {}
+              veafRadio.humanGroups[unit.groupId].units = {}
+            end
+            table.insert(veafRadio.humanGroups[unit.groupId].callsigns,callsign)
+            veafRadio.humanGroups[unit.groupId].units[callsign] = unitObject
         end
+    end
+
+    -- sort callsigns for each group
+    for _, groupData in pairs(veafRadio.humanGroups) do
+      table.sort(groupData.callsigns)
     end
 end
 
@@ -287,7 +387,7 @@ end
 
 function veafRadio.initialize()
     -- Build the initial radio menu
-    veafRadio.buildHumanGroups()
+    veafRadio.buildHumanUnits()
     veafRadio.refreshRadioMenu()
     --veafRadio.radioRefreshWatchdog()
 
