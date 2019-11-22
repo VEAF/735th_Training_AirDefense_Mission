@@ -4,6 +4,7 @@ mission/*
 mission/
 *.miz
 node_modules/
+7za.exe
 
 
 setup_zip_production.cmd
