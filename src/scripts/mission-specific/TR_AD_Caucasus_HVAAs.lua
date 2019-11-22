@@ -16,9 +16,9 @@ do
     :InitRepeatOnEngineShutDown()
     :SpawnScheduled(60,0)
 
-  -- Texaco2 KC-135
-  Spawn_Texaco2 = SPAWN
-    :New("Shell2")
+  -- Shell1 KC-135
+  Spawn_Shell1 = SPAWN
+    :New("Shell1")
     :InitLimit( 1, 5 )
     :InitRepeatOnEngineShutDown()
     :SpawnScheduled(60,0)
