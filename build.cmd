@@ -10,9 +10,9 @@ call npm update
 
 rem -- prepare the folders
 echo preparing the folders
-rd /s /q .\build  
-mkdir .\build  
-mkdir .\build\tempsrc  
+rd /s /q .\build
+mkdir .\build
+mkdir .\build\tempsrc
 
 rem -- default options values
 echo options values :
@@ -48,6 +48,7 @@ echo SEVENZIP = %SEVENZIP%
 echo building the mission
 rem -- copy all the source mission files and mission-specific scripts
 xcopy /y /e src\mission .\build\tempsrc\ >nul 2>&1
+copy src\scripts\mission-specific\*.lua .\build\tempsrc\l10n\Default  >nul 2>&1
 
 rem -- copy the documentation images to the kneeboard
 xcopy /y /e doc\*.png .\build\tempsrc\KNEEBOARD\IMAGES >nul 2>&1
@@ -85,7 +86,7 @@ rem -- compile the mission
 "%SEVENZIP%" a -r -tzip %MISSION_FILE%.miz .\build\tempsrc\* -mem=AES256 >nul 2>&1
 
 rem -- cleanup
-rd /s /q .\build\tempsrc  
+rd /s /q .\build\tempsrc
 
 rem -- done !
 echo Built %MISSION_FILE%.miz
