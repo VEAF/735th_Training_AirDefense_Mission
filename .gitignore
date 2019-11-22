@@ -1,12 +1,6 @@
-build/*
-build/
-mission/*
-mission/
-*.miz
-node_modules/
-7za.exe
+/build
+/*.miz
+/node_modules/
+/7za.exe
+/setup_*.cmd
 
-
-setup_zip_production.cmd
-
-setup_zip.cmd
