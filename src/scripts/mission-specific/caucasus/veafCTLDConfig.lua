@@ -201,7 +201,6 @@ ctld.wpZones = {
 ctld.transportPilotNames = {
 
     "helicargo1",
-    "helicargo1",
     "helicargo2",
     "helicargo3",
     "helicargo4",

@@ -3,6 +3,7 @@ build/
 mission/*
 mission/
 *.miz
+node_modules/
 
 
 setup_zip_production.cmd
