@@ -1,12 +1,12 @@
 # 735th Training Air Defense mission
 
 ## Abstract
-This mission has been designed in order to offer a friendly environment for **Air Denfense** training on [DCS World](https://www.digitalcombatsimulator.com).
+This mission has been designed in order to offer a friendly environment for **Air Defense** training on [DCS World](https://www.digitalcombatsimulator.com).
 
-Please read the operationnal documentation for further information on the training concept.
+Please read the operational documentation for further information on the training concept.
 In this documentation you will also find ATO, ACO, radio presets... and many more.
 
-*Link to the operationnal documentation - in progress*
+*Link to the operational documentation - in progress*
 
 
 ## Contributor onboarding
@@ -14,11 +14,10 @@ In this documentation you will also find ATO, ACO, radio presets... and many mor
 If you want to contribute to this mission project, or simply want to edit and build your own based on the original TRAD mission, please read the following steps.
 
 1. clone this repository
-2. [download](https://www.7-zip.org/download.html) **7za.exe** (in *7-Zip Extra: standalone console version, 7z DLL, Plugin for Far Manager* package) and paste it in the root of this repository
+2. [download](https://www.7-zip.org/download.html) **7za.exe** (in *7-Zip Extra: standalone console version, 7z DLL, Plugin for Far Manager* package), install it and either add it to your PATH or copy it in the root of this repository.
 3. install npm - for that install [node.js](https://nodejs.org/en/download/)
-4. in this repository root, execute **npm install** in order to install *VEAF-Mission-Creation-Tools* scripts
 
-At this stage, you're ready to build your own TRAD mission.
+At this stage, you're ready to build your own TRAD mission (use the *build* command).
 Happy editing :-).
 
 
