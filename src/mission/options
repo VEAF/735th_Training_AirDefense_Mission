@@ -119,6 +119,12 @@ options =
             ["PPA_TOTPAR"] = false,
             ["UNI_NODRIFT"] = false,
         }, -- end of ["M-2000C"]
+        ["F-16C"] = 
+        {
+            ["abDetent"] = 0,
+            ["CPLocalList"] = "default",
+            ["hmdEye"] = 1,
+        }, -- end of ["F-16C"]
         ["CaptoGlove"] = 
         {
             ["enable"] = false,
@@ -157,12 +163,12 @@ options =
             ["tacviewClientTelemetryPassword"] = "",
             ["tacviewRemoteControlPassword"] = "",
         }, -- end of ["Tacview"]
-        ["F-16C"] = 
+        ["A-4E-C"] = 
         {
-            ["abDetent"] = 0,
-            ["CPLocalList"] = "default",
-            ["hmdEye"] = 1,
-        }, -- end of ["F-16C"]
+            ["hideControlStick"] = 0,
+            ["rwrType"] = 0,
+            ["trimSpeed"] = 0,
+        }, -- end of ["A-4E-C"]
     }, -- end of ["plugins"]
     ["format"] = 1,
     ["sound"] = 
