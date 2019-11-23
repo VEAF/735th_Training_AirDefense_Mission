@@ -1,5 +1,5 @@
 @echo off
-set MISSION_NAME=TR_AD
+set MISSION_NAME=TR_AD_Caucasus_One
 echo -
 echo ----------------------------------------
 echo building Training Air Defense Mission
