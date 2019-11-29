@@ -13,7 +13,6 @@ set SEVENZIP=7za
 :DontDefineDefaultSEVENZIP
 echo SEVENZIP = %SEVENZIP%
 rem extracting MIZ files
-pushd src\mission
 "%SEVENZIP%" x -y *.miz -o"%cd%\src\mission\"
 del /f /q src\mission\l10n\Default\*.lua
 popd
