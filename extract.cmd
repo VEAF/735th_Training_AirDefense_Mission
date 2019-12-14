@@ -15,5 +15,4 @@ echo SEVENZIP = %SEVENZIP%
 rem extracting MIZ files
 "%SEVENZIP%" x -y *.miz -o"%cd%\src\mission\"
 del /f /q src\mission\l10n\Default\*.lua
-popd
 del *.miz
