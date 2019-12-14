@@ -1,9 +1,0 @@
-Farp Moscow 
-230.15
-N 425514
-E 443828
-2365 ft
-CAS and JAAT training area 1
-
-
-Si pas de vent alors ATC on closest point -> dernière ligne devrait être "no wind"
