@@ -1,0 +1,14 @@
+Farp Moscow 
+230.15
+N 425514
+E 443828
+2365 ft
+CAS and JAAT training area 1
+
+
+Farp Warsaw
+230.30
+N 433540
+E 394432
+210 ft
+CAS and JAAT training area 2
