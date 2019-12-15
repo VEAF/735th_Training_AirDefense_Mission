@@ -13,9 +13,10 @@ mission =
     {
         ["actions"] = 
         {
-            [1] = "a_do_script_file(getValueResourceByKey(\"ResKey_Action_16\"));",
-            [2] = "a_do_script_file(getValueResourceByKey(\"ResKey_Action_17\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_57\"));",
-            [3] = "a_do_script_file(getValueResourceByKey(\"ResKey_Action_52\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_351\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_350\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_352\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_353\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_363\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_364\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_356\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_53\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_54\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_365\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_366\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_367\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_368\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_369\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_370\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_371\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_372\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_55\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_373\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_374\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_375\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_376\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_377\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_378\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_56\"));",
+            [1] = "a_remove_scene_objects(344, 2);",
+            [2] = "a_do_script_file(getValueResourceByKey(\"ResKey_Action_845\"));",
+            [3] = "a_do_script_file(getValueResourceByKey(\"ResKey_Action_17\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_57\"));",
+            [4] = "a_do_script_file(getValueResourceByKey(\"ResKey_Action_52\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_351\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_350\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_352\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_353\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_363\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_364\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_356\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_53\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_54\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_365\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_366\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_367\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_368\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_369\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_370\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_371\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_372\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_55\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_373\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_374\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_375\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_376\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_377\"));a_do_script_file(getValueResourceByKey(\"ResKey_Action_378\"));a_do_script(getValueDictByKey(\"DictKey_ActionText_56\"));",
         }, -- end of ["actions"]
         ["events"] = 
         {
@@ -31,12 +32,14 @@ mission =
             [1] = true,
             [2] = true,
             [3] = true,
+            [4] = true,
         }, -- end of ["flag"]
         ["conditions"] = 
         {
             [1] = "return(true)",
             [2] = "return(true)",
             [3] = "return(true)",
+            [4] = "return(true)",
         }, -- end of ["conditions"]
         ["customStartup"] = 
         {
@@ -46,6 +49,7 @@ mission =
             [1] = "if mission.trig.conditions[1]() then mission.trig.actions[1]() end",
             [2] = "if mission.trig.conditions[2]() then mission.trig.actions[2]() end",
             [3] = "if mission.trig.conditions[3]() then mission.trig.actions[3]() end",
+            [4] = "if mission.trig.conditions[4]() then mission.trig.actions[4]() end",
         }, -- end of ["funcStartup"]
     }, -- end of ["trig"]
     ["result"] = 
@@ -88,7 +92,7 @@ mission =
             }, -- end of ["func"]
         }, -- end of ["red"]
     }, -- end of ["result"]
-    ["maxDictId"] = 838,
+    ["maxDictId"] = 845,
     ["pictureFileNameN"] = 
     {
     }, -- end of ["pictureFileNameN"]
@@ -150,7 +154,7 @@ mission =
         ["enable_fog"] = true,
         ["season"] = 
         {
-            ["temperature"] = 5,
+            ["temperature"] = 8.3999996185303,
         }, -- end of ["season"]
         ["qnh"] = 760,
         ["cyclones"] = 
@@ -310,13 +314,32 @@ mission =
                 ["hidden"] = false,
                 ["name"] = "Deep Strike training area 3",
             }, -- end of [5]
+            [6] = 
+            {
+                ["y"] = 852614.44597649,
+                ["radius"] = 213.36,
+                ["zoneId"] = 344,
+                ["x"] = -196795.00700098,
+                ["color"] = 
+                {
+                    [1] = 1,
+                    [2] = 1,
+                    [3] = 1,
+                    [4] = 0.15,
+                }, -- end of ["color"]
+                ["properties"] = 
+                {
+                }, -- end of ["properties"]
+                ["hidden"] = false,
+                ["name"] = "REMOVE1",
+            }, -- end of [6]
         }, -- end of ["zones"]
     }, -- end of ["triggers"]
     ["map"] = 
     {
-        ["centerY"] = 444661.37945248,
-        ["zoom"] = 5454.1914114753,
-        ["centerX"] = -149157.41219267,
+        ["centerY"] = 422854.97442428,
+        ["zoom"] = 314257.48651503,
+        ["centerX"] = -173024.24184997,
     }, -- end of ["map"]
     ["coalitions"] = 
     {
@@ -707,7 +730,7 @@ mission =
                                     {
                                         [1] = 
                                         {
-                                            ["alt"] = 721,
+                                            ["alt"] = 1219,
                                             ["action"] = "From Parking Area",
                                             ["alt_type"] = "BARO",
                                             ["linkUnit"] = 999321,
@@ -732,8 +755,8 @@ mission =
                                             ["type"] = "TakeOffParking",
                                             ["ETA"] = 0,
                                             ["ETA_locked"] = true,
-                                            ["y"] = 851004.62400411,
-                                            ["x"] = -179862.13645221,
+                                            ["y"] = 852589.39227005,
+                                            ["x"] = -196887.56499123,
                                             ["name"] = "DictKey_WptName_748",
                                             ["formation_template"] = "",
                                             ["speed_locked"] = true,
@@ -792,7 +815,7 @@ mission =
                                                 }, -- end of ["params"]
                                             }, -- end of ["task"]
                                             ["type"] = "Turning Point",
-                                            ["ETA"] = 1197.9597776651,
+                                            ["ETA"] = 1257.9857352488,
                                             ["ETA_locked"] = false,
                                             ["y"] = 843737.05677834,
                                             ["x"] = -148730.64993705,
@@ -901,11 +924,11 @@ mission =
                                 {
                                     [1] = 
                                     {
-                                        ["alt"] = 721,
+                                        ["alt"] = 1219,
                                         ["hardpoint_racks"] = true,
                                         ["alt_type"] = "BARO",
                                         ["livery_id"] = "Russia Demo #22 `Black Shark`",
-                                        ["skill"] = "Player",
+                                        ["skill"] = "Client",
                                         ["parking"] = "1",
                                         ["ropeLength"] = 15,
                                         ["speed"] = 41.666666666667,
@@ -958,9 +981,9 @@ mission =
                                             }, -- end of [2]
                                         }, -- end of ["Radio"]
                                         ["unitId"] = 999322,
-                                        ["psi"] = -0.4678744778845,
+                                        ["psi"] = -0.20787559001087,
                                         ["parking_id"] = "1",
-                                        ["x"] = -179862.13645221,
+                                        ["x"] = -196887.56499123,
                                         ["name"] = "DictKey_UnitName_747",
                                         ["payload"] = 
                                         {
@@ -988,8 +1011,8 @@ mission =
                                             ["chaff"] = 0,
                                             ["gun"] = 100,
                                         }, -- end of ["payload"]
-                                        ["y"] = 851004.62400411,
-                                        ["heading"] = 0.4678744778845,
+                                        ["y"] = 852589.39227005,
+                                        ["heading"] = 0.20787559001087,
                                         ["callsign"] = 
                                         {
                                             [1] = 3,
@@ -999,9 +1022,306 @@ mission =
                                         }, -- end of ["callsign"]
                                         ["onboard_num"] = "051",
                                     }, -- end of [1]
+                                    [2] = 
+                                    {
+                                        ["alt"] = 1219,
+                                        ["alt_type"] = "BARO",
+                                        ["livery_id"] = "Russia Demo #22 `Black Shark`",
+                                        ["skill"] = "Client",
+                                        ["parking"] = "3",
+                                        ["ropeLength"] = 15,
+                                        ["speed"] = 41.666666666667,
+                                        ["type"] = "Ka-50",
+                                        ["Radio"] = 
+                                        {
+                                            [1] = 
+                                            {
+                                                ["modulations"] = 
+                                                {
+                                                }, -- end of ["modulations"]
+                                                ["channels"] = 
+                                                {
+                                                    [7] = 40,
+                                                    [1] = 21.5,
+                                                    [2] = 25.7,
+                                                    [4] = 28,
+                                                    [8] = 50,
+                                                    [9] = 55.5,
+                                                    [5] = 30,
+                                                    [10] = 59.9,
+                                                    [3] = 27,
+                                                    [6] = 32,
+                                                }, -- end of ["channels"]
+                                            }, -- end of [1]
+                                            [2] = 
+                                            {
+                                                ["modulations"] = 
+                                                {
+                                                }, -- end of ["modulations"]
+                                                ["channels"] = 
+                                                {
+                                                    [14] = 0.283,
+                                                    [13] = 0.583,
+                                                    [7] = 0.443,
+                                                    [1] = 0.625,
+                                                    [2] = 0.303,
+                                                    [4] = 0.591,
+                                                    [8] = 0.215,
+                                                    [16] = 1.21,
+                                                    [9] = 0.525,
+                                                    [5] = 0.408,
+                                                    [10] = 1.065,
+                                                    [11] = 0.718,
+                                                    [3] = 0.289,
+                                                    [6] = 0.803,
+                                                    [12] = 0.35,
+                                                    [15] = 0.995,
+                                                }, -- end of ["channels"]
+                                            }, -- end of [2]
+                                        }, -- end of ["Radio"]
+                                        ["unitId"] = 999352,
+                                        ["psi"] = -0.20787559001087,
+                                        ["parking_id"] = "3",
+                                        ["x"] = -196887.56499123,
+                                        ["name"] = "DictKey_UnitName_842",
+                                        ["payload"] = 
+                                        {
+                                            ["pylons"] = 
+                                            {
+                                                [1] = 
+                                                {
+                                                    ["CLSID"] = "{A6FD14D3-6D30-4C85-88A7-8D17BEE120E2}",
+                                                }, -- end of [1]
+                                                [2] = 
+                                                {
+                                                    ["CLSID"] = "{FC56DF80-9B09-44C5-8976-DCFAFF219062}",
+                                                }, -- end of [2]
+                                                [3] = 
+                                                {
+                                                    ["CLSID"] = "{FC56DF80-9B09-44C5-8976-DCFAFF219062}",
+                                                }, -- end of [3]
+                                                [4] = 
+                                                {
+                                                    ["CLSID"] = "{A6FD14D3-6D30-4C85-88A7-8D17BEE120E2}",
+                                                }, -- end of [4]
+                                            }, -- end of ["pylons"]
+                                            ["fuel"] = "1450",
+                                            ["flare"] = 128,
+                                            ["chaff"] = 0,
+                                            ["gun"] = 100,
+                                        }, -- end of ["payload"]
+                                        ["y"] = 852589.39227005,
+                                        ["heading"] = 0.20787559001087,
+                                        ["callsign"] = 
+                                        {
+                                            [1] = 3,
+                                            [2] = 1,
+                                            [3] = 2,
+                                            ["name"] = "Uzi12",
+                                        }, -- end of ["callsign"]
+                                        ["onboard_num"] = "067",
+                                    }, -- end of [2]
+                                    [3] = 
+                                    {
+                                        ["alt"] = 1219,
+                                        ["alt_type"] = "BARO",
+                                        ["livery_id"] = "Russia Demo #22 `Black Shark`",
+                                        ["skill"] = "Client",
+                                        ["parking"] = "4",
+                                        ["ropeLength"] = 15,
+                                        ["speed"] = 41.666666666667,
+                                        ["type"] = "Ka-50",
+                                        ["Radio"] = 
+                                        {
+                                            [1] = 
+                                            {
+                                                ["modulations"] = 
+                                                {
+                                                }, -- end of ["modulations"]
+                                                ["channels"] = 
+                                                {
+                                                    [7] = 40,
+                                                    [1] = 21.5,
+                                                    [2] = 25.7,
+                                                    [4] = 28,
+                                                    [8] = 50,
+                                                    [9] = 55.5,
+                                                    [5] = 30,
+                                                    [10] = 59.9,
+                                                    [3] = 27,
+                                                    [6] = 32,
+                                                }, -- end of ["channels"]
+                                            }, -- end of [1]
+                                            [2] = 
+                                            {
+                                                ["modulations"] = 
+                                                {
+                                                }, -- end of ["modulations"]
+                                                ["channels"] = 
+                                                {
+                                                    [14] = 0.283,
+                                                    [13] = 0.583,
+                                                    [7] = 0.443,
+                                                    [1] = 0.625,
+                                                    [2] = 0.303,
+                                                    [4] = 0.591,
+                                                    [8] = 0.215,
+                                                    [16] = 1.21,
+                                                    [9] = 0.525,
+                                                    [5] = 0.408,
+                                                    [10] = 1.065,
+                                                    [11] = 0.718,
+                                                    [3] = 0.289,
+                                                    [6] = 0.803,
+                                                    [12] = 0.35,
+                                                    [15] = 0.995,
+                                                }, -- end of ["channels"]
+                                            }, -- end of [2]
+                                        }, -- end of ["Radio"]
+                                        ["unitId"] = 999353,
+                                        ["psi"] = -0.20787559001087,
+                                        ["parking_id"] = "4",
+                                        ["x"] = -196887.56499123,
+                                        ["name"] = "DictKey_UnitName_843",
+                                        ["payload"] = 
+                                        {
+                                            ["pylons"] = 
+                                            {
+                                                [1] = 
+                                                {
+                                                    ["CLSID"] = "{A6FD14D3-6D30-4C85-88A7-8D17BEE120E2}",
+                                                }, -- end of [1]
+                                                [2] = 
+                                                {
+                                                    ["CLSID"] = "{FC56DF80-9B09-44C5-8976-DCFAFF219062}",
+                                                }, -- end of [2]
+                                                [3] = 
+                                                {
+                                                    ["CLSID"] = "{FC56DF80-9B09-44C5-8976-DCFAFF219062}",
+                                                }, -- end of [3]
+                                                [4] = 
+                                                {
+                                                    ["CLSID"] = "{A6FD14D3-6D30-4C85-88A7-8D17BEE120E2}",
+                                                }, -- end of [4]
+                                            }, -- end of ["pylons"]
+                                            ["fuel"] = "1450",
+                                            ["flare"] = 128,
+                                            ["chaff"] = 0,
+                                            ["gun"] = 100,
+                                        }, -- end of ["payload"]
+                                        ["y"] = 852589.39227005,
+                                        ["heading"] = 0.20787559001087,
+                                        ["callsign"] = 
+                                        {
+                                            [1] = 3,
+                                            [2] = 1,
+                                            [3] = 3,
+                                            ["name"] = "Uzi13",
+                                        }, -- end of ["callsign"]
+                                        ["onboard_num"] = "068",
+                                    }, -- end of [3]
+                                    [4] = 
+                                    {
+                                        ["alt"] = 1219,
+                                        ["alt_type"] = "BARO",
+                                        ["livery_id"] = "Russia Demo #22 `Black Shark`",
+                                        ["skill"] = "Client",
+                                        ["parking"] = "2",
+                                        ["ropeLength"] = 15,
+                                        ["speed"] = 41.666666666667,
+                                        ["type"] = "Ka-50",
+                                        ["Radio"] = 
+                                        {
+                                            [1] = 
+                                            {
+                                                ["modulations"] = 
+                                                {
+                                                }, -- end of ["modulations"]
+                                                ["channels"] = 
+                                                {
+                                                    [7] = 40,
+                                                    [1] = 21.5,
+                                                    [2] = 25.7,
+                                                    [4] = 28,
+                                                    [8] = 50,
+                                                    [9] = 55.5,
+                                                    [5] = 30,
+                                                    [10] = 59.9,
+                                                    [3] = 27,
+                                                    [6] = 32,
+                                                }, -- end of ["channels"]
+                                            }, -- end of [1]
+                                            [2] = 
+                                            {
+                                                ["modulations"] = 
+                                                {
+                                                }, -- end of ["modulations"]
+                                                ["channels"] = 
+                                                {
+                                                    [14] = 0.283,
+                                                    [13] = 0.583,
+                                                    [7] = 0.443,
+                                                    [1] = 0.625,
+                                                    [2] = 0.303,
+                                                    [4] = 0.591,
+                                                    [8] = 0.215,
+                                                    [16] = 1.21,
+                                                    [9] = 0.525,
+                                                    [5] = 0.408,
+                                                    [10] = 1.065,
+                                                    [11] = 0.718,
+                                                    [3] = 0.289,
+                                                    [6] = 0.803,
+                                                    [12] = 0.35,
+                                                    [15] = 0.995,
+                                                }, -- end of ["channels"]
+                                            }, -- end of [2]
+                                        }, -- end of ["Radio"]
+                                        ["unitId"] = 999354,
+                                        ["psi"] = -0.20787559001087,
+                                        ["parking_id"] = "2",
+                                        ["x"] = -196887.56499123,
+                                        ["name"] = "DictKey_UnitName_844",
+                                        ["payload"] = 
+                                        {
+                                            ["pylons"] = 
+                                            {
+                                                [1] = 
+                                                {
+                                                    ["CLSID"] = "{A6FD14D3-6D30-4C85-88A7-8D17BEE120E2}",
+                                                }, -- end of [1]
+                                                [2] = 
+                                                {
+                                                    ["CLSID"] = "{FC56DF80-9B09-44C5-8976-DCFAFF219062}",
+                                                }, -- end of [2]
+                                                [3] = 
+                                                {
+                                                    ["CLSID"] = "{FC56DF80-9B09-44C5-8976-DCFAFF219062}",
+                                                }, -- end of [3]
+                                                [4] = 
+                                                {
+                                                    ["CLSID"] = "{A6FD14D3-6D30-4C85-88A7-8D17BEE120E2}",
+                                                }, -- end of [4]
+                                            }, -- end of ["pylons"]
+                                            ["fuel"] = "1450",
+                                            ["flare"] = 128,
+                                            ["chaff"] = 0,
+                                            ["gun"] = 100,
+                                        }, -- end of ["payload"]
+                                        ["y"] = 852589.39227005,
+                                        ["heading"] = 0.20787559001087,
+                                        ["callsign"] = 
+                                        {
+                                            [1] = 3,
+                                            [2] = 1,
+                                            [3] = 4,
+                                            ["name"] = "Uzi14",
+                                        }, -- end of ["callsign"]
+                                        ["onboard_num"] = "069",
+                                    }, -- end of [4]
                                 }, -- end of ["units"]
-                                ["y"] = 851004.62400411,
-                                ["x"] = -179862.13645221,
+                                ["y"] = 852589.39227005,
+                                ["x"] = -196887.56499123,
                                 ["name"] = "DictKey_GroupName_746",
                                 ["communication"] = false,
                                 ["start_time"] = 0,
@@ -1022,7 +1342,7 @@ mission =
                                     {
                                         [1] = 
                                         {
-                                            ["alt"] = 721,
+                                            ["alt"] = 525,
                                             ["action"] = "From Parking Area",
                                             ["alt_type"] = "BARO",
                                             ["linkUnit"] = 999321,
@@ -1047,8 +1367,8 @@ mission =
                                             ["type"] = "TakeOffParking",
                                             ["ETA"] = 0,
                                             ["ETA_locked"] = true,
-                                            ["y"] = 851004.62400411,
-                                            ["x"] = -179862.13645221,
+                                            ["y"] = 852589.39227005,
+                                            ["x"] = -196887.56499123,
                                             ["name"] = "DictKey_WptName_756",
                                             ["formation_template"] = "",
                                             ["speed_locked"] = true,
@@ -1107,7 +1427,7 @@ mission =
                                                 }, -- end of ["params"]
                                             }, -- end of ["task"]
                                             ["type"] = "Turning Point",
-                                            ["ETA"] = 980.06491936377,
+                                            ["ETA"] = 1397.5362714277,
                                             ["ETA_locked"] = false,
                                             ["y"] = 843687.53462813,
                                             ["x"] = -148762.19731058,
@@ -1216,7 +1536,7 @@ mission =
                                 {
                                     [1] = 
                                     {
-                                        ["alt"] = 721,
+                                        ["alt"] = 525,
                                         ["hardpoint_racks"] = true,
                                         ["alt_type"] = "BARO",
                                         ["livery_id"] = "US ARMY 1972",
@@ -1265,9 +1585,9 @@ mission =
                                             }, -- end of [1]
                                         }, -- end of ["Radio"]
                                         ["unitId"] = 999323,
-                                        ["psi"] = -0.46874141259707,
+                                        ["psi"] = -0.20852754217875,
                                         ["parking_id"] = "1",
-                                        ["x"] = -179862.13645221,
+                                        ["x"] = -196887.56499123,
                                         ["name"] = "DictKey_UnitName_755",
                                         ["payload"] = 
                                         {
@@ -1303,8 +1623,8 @@ mission =
                                             ["chaff"] = 0,
                                             ["gun"] = 100,
                                         }, -- end of ["payload"]
-                                        ["y"] = 851004.62400411,
-                                        ["heading"] = 0.46874141259707,
+                                        ["y"] = 852589.39227005,
+                                        ["heading"] = 0.20852754217875,
                                         ["callsign"] = 
                                         {
                                             [1] = 4,
@@ -1316,12 +1636,12 @@ mission =
                                     }, -- end of [1]
                                     [2] = 
                                     {
-                                        ["alt"] = 721,
+                                        ["alt"] = 525,
                                         ["hardpoint_racks"] = true,
                                         ["alt_type"] = "BARO",
                                         ["livery_id"] = "US ARMY 1972",
                                         ["skill"] = "Client",
-                                        ["parking"] = 1,
+                                        ["parking"] = "3",
                                         ["ropeLength"] = 15,
                                         ["speed"] = 41.666666666667,
                                         ["AddPropAircraft"] = 
@@ -1365,9 +1685,9 @@ mission =
                                             }, -- end of [1]
                                         }, -- end of ["Radio"]
                                         ["unitId"] = 999341,
-                                        ["psi"] = -0.46874141259707,
-                                        ["parking_id"] = "1",
-                                        ["x"] = -179902.13645221,
+                                        ["psi"] = -0.20852754217875,
+                                        ["parking_id"] = "3",
+                                        ["x"] = -196894.74127222,
                                         ["name"] = "DictKey_UnitName_810",
                                         ["payload"] = 
                                         {
@@ -1403,8 +1723,8 @@ mission =
                                             ["chaff"] = 0,
                                             ["gun"] = 100,
                                         }, -- end of ["payload"]
-                                        ["y"] = 851044.62400411,
-                                        ["heading"] = 0.46874141259707,
+                                        ["y"] = 852593.98766444,
+                                        ["heading"] = 0.20852754217875,
                                         ["callsign"] = 
                                         {
                                             [1] = 4,
@@ -1416,12 +1736,12 @@ mission =
                                     }, -- end of [2]
                                     [3] = 
                                     {
-                                        ["alt"] = 721,
+                                        ["alt"] = 525,
                                         ["hardpoint_racks"] = true,
                                         ["alt_type"] = "BARO",
                                         ["livery_id"] = "US ARMY 1972",
                                         ["skill"] = "Client",
-                                        ["parking"] = 1,
+                                        ["parking"] = "4",
                                         ["ropeLength"] = 15,
                                         ["speed"] = 41.666666666667,
                                         ["AddPropAircraft"] = 
@@ -1465,9 +1785,9 @@ mission =
                                             }, -- end of [1]
                                         }, -- end of ["Radio"]
                                         ["unitId"] = 999342,
-                                        ["psi"] = -0.46874141259707,
-                                        ["parking_id"] = "1",
-                                        ["x"] = -179942.13645221,
+                                        ["psi"] = -0.20852754217875,
+                                        ["parking_id"] = "4",
+                                        ["x"] = -196894.74127222,
                                         ["name"] = "DictKey_UnitName_811",
                                         ["payload"] = 
                                         {
@@ -1503,8 +1823,8 @@ mission =
                                             ["chaff"] = 0,
                                             ["gun"] = 100,
                                         }, -- end of ["payload"]
-                                        ["y"] = 851084.62400411,
-                                        ["heading"] = 0.46874141259707,
+                                        ["y"] = 852593.98766444,
+                                        ["heading"] = 0.20852754217875,
                                         ["callsign"] = 
                                         {
                                             [1] = 4,
@@ -1516,12 +1836,12 @@ mission =
                                     }, -- end of [3]
                                     [4] = 
                                     {
-                                        ["alt"] = 721,
+                                        ["alt"] = 525,
                                         ["hardpoint_racks"] = true,
                                         ["alt_type"] = "BARO",
                                         ["livery_id"] = "US ARMY 1972",
                                         ["skill"] = "Client",
-                                        ["parking"] = 1,
+                                        ["parking"] = "2",
                                         ["ropeLength"] = 15,
                                         ["speed"] = 41.666666666667,
                                         ["AddPropAircraft"] = 
@@ -1565,9 +1885,9 @@ mission =
                                             }, -- end of [1]
                                         }, -- end of ["Radio"]
                                         ["unitId"] = 999343,
-                                        ["psi"] = -0.46874141259707,
-                                        ["parking_id"] = "1",
-                                        ["x"] = -179982.13645221,
+                                        ["psi"] = -0.20852754217875,
+                                        ["parking_id"] = "2",
+                                        ["x"] = -196894.74127222,
                                         ["name"] = "DictKey_UnitName_812",
                                         ["payload"] = 
                                         {
@@ -1603,8 +1923,8 @@ mission =
                                             ["chaff"] = 0,
                                             ["gun"] = 100,
                                         }, -- end of ["payload"]
-                                        ["y"] = 851124.62400411,
-                                        ["heading"] = 0.46874141259707,
+                                        ["y"] = 852593.98766444,
+                                        ["heading"] = 0.20852754217875,
                                         ["callsign"] = 
                                         {
                                             [1] = 4,
@@ -1615,8 +1935,8 @@ mission =
                                         ["onboard_num"] = "063",
                                     }, -- end of [4]
                                 }, -- end of ["units"]
-                                ["y"] = 851004.62400411,
-                                ["x"] = -179862.13645221,
+                                ["y"] = 852589.39227005,
+                                ["x"] = -196887.56499123,
                                 ["name"] = "DictKey_GroupName_754",
                                 ["communication"] = false,
                                 ["start_time"] = 0,
@@ -1936,7 +2256,7 @@ mission =
                                         ["alt_type"] = "BARO",
                                         ["livery_id"] = "US ARMY 1972",
                                         ["skill"] = "Client",
-                                        ["parking"] = 1,
+                                        ["parking"] = "3",
                                         ["ropeLength"] = 15,
                                         ["speed"] = 41.666666666667,
                                         ["AddPropAircraft"] = 
@@ -1981,8 +2301,8 @@ mission =
                                         }, -- end of ["Radio"]
                                         ["unitId"] = 999334,
                                         ["psi"] = 0.16705002011969,
-                                        ["parking_id"] = "1",
-                                        ["x"] = -149170.99873997,
+                                        ["parking_id"] = "3",
+                                        ["x"] = -149130.99873997,
                                         ["name"] = "DictKey_UnitName_796",
                                         ["payload"] = 
                                         {
@@ -2018,7 +2338,7 @@ mission =
                                             ["chaff"] = 0,
                                             ["gun"] = 100,
                                         }, -- end of ["payload"]
-                                        ["y"] = 444817.13077725,
+                                        ["y"] = 444777.13077725,
                                         ["heading"] = -0.16705002011969,
                                         ["callsign"] = 
                                         {
@@ -2036,7 +2356,7 @@ mission =
                                         ["alt_type"] = "BARO",
                                         ["livery_id"] = "US ARMY 1972",
                                         ["skill"] = "Client",
-                                        ["parking"] = 1,
+                                        ["parking"] = "4",
                                         ["ropeLength"] = 15,
                                         ["speed"] = 41.666666666667,
                                         ["AddPropAircraft"] = 
@@ -2081,8 +2401,8 @@ mission =
                                         }, -- end of ["Radio"]
                                         ["unitId"] = 999335,
                                         ["psi"] = 0.16705002011969,
-                                        ["parking_id"] = "1",
-                                        ["x"] = -149210.99873997,
+                                        ["parking_id"] = "4",
+                                        ["x"] = -149130.99873997,
                                         ["name"] = "DictKey_UnitName_797",
                                         ["payload"] = 
                                         {
@@ -2118,7 +2438,7 @@ mission =
                                             ["chaff"] = 0,
                                             ["gun"] = 100,
                                         }, -- end of ["payload"]
-                                        ["y"] = 444857.13077725,
+                                        ["y"] = 444777.13077725,
                                         ["heading"] = -0.16705002011969,
                                         ["callsign"] = 
                                         {
@@ -2136,7 +2456,7 @@ mission =
                                         ["alt_type"] = "BARO",
                                         ["livery_id"] = "US ARMY 1972",
                                         ["skill"] = "Client",
-                                        ["parking"] = 1,
+                                        ["parking"] = "2",
                                         ["ropeLength"] = 15,
                                         ["speed"] = 41.666666666667,
                                         ["AddPropAircraft"] = 
@@ -2181,8 +2501,8 @@ mission =
                                         }, -- end of ["Radio"]
                                         ["unitId"] = 999336,
                                         ["psi"] = 0.16705002011969,
-                                        ["parking_id"] = "1",
-                                        ["x"] = -149250.99873997,
+                                        ["parking_id"] = "2",
+                                        ["x"] = -149130.99873997,
                                         ["name"] = "DictKey_UnitName_798",
                                         ["payload"] = 
                                         {
@@ -2218,7 +2538,7 @@ mission =
                                             ["chaff"] = 0,
                                             ["gun"] = 100,
                                         }, -- end of ["payload"]
-                                        ["y"] = 444897.13077725,
+                                        ["y"] = 444777.13077725,
                                         ["heading"] = -0.16705002011969,
                                         ["callsign"] = 
                                         {
@@ -3475,7 +3795,7 @@ mission =
                                     {
                                         [1] = 
                                         {
-                                            ["alt"] = 721,
+                                            ["alt"] = 525,
                                             ["action"] = "From Parking Area",
                                             ["alt_type"] = "BARO",
                                             ["linkUnit"] = 999321,
@@ -3500,8 +3820,8 @@ mission =
                                             ["type"] = "TakeOffParking",
                                             ["ETA"] = 0,
                                             ["ETA_locked"] = true,
-                                            ["y"] = 851004.62400411,
-                                            ["x"] = -179862.13645221,
+                                            ["y"] = 852589.39227005,
+                                            ["x"] = -196887.56499123,
                                             ["name"] = "DictKey_WptName_830",
                                             ["formation_template"] = "",
                                             ["speed_locked"] = true,
@@ -3560,7 +3880,7 @@ mission =
                                                 }, -- end of ["params"]
                                             }, -- end of ["task"]
                                             ["type"] = "Turning Point",
-                                            ["ETA"] = 883.07407311639,
+                                            ["ETA"] = 1259.7625183169,
                                             ["ETA_locked"] = false,
                                             ["y"] = 843681.32288497,
                                             ["x"] = -148635.18438828,
@@ -3669,7 +3989,7 @@ mission =
                                 {
                                     [1] = 
                                     {
-                                        ["alt"] = 721,
+                                        ["alt"] = 525,
                                         ["hardpoint_racks"] = true,
                                         ["alt_type"] = "BARO",
                                         ["livery_id"] = "Russia_VVS_Standard",
@@ -3741,9 +4061,9 @@ mission =
                                             }, -- end of [2]
                                         }, -- end of ["Radio"]
                                         ["unitId"] = 999348,
-                                        ["psi"] = -0.46317819469356,
+                                        ["psi"] = -0.20578155693081,
                                         ["parking_id"] = "1",
-                                        ["x"] = -179862.13645221,
+                                        ["x"] = -196887.56499123,
                                         ["name"] = "DictKey_UnitName_829",
                                         ["payload"] = 
                                         {
@@ -3755,8 +4075,8 @@ mission =
                                             ["chaff"] = 0,
                                             ["gun"] = 100,
                                         }, -- end of ["payload"]
-                                        ["y"] = 851004.62400411,
-                                        ["heading"] = 0.46317819469356,
+                                        ["y"] = 852589.39227005,
+                                        ["heading"] = 0.20578155693081,
                                         ["callsign"] = 
                                         {
                                             [1] = 8,
@@ -3768,12 +4088,12 @@ mission =
                                     }, -- end of [1]
                                     [2] = 
                                     {
-                                        ["alt"] = 721,
+                                        ["alt"] = 525,
                                         ["hardpoint_racks"] = true,
                                         ["alt_type"] = "BARO",
                                         ["livery_id"] = "Russia_VVS_Standard",
                                         ["skill"] = "Client",
-                                        ["parking"] = 1,
+                                        ["parking"] = "3",
                                         ["ropeLength"] = 15,
                                         ["speed"] = 41.666666666667,
                                         ["AddPropAircraft"] = 
@@ -3840,9 +4160,9 @@ mission =
                                             }, -- end of [2]
                                         }, -- end of ["Radio"]
                                         ["unitId"] = 999349,
-                                        ["psi"] = -0.46317819469356,
-                                        ["parking_id"] = "1",
-                                        ["x"] = -179902.13645221,
+                                        ["psi"] = -0.20578155693081,
+                                        ["parking_id"] = "3",
+                                        ["x"] = -196887.56499123,
                                         ["name"] = "DictKey_UnitName_836",
                                         ["payload"] = 
                                         {
@@ -3854,8 +4174,8 @@ mission =
                                             ["chaff"] = 0,
                                             ["gun"] = 100,
                                         }, -- end of ["payload"]
-                                        ["y"] = 851044.62400411,
-                                        ["heading"] = 0.46317819469356,
+                                        ["y"] = 852589.39227005,
+                                        ["heading"] = 0.20578155693081,
                                         ["callsign"] = 
                                         {
                                             [1] = 8,
@@ -3867,12 +4187,12 @@ mission =
                                     }, -- end of [2]
                                     [3] = 
                                     {
-                                        ["alt"] = 721,
+                                        ["alt"] = 525,
                                         ["hardpoint_racks"] = true,
                                         ["alt_type"] = "BARO",
                                         ["livery_id"] = "Russia_VVS_Standard",
                                         ["skill"] = "Client",
-                                        ["parking"] = 1,
+                                        ["parking"] = "4",
                                         ["ropeLength"] = 15,
                                         ["speed"] = 41.666666666667,
                                         ["AddPropAircraft"] = 
@@ -3939,9 +4259,9 @@ mission =
                                             }, -- end of [2]
                                         }, -- end of ["Radio"]
                                         ["unitId"] = 999350,
-                                        ["psi"] = -0.46317819469356,
-                                        ["parking_id"] = "1",
-                                        ["x"] = -179942.13645221,
+                                        ["psi"] = -0.20578155693081,
+                                        ["parking_id"] = "4",
+                                        ["x"] = -196887.56499123,
                                         ["name"] = "DictKey_UnitName_837",
                                         ["payload"] = 
                                         {
@@ -3953,8 +4273,8 @@ mission =
                                             ["chaff"] = 0,
                                             ["gun"] = 100,
                                         }, -- end of ["payload"]
-                                        ["y"] = 851084.62400411,
-                                        ["heading"] = 0.46317819469356,
+                                        ["y"] = 852589.39227005,
+                                        ["heading"] = 0.20578155693081,
                                         ["callsign"] = 
                                         {
                                             [1] = 8,
@@ -3966,12 +4286,12 @@ mission =
                                     }, -- end of [3]
                                     [4] = 
                                     {
-                                        ["alt"] = 721,
+                                        ["alt"] = 525,
                                         ["hardpoint_racks"] = true,
                                         ["alt_type"] = "BARO",
                                         ["livery_id"] = "Russia_VVS_Standard",
                                         ["skill"] = "Client",
-                                        ["parking"] = 1,
+                                        ["parking"] = "2",
                                         ["ropeLength"] = 15,
                                         ["speed"] = 41.666666666667,
                                         ["AddPropAircraft"] = 
@@ -4038,9 +4358,9 @@ mission =
                                             }, -- end of [2]
                                         }, -- end of ["Radio"]
                                         ["unitId"] = 999351,
-                                        ["psi"] = -0.46317819469356,
-                                        ["parking_id"] = "1",
-                                        ["x"] = -179982.13645221,
+                                        ["psi"] = -0.20578155693081,
+                                        ["parking_id"] = "2",
+                                        ["x"] = -196887.56499123,
                                         ["name"] = "DictKey_UnitName_838",
                                         ["payload"] = 
                                         {
@@ -4052,8 +4372,8 @@ mission =
                                             ["chaff"] = 0,
                                             ["gun"] = 100,
                                         }, -- end of ["payload"]
-                                        ["y"] = 851124.62400411,
-                                        ["heading"] = 0.46317819469356,
+                                        ["y"] = 852589.39227005,
+                                        ["heading"] = 0.20578155693081,
                                         ["callsign"] = 
                                         {
                                             [1] = 8,
@@ -4064,8 +4384,8 @@ mission =
                                         ["onboard_num"] = "066",
                                     }, -- end of [4]
                                 }, -- end of ["units"]
-                                ["y"] = 851004.62400411,
-                                ["x"] = -179862.13645221,
+                                ["y"] = 852589.39227005,
+                                ["x"] = -196887.56499123,
                                 ["name"] = "DictKey_GroupName_828",
                                 ["communication"] = false,
                                 ["start_time"] = 0,
@@ -4331,7 +4651,7 @@ mission =
                         {
                             [1] = 
                             {
-                                ["heading"] = 1.9722220547536,
+                                ["heading"] = 0.13962634015955,
                                 ["route"] = 
                                 {
                                     ["points"] = 
@@ -4341,9 +4661,9 @@ mission =
                                             ["alt"] = 0,
                                             ["type"] = "",
                                             ["name"] = "",
-                                            ["y"] = 851004.62400411,
+                                            ["y"] = 852589.39227005,
                                             ["speed"] = 0,
-                                            ["x"] = -179862.13645221,
+                                            ["x"] = -196887.56499123,
                                             ["formation_template"] = "",
                                             ["action"] = "",
                                         }, -- end of [1]
@@ -4359,16 +4679,16 @@ mission =
                                         ["type"] = "FARP",
                                         ["unitId"] = 999321,
                                         ["heliport_frequency"] = "230.15",
-                                        ["y"] = 851004.62400411,
-                                        ["x"] = -179862.13645221,
+                                        ["y"] = 852589.39227005,
+                                        ["x"] = -196887.56499123,
                                         ["name"] = "DictKey_GroupName_743",
                                         ["heliport_modulation"] = 0,
-                                        ["heliport_callsign_id"] = 4,
-                                        ["heading"] = 1.9722220547536,
+                                        ["heliport_callsign_id"] = 5,
+                                        ["heading"] = 0.13962634015955,
                                     }, -- end of [1]
                                 }, -- end of ["units"]
-                                ["y"] = 851004.62400411,
-                                ["x"] = -179862.13645221,
+                                ["y"] = 852589.39227005,
+                                ["x"] = -196887.56499123,
                                 ["name"] = "DictKey_GroupName_743",
                                 ["linkOffset"] = false,
                                 ["dead"] = false,
@@ -21883,6 +22203,12 @@ mission =
                                             ["alt"] = 480,
                                             ["action"] = "From Parking Area",
                                             ["alt_type"] = "BARO",
+                                            ["properties"] = 
+                                            {
+                                                ["addopt"] = 
+                                                {
+                                                }, -- end of ["addopt"]
+                                            }, -- end of ["properties"]
                                             ["speed"] = 138.88888888889,
                                             ["task"] = 
                                             {
@@ -21994,6 +22320,12 @@ mission =
                                             ["alt"] = 6096,
                                             ["action"] = "Turning Point",
                                             ["alt_type"] = "BARO",
+                                            ["properties"] = 
+                                            {
+                                                ["addopt"] = 
+                                                {
+                                                }, -- end of ["addopt"]
+                                            }, -- end of ["properties"]
                                             ["speed"] = 179.86111111111,
                                             ["task"] = 
                                             {
@@ -22006,7 +22338,7 @@ mission =
                                                 }, -- end of ["params"]
                                             }, -- end of ["task"]
                                             ["type"] = "Turning Point",
-                                            ["ETA"] = 488.82987411335,
+                                            ["ETA"] = 716.52622414126,
                                             ["ETA_locked"] = false,
                                             ["y"] = 852372.99278006,
                                             ["x"] = -199797.02998363,
@@ -26092,6 +26424,9 @@ mission =
                                             ["properties"] = 
                                             {
                                                 ["vnav"] = 1,
+                                                ["addopt"] = 
+                                                {
+                                                }, -- end of ["addopt"]
                                                 ["scale"] = 0,
                                                 ["vangle"] = 0,
                                                 ["angle"] = 0,
@@ -26229,6 +26564,9 @@ mission =
                                             ["properties"] = 
                                             {
                                                 ["vnav"] = 1,
+                                                ["addopt"] = 
+                                                {
+                                                }, -- end of ["addopt"]
                                                 ["scale"] = 0,
                                                 ["vangle"] = 0,
                                                 ["angle"] = 0,
@@ -26246,7 +26584,7 @@ mission =
                                                 }, -- end of ["params"]
                                             }, -- end of ["task"]
                                             ["type"] = "Turning Point",
-                                            ["ETA"] = 488.06197315541,
+                                            ["ETA"] = 1044.9218253052,
                                             ["ETA_locked"] = false,
                                             ["y"] = 852617.76148308,
                                             ["x"] = -199972.70666369,
@@ -26827,6 +27165,12 @@ mission =
                                             ["alt"] = 480,
                                             ["action"] = "From Parking Area",
                                             ["alt_type"] = "BARO",
+                                            ["properties"] = 
+                                            {
+                                                ["addopt"] = 
+                                                {
+                                                }, -- end of ["addopt"]
+                                            }, -- end of ["properties"]
                                             ["speed"] = 138.88888888889,
                                             ["task"] = 
                                             {
@@ -26940,6 +27284,12 @@ mission =
                                             ["alt"] = 6096,
                                             ["action"] = "Turning Point",
                                             ["alt_type"] = "BARO",
+                                            ["properties"] = 
+                                            {
+                                                ["addopt"] = 
+                                                {
+                                                }, -- end of ["addopt"]
+                                            }, -- end of ["properties"]
                                             ["speed"] = 220.97222222222,
                                             ["task"] = 
                                             {
@@ -26952,7 +27302,7 @@ mission =
                                                 }, -- end of ["params"]
                                             }, -- end of ["task"]
                                             ["type"] = "Turning Point",
-                                            ["ETA"] = 488.06197315541,
+                                            ["ETA"] = 583.20202374678,
                                             ["ETA_locked"] = false,
                                             ["y"] = 852699.34805247,
                                             ["x"] = -200033.77449299,
@@ -27152,10 +27502,10 @@ mission =
                                         ["speed"] = 138.88888888889,
                                         ["AddPropAircraft"] = 
                                         {
-                                            ["LaserCode10"] = 8,
-                                            ["LaserCode100"] = 6,
-                                            ["LaserCode1"] = 8,
                                             ["LAU3ROF"] = 0,
+                                            ["LaserCode100"] = 6,
+                                            ["LaserCode10"] = 8,
+                                            ["LaserCode1"] = 8,
                                         }, -- end of ["AddPropAircraft"]
                                         ["type"] = "F-16C_50",
                                         ["Radio"] = 
@@ -27336,10 +27686,10 @@ mission =
                                         ["speed"] = 138.88888888889,
                                         ["AddPropAircraft"] = 
                                         {
-                                            ["LaserCode10"] = 8,
-                                            ["LaserCode100"] = 6,
-                                            ["LaserCode1"] = 8,
                                             ["LAU3ROF"] = 0,
+                                            ["LaserCode100"] = 6,
+                                            ["LaserCode10"] = 8,
+                                            ["LaserCode1"] = 8,
                                         }, -- end of ["AddPropAircraft"]
                                         ["type"] = "F-16C_50",
                                         ["Radio"] = 
@@ -27520,10 +27870,10 @@ mission =
                                         ["speed"] = 138.88888888889,
                                         ["AddPropAircraft"] = 
                                         {
-                                            ["LaserCode10"] = 8,
-                                            ["LaserCode100"] = 6,
-                                            ["LaserCode1"] = 8,
                                             ["LAU3ROF"] = 0,
+                                            ["LaserCode100"] = 6,
+                                            ["LaserCode10"] = 8,
+                                            ["LaserCode1"] = 8,
                                         }, -- end of ["AddPropAircraft"]
                                         ["type"] = "F-16C_50",
                                         ["Radio"] = 
@@ -27704,10 +28054,10 @@ mission =
                                         ["speed"] = 138.88888888889,
                                         ["AddPropAircraft"] = 
                                         {
-                                            ["LaserCode10"] = 8,
-                                            ["LaserCode100"] = 6,
-                                            ["LaserCode1"] = 8,
                                             ["LAU3ROF"] = 0,
+                                            ["LaserCode100"] = 6,
+                                            ["LaserCode10"] = 8,
+                                            ["LaserCode1"] = 8,
                                         }, -- end of ["AddPropAircraft"]
                                         ["type"] = "F-16C_50",
                                         ["Radio"] = 
@@ -27905,6 +28255,12 @@ mission =
                                             ["alt"] = 480,
                                             ["action"] = "From Parking Area",
                                             ["alt_type"] = "BARO",
+                                            ["properties"] = 
+                                            {
+                                                ["addopt"] = 
+                                                {
+                                                }, -- end of ["addopt"]
+                                            }, -- end of ["properties"]
                                             ["speed"] = 138.88888888889,
                                             ["task"] = 
                                             {
@@ -27999,6 +28355,12 @@ mission =
                                             ["alt"] = 6096,
                                             ["action"] = "Turning Point",
                                             ["alt_type"] = "BARO",
+                                            ["properties"] = 
+                                            {
+                                                ["addopt"] = 
+                                                {
+                                                }, -- end of ["addopt"]
+                                            }, -- end of ["properties"]
                                             ["speed"] = 226.11111111111,
                                             ["task"] = 
                                             {
@@ -28011,7 +28373,7 @@ mission =
                                                 }, -- end of ["params"]
                                             }, -- end of ["task"]
                                             ["type"] = "Turning Point",
-                                            ["ETA"] = 488.06197315541,
+                                            ["ETA"] = 563.35372906867,
                                             ["ETA_locked"] = false,
                                             ["y"] = 852793.69376558,
                                             ["x"] = -199917.24126103,
@@ -28217,10 +28579,10 @@ mission =
                                             ["EWDispenserTFR"] = 1,
                                             ["MountNVG"] = false,
                                             ["ForceINSRules"] = false,
-                                            ["EWDispenserTFL"] = 1,
-                                            ["RocketBurst"] = 1,
-                                            ["EWDispenserBL"] = 2,
                                             ["WpBullseye"] = 0,
+                                            ["EWDispenserTFL"] = 1,
+                                            ["EWDispenserBL"] = 2,
+                                            ["RocketBurst"] = 1,
                                             ["ClockTime"] = 1,
                                             ["EWDispenserTBR"] = 2,
                                         }, -- end of ["AddPropAircraft"]
@@ -28489,10 +28851,10 @@ mission =
                                             ["EWDispenserTFR"] = 1,
                                             ["MountNVG"] = false,
                                             ["ForceINSRules"] = false,
-                                            ["EWDispenserTFL"] = 1,
-                                            ["RocketBurst"] = 1,
-                                            ["EWDispenserBL"] = 2,
                                             ["WpBullseye"] = 0,
+                                            ["EWDispenserTFL"] = 1,
+                                            ["EWDispenserBL"] = 2,
+                                            ["RocketBurst"] = 1,
                                             ["ClockTime"] = 1,
                                             ["EWDispenserTBR"] = 2,
                                         }, -- end of ["AddPropAircraft"]
@@ -28761,10 +29123,10 @@ mission =
                                             ["EWDispenserTFR"] = 1,
                                             ["MountNVG"] = false,
                                             ["ForceINSRules"] = false,
-                                            ["EWDispenserTFL"] = 1,
-                                            ["RocketBurst"] = 1,
-                                            ["EWDispenserBL"] = 2,
                                             ["WpBullseye"] = 0,
+                                            ["EWDispenserTFL"] = 1,
+                                            ["EWDispenserBL"] = 2,
+                                            ["RocketBurst"] = 1,
                                             ["ClockTime"] = 1,
                                             ["EWDispenserTBR"] = 2,
                                         }, -- end of ["AddPropAircraft"]
@@ -29033,10 +29395,10 @@ mission =
                                             ["EWDispenserTFR"] = 1,
                                             ["MountNVG"] = false,
                                             ["ForceINSRules"] = false,
-                                            ["EWDispenserTFL"] = 1,
-                                            ["RocketBurst"] = 1,
-                                            ["EWDispenserBL"] = 2,
                                             ["WpBullseye"] = 0,
+                                            ["EWDispenserTFL"] = 1,
+                                            ["EWDispenserBL"] = 2,
+                                            ["RocketBurst"] = 1,
                                             ["ClockTime"] = 1,
                                             ["EWDispenserTBR"] = 2,
                                         }, -- end of ["AddPropAircraft"]
@@ -33842,10 +34204,10 @@ mission =
                                         ["speed"] = 138.88888888889,
                                         ["AddPropAircraft"] = 
                                         {
-                                            ["LAU3ROF"] = 0,
-                                            ["LaserCode100"] = 6,
-                                            ["LaserCode10"] = 8,
                                             ["LaserCode1"] = 8,
+                                            ["LaserCode100"] = 6,
+                                            ["LAU3ROF"] = 0,
+                                            ["LaserCode10"] = 8,
                                         }, -- end of ["AddPropAircraft"]
                                         ["type"] = "F-16C_50",
                                         ["Radio"] = 
@@ -34026,10 +34388,10 @@ mission =
                                         ["speed"] = 138.88888888889,
                                         ["AddPropAircraft"] = 
                                         {
-                                            ["LAU3ROF"] = 0,
-                                            ["LaserCode100"] = 6,
-                                            ["LaserCode10"] = 8,
                                             ["LaserCode1"] = 8,
+                                            ["LaserCode100"] = 6,
+                                            ["LAU3ROF"] = 0,
+                                            ["LaserCode10"] = 8,
                                         }, -- end of ["AddPropAircraft"]
                                         ["type"] = "F-16C_50",
                                         ["Radio"] = 
@@ -34210,10 +34572,10 @@ mission =
                                         ["speed"] = 138.88888888889,
                                         ["AddPropAircraft"] = 
                                         {
-                                            ["LAU3ROF"] = 0,
-                                            ["LaserCode100"] = 6,
-                                            ["LaserCode10"] = 8,
                                             ["LaserCode1"] = 8,
+                                            ["LaserCode100"] = 6,
+                                            ["LAU3ROF"] = 0,
+                                            ["LaserCode10"] = 8,
                                         }, -- end of ["AddPropAircraft"]
                                         ["type"] = "F-16C_50",
                                         ["Radio"] = 
@@ -34394,10 +34756,10 @@ mission =
                                         ["speed"] = 138.88888888889,
                                         ["AddPropAircraft"] = 
                                         {
-                                            ["LAU3ROF"] = 0,
-                                            ["LaserCode100"] = 6,
-                                            ["LaserCode10"] = 8,
                                             ["LaserCode1"] = 8,
+                                            ["LaserCode100"] = 6,
+                                            ["LAU3ROF"] = 0,
+                                            ["LaserCode10"] = 8,
                                         }, -- end of ["AddPropAircraft"]
                                         ["type"] = "F-16C_50",
                                         ["Radio"] = 
@@ -35576,10 +35938,10 @@ mission =
                                             ["EWDispenserTFR"] = 1,
                                             ["MountNVG"] = false,
                                             ["ForceINSRules"] = false,
-                                            ["RocketBurst"] = 1,
-                                            ["WpBullseye"] = 0,
-                                            ["EWDispenserBL"] = 2,
                                             ["EWDispenserTFL"] = 1,
+                                            ["RocketBurst"] = 1,
+                                            ["EWDispenserBL"] = 2,
+                                            ["WpBullseye"] = 0,
                                             ["ClockTime"] = 1,
                                             ["EWDispenserTBR"] = 2,
                                         }, -- end of ["AddPropAircraft"]
@@ -35852,10 +36214,10 @@ mission =
                                             ["EWDispenserTFR"] = 1,
                                             ["MountNVG"] = false,
                                             ["ForceINSRules"] = false,
-                                            ["RocketBurst"] = 1,
-                                            ["WpBullseye"] = 0,
-                                            ["EWDispenserBL"] = 2,
                                             ["EWDispenserTFL"] = 1,
+                                            ["RocketBurst"] = 1,
+                                            ["EWDispenserBL"] = 2,
+                                            ["WpBullseye"] = 0,
                                             ["ClockTime"] = 1,
                                             ["EWDispenserTBR"] = 2,
                                         }, -- end of ["AddPropAircraft"]
@@ -36128,10 +36490,10 @@ mission =
                                             ["EWDispenserTFR"] = 1,
                                             ["MountNVG"] = false,
                                             ["ForceINSRules"] = false,
-                                            ["RocketBurst"] = 1,
-                                            ["WpBullseye"] = 0,
-                                            ["EWDispenserBL"] = 2,
                                             ["EWDispenserTFL"] = 1,
+                                            ["RocketBurst"] = 1,
+                                            ["EWDispenserBL"] = 2,
+                                            ["WpBullseye"] = 0,
                                             ["ClockTime"] = 1,
                                             ["EWDispenserTBR"] = 2,
                                         }, -- end of ["AddPropAircraft"]
@@ -36404,10 +36766,10 @@ mission =
                                             ["EWDispenserTFR"] = 1,
                                             ["MountNVG"] = false,
                                             ["ForceINSRules"] = false,
-                                            ["RocketBurst"] = 1,
-                                            ["WpBullseye"] = 0,
-                                            ["EWDispenserBL"] = 2,
                                             ["EWDispenserTFL"] = 1,
+                                            ["RocketBurst"] = 1,
+                                            ["EWDispenserBL"] = 2,
+                                            ["WpBullseye"] = 0,
                                             ["ClockTime"] = 1,
                                             ["EWDispenserTBR"] = 2,
                                         }, -- end of ["AddPropAircraft"]
@@ -47309,6 +47671,12 @@ mission =
                                             ["alt"] = 480,
                                             ["action"] = "From Parking Area",
                                             ["alt_type"] = "BARO",
+                                            ["properties"] = 
+                                            {
+                                                ["addopt"] = 
+                                                {
+                                                }, -- end of ["addopt"]
+                                            }, -- end of ["properties"]
                                             ["speed"] = 138.88888888889,
                                             ["task"] = 
                                             {
@@ -47401,6 +47769,12 @@ mission =
                                             ["alt"] = 6096,
                                             ["action"] = "Turning Point",
                                             ["alt_type"] = "BARO",
+                                            ["properties"] = 
+                                            {
+                                                ["addopt"] = 
+                                                {
+                                                }, -- end of ["addopt"]
+                                            }, -- end of ["properties"]
                                             ["speed"] = 270.68249666353,
                                             ["task"] = 
                                             {
@@ -60979,18 +61353,46 @@ mission =
             {
             }, -- end of ["rules"]
             ["eventlist"] = "",
+            ["predicate"] = "triggerStart",
             ["actions"] = 
             {
                 [1] = 
                 {
-                    ["predicate"] = "a_do_script_file",
-                    ["file"] = "ResKey_Action_16",
+                    ["objects_mask"] = 2,
+                    ["zone"] = 344,
+                    ["predicate"] = "a_remove_scene_objects",
+                    ["ai_task"] = 
+                    {
+                        [1] = "",
+                        [2] = "",
+                    }, -- end of ["ai_task"]
                 }, -- end of [1]
             }, -- end of ["actions"]
-            ["predicate"] = "triggerStart",
-            ["comment"] = "MOOSE",
+            ["comment"] = "REMOVE1",
         }, -- end of [1]
         [2] = 
+        {
+            ["rules"] = 
+            {
+            }, -- end of ["rules"]
+            ["eventlist"] = "",
+            ["predicate"] = "triggerStart",
+            ["actions"] = 
+            {
+                [1] = 
+                {
+                    ["file"] = "ResKey_Action_845",
+                    ["predicate"] = "a_do_script_file",
+                    ["ai_task"] = 
+                    {
+                        [1] = "",
+                        [2] = "",
+                    }, -- end of ["ai_task"]
+                }, -- end of [1]
+            }, -- end of ["actions"]
+            ["comment"] = "MOOSE",
+        }, -- end of [2]
+        [3] = 
         {
             ["rules"] = 
             {
@@ -61011,8 +61413,8 @@ mission =
             }, -- end of ["actions"]
             ["predicate"] = "triggerStart",
             ["comment"] = "Scripts TR_AD",
-        }, -- end of [2]
-        [3] = 
+        }, -- end of [3]
+        [4] = 
         {
             ["rules"] = 
             {
@@ -61158,9 +61560,9 @@ mission =
                 }, -- end of [26]
             }, -- end of ["actions"]
             ["comment"] = "Init scripts VEAF",
-        }, -- end of [3]
+        }, -- end of [4]
     }, -- end of ["trigrules"]
-    ["currentKey"] = 224579,
+    ["currentKey"] = 257129,
     ["start_time"] = 43200,
     ["forcedOptions"] = 
     {
