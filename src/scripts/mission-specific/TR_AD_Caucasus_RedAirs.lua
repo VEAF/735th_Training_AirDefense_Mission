@@ -34,9 +34,9 @@ A2ADispatcher:SetEngageRadius( 80000 )
 
 -- Setup the squadrons.
 A2ADispatcher:SetSquadron( "Mineralnye", AIRBASE.Caucasus.Mineralnye_Vody, { "SQ Red SU-27" }, 20 )
-A2ADispatcher:SetSquadron( "Mineralnye2", AIRBASE.Caucasus.Mineralnye_Vody, { "SQ Red SU-27" }, 20 )
-A2ADispatcher:SetSquadron( "Maykop", AIRBASE.Caucasus.Maykop_Khanskaya, { "SQ Red MIG-21" }, 20 )
-A2ADispatcher:SetSquadron( "Maykop2", AIRBASE.Caucasus.Maykop_Khanskaya, { "SQ Red MIG-21" }, 20 )
+A2ADispatcher:SetSquadron( "Mineralnye2", AIRBASE.Caucasus.Mineralnye_Vody, { "SQ Red MIG-29A" }, 20 )
+A2ADispatcher:SetSquadron( "Maykop", AIRBASE.Caucasus.Maykop_Khanskaya, { "SQ Red SU-30" }, 20 )
+A2ADispatcher:SetSquadron( "Maykop2", AIRBASE.Caucasus.Maykop_Khanskaya, { "SQ Red MIG-29S" }, 20 )
 A2ADispatcher:SetSquadron( "Mozdok", AIRBASE.Caucasus.Mozdok, { "SQ Red MIG-31" }, 20 )
 A2ADispatcher:SetSquadron( "Nalchik", AIRBASE.Caucasus.Nalchik, { "SQ Red MIG-29A" }, 20 )
 
@@ -103,16 +103,16 @@ A2ADispatcher:SetSquadronCapInterval( "Mineralnye2", 1, 30, 60, 1 )
 -- A2ADispatcher:SetSquadronCap( "Nalchik", CAPZone5, 6095, 10670, 800, 900, 1020, 2030 ) -- 6095m = 20 000ft / 10670m = 35000ft / 800km/h = M0.8 / 2030km/h = M1.8
 -- A2ADispatcher:SetSquadronCapInterval( "Nalchik", 1, 30, 60, 1 )
 
-CAPZone6 = ZONE_POLYGON:New( "Red FAOR6", GROUP:FindByName( "Red FAOR6" ) )
-A2ADispatcher:SetSquadronCap( "Mozdok", CAPZone6, 6095, 10670, 800, 900, 1020, 2480 ) -- 6095m = 20 000ft / 10670m = 35000ft / 800km/h = M0.8 / 2480km/h = M2.2
-A2ADispatcher:SetSquadronCapInterval( "Mozdok", 1, 30, 60, 1 )
+--CAPZone6 = ZONE_POLYGON:New( "Red FAOR6", GROUP:FindByName( "Red FAOR6" ) )
+--A2ADispatcher:SetSquadronCap( "Mozdok", CAPZone6, 6095, 10670, 800, 900, 1020, 2480 ) -- 6095m = 20 000ft / 10670m = 35000ft / 800km/h = M0.8 / 2480km/h = M2.2
+--A2ADispatcher:SetSquadronCapInterval( "Mozdok", 1, 30, 60, 1 )
 
 -- GCI Squadron execution.
 --[[
 A2ADispatcher:SetSquadronGci( "Maykop", 900, 1200 )
 A2ADispatcher:SetSquadronGci( "Mineralnye", 900, 2100 )
 A2ADispatcher:SetSquadronGci( "Nalchik", 900, 1200 )
-A2ADispatcher:SetSquadronGci( "Mozdok", 900, 1200 )
 ]]
+A2ADispatcher:SetSquadronGci( "Mozdok", 900, 1200 )
 
 CleanUp = CLEANUP_AIRBASE:New( { AIRBASE.Caucasus.Novorossiysk } )
