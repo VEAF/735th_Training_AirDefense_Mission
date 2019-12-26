@@ -111,18 +111,18 @@ local function CHARLIE_Interceptors_Activate_Scenario1_5()
 end
 
 -- Menu creation
-local Menu_Blue_Coalition_ALPHA_RedAirs = MENU_COALITION:New( coalition.side.BLUE, "ALPHA RedAir Activations" )
-local Menu_Blue_Coalition_BRAVO_RedAirs = MENU_COALITION:New( coalition.side.BLUE, "BRAVO RedAir Activations" )
-local Menu_Blue_Coalition_CHARLIE_RedAirs = MENU_COALITION:New( coalition.side.BLUE, "CHARLIE RedAir Activations" )
+local Menu_Blue_Coalition_ALPHA_RedAirs = veafRadio.addMenu("ALPHA RedAir Activations" )
+local Menu_Blue_Coalition_BRAVO_RedAirs = veafRadio.addMenu("BRAVO RedAir Activations" )
+local Menu_Blue_Coalition_CHARLIE_RedAirs = veafRadio.addMenu("CHARLIE RedAir Activations" )
 
 -- Menu Command to activate RedAirs ALPHA
-local Menu_Activate_ALPHA1 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "ALPHA Interceptors Scenario 1 - 10min", Menu_Blue_Coalition_ALPHA_RedAirs, ALPHA_Interceptors_Activate_Scenario1_10 )
-local Menu_Activate_ALPHA2 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "ALPHA Interceptors Scenario 1 - 5min", Menu_Blue_Coalition_ALPHA_RedAirs, ALPHA_Interceptors_Activate_Scenario1_5 )
+veafRadio.addCommandToSubmenu("ALPHA Interceptors Scenario 1 - 10min", Menu_Blue_Coalition_ALPHA_RedAirs, ALPHA_Interceptors_Activate_Scenario1_10, nil, veafRadio.USAGE_ForAll)
+veafRadio.addCommandToSubmenu("ALPHA Interceptors Scenario 1 - 5min", Menu_Blue_Coalition_ALPHA_RedAirs, ALPHA_Interceptors_Activate_Scenario1_5, nil, veafRadio.USAGE_ForAll)
 
 -- Menu Command to activate RedAirs BRAVO
-local Menu_Activate_BRAVO1 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "BRAVO Interceptors Scenario 1 - 10min", Menu_Blue_Coalition_BRAVO_RedAirs, BRAVO_Interceptors_Activate_Scenario1_10 )
-local Menu_Activate_BRAVO2 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "BRAVO Interceptors Scenario 1 - 5min", Menu_Blue_Coalition_BRAVO_RedAirs, BRAVO_Interceptors_Activate_Scenario1_5 )
+veafRadio.addCommandToSubmenu("BRAVO Interceptors Scenario 1 - 10min", Menu_Blue_Coalition_BRAVO_RedAirs, BRAVO_Interceptors_Activate_Scenario1_10, nil, veafRadio.USAGE_ForAll)
+veafRadio.addCommandToSubmenu("BRAVO Interceptors Scenario 1 - 5min", Menu_Blue_Coalition_BRAVO_RedAirs, BRAVO_Interceptors_Activate_Scenario1_5, nil, veafRadio.USAGE_ForAll)
 
 -- Menu Command to activate RedAirs CHARLIE
-local Menu_Activate_CHARLIE1 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "CHARLIE Interceptors Scenario 1 - 10min", Menu_Blue_Coalition_CHARLIE_RedAirs, CHARLIE_Interceptors_Activate_Scenario1_10 )
-local Menu_Activate_CHARLIE2 = MENU_COALITION_COMMAND:New( coalition.side.BLUE, "CHARLIE Interceptors Scenario 1 - 5min", Menu_Blue_Coalition_CHARLIE_RedAirs, CHARLIE_Interceptors_Activate_Scenario1_5 )
+veafRadio.addCommandToSubmenu("CHARLIE Interceptors Scenario 1 - 10min", Menu_Blue_Coalition_CHARLIE_RedAirs, CHARLIE_Interceptors_Activate_Scenario1_10, nil, veafRadio.USAGE_ForAll)
+veafRadio.addCommandToSubmenu("CHARLIE Interceptors Scenario 1 - 5min", Menu_Blue_Coalition_CHARLIE_RedAirs, CHARLIE_Interceptors_Activate_Scenario1_5, nil, veafRadio.USAGE_ForAll)
