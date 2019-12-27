@@ -617,17 +617,6 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["L-39ZA"]
-                    ["B-17G"] = 
-                    {
-                        ["wsType"] = 
-                        {
-                            [1] = 1,
-                            [2] = 1,
-                            [3] = 4,
-                            [4] = 287,
-                        }, -- end of ["wsType"]
-                        ["initialAmount"] = 100,
-                    }, -- end of ["B-17G"]
                     ["MiG-19P"] = 
                     {
                         ["wsType"] = 
@@ -639,6 +628,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["MiG-19P"]
+                    ["M2000D"] = 
+                    {
+                        ["wsType"] = 
+                        {
+                            [1] = 1,
+                            [2] = 1,
+                            [3] = 1,
+                            [4] = 287,
+                        }, -- end of ["wsType"]
+                        ["initialAmount"] = 100,
+                    }, -- end of ["M2000D"]
                     ["I-16"] = 
                     {
                         ["wsType"] = 
@@ -694,17 +694,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["MiG-29S"]
-                    ["Su-33"] = 
+                    ["Su-24MR"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
                             [3] = 1,
-                            [4] = 4,
+                            [4] = 51,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["Su-33"]
+                    }, -- end of ["Su-24MR"]
                     ["MiG-23MLD"] = 
                     {
                         ["wsType"] = 
@@ -793,17 +793,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["Tu-142"]
-                    ["M-2000C"] = 
+                    ["F-15E"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
                             [3] = 1,
-                            [4] = 275,
+                            [4] = 59,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["M-2000C"]
+                    }, -- end of ["F-15E"]
                     ["B-52H"] = 
                     {
                         ["wsType"] = 
@@ -826,6 +826,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["F-117A"]
+                    ["A-4E-C"] = 
+                    {
+                        ["wsType"] = 
+                        {
+                            [1] = 1,
+                            [2] = 1,
+                            [3] = 1,
+                            [4] = 288,
+                        }, -- end of ["wsType"]
+                        ["initialAmount"] = 100,
+                    }, -- end of ["A-4E-C"]
                     ["AJS37"] = 
                     {
                         ["wsType"] = 
@@ -881,17 +892,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["IL-78M"]
-                    ["JF-17"] = 
+                    ["MiG-15bis"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
                             [3] = 1,
-                            [4] = 266,
+                            [4] = 277,
                         }, -- end of ["wsType"]
-                        ["initialAmount"] = 100,
-                    }, -- end of ["JF-17"]
+                        ["initialAmount"] = 0,
+                    }, -- end of ["MiG-15bis"]
                     ["Su-30"] = 
                     {
                         ["wsType"] = 
@@ -903,6 +914,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["Su-30"]
+                    ["C-101CC"] = 
+                    {
+                        ["wsType"] = 
+                        {
+                            [1] = 1,
+                            [2] = 1,
+                            [3] = 6,
+                            [4] = 265,
+                        }, -- end of ["wsType"]
+                        ["initialAmount"] = 0,
+                    }, -- end of ["C-101CC"]
                     ["An-26B"] = 
                     {
                         ["wsType"] = 
@@ -914,17 +936,6 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["An-26B"]
-                    ["Christen Eagle II"] = 
-                    {
-                        ["wsType"] = 
-                        {
-                            [1] = 1,
-                            [2] = 1,
-                            [3] = 1,
-                            [4] = 267,
-                        }, -- end of ["wsType"]
-                        ["initialAmount"] = 0,
-                    }, -- end of ["Christen Eagle II"]
                     ["MiG-25RBT"] = 
                     {
                         ["wsType"] = 
@@ -1035,17 +1046,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["FW-190A8"]
-                    ["F-16A MLU"] = 
+                    ["Su-33"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
                             [3] = 1,
-                            [4] = 52,
+                            [4] = 4,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["F-16A MLU"]
+                    }, -- end of ["Su-33"]
                     ["KC-135"] = 
                     {
                         ["wsType"] = 
@@ -1145,17 +1156,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["C-17A"]
-                    ["Tu-95MS"] = 
+                    ["F-16A MLU"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
-                            [3] = 4,
-                            [4] = 21,
+                            [3] = 1,
+                            [4] = 52,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["Tu-95MS"]
+                    }, -- end of ["F-16A MLU"]
                     ["Su-24M"] = 
                     {
                         ["wsType"] = 
@@ -1200,28 +1211,28 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["MiG-29A"]
-                    ["Bf-109K-4"] = 
+                    ["F-16C bl.52d"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
                             [3] = 1,
-                            [4] = 257,
+                            [4] = 7,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["Bf-109K-4"]
-                    ["C-130"] = 
+                    }, -- end of ["F-16C bl.52d"]
+                    ["Christen Eagle II"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
-                            [3] = 5,
-                            [4] = 31,
+                            [3] = 1,
+                            [4] = 267,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["C-130"]
+                    }, -- end of ["Christen Eagle II"]
                     ["Su-25T"] = 
                     {
                         ["wsType"] = 
@@ -1244,17 +1255,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["E-3A"]
-                    ["J-11A"] = 
+                    ["MQ-9 Reaper"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
                             [3] = 1,
-                            [4] = 66,
+                            [4] = 276,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["J-11A"]
+                    }, -- end of ["MQ-9 Reaper"]
                     ["Hawk"] = 
                     {
                         ["wsType"] = 
@@ -1420,17 +1431,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["MiG-29G"]
-                    ["MiG-15bis"] = 
+                    ["JF-17"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
                             [3] = 1,
-                            [4] = 277,
+                            [4] = 266,
                         }, -- end of ["wsType"]
-                        ["initialAmount"] = 0,
-                    }, -- end of ["MiG-15bis"]
+                        ["initialAmount"] = 100,
+                    }, -- end of ["JF-17"]
                     ["MiG-29K"] = 
                     {
                         ["wsType"] = 
@@ -1453,28 +1464,28 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["MiG-31"]
-                    ["F-16C bl.52d"] = 
+                    ["J-11A"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
                             [3] = 1,
-                            [4] = 7,
+                            [4] = 66,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["F-16C bl.52d"]
-                    ["C-101CC"] = 
+                    }, -- end of ["J-11A"]
+                    ["Tu-95MS"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
-                            [3] = 6,
-                            [4] = 265,
+                            [3] = 4,
+                            [4] = 21,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["C-101CC"]
+                    }, -- end of ["Tu-95MS"]
                     ["F-5E"] = 
                     {
                         ["wsType"] = 
@@ -1486,17 +1497,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["F-5E"]
-                    ["MQ-9 Reaper"] = 
+                    ["Bf-109K-4"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
                             [3] = 1,
-                            [4] = 276,
+                            [4] = 257,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["MQ-9 Reaper"]
+                    }, -- end of ["Bf-109K-4"]
                     ["A-50"] = 
                     {
                         ["wsType"] = 
@@ -1530,17 +1541,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["IL-76MD"]
-                    ["Su-24MR"] = 
+                    ["C-130"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
-                            [3] = 1,
-                            [4] = 51,
+                            [3] = 5,
+                            [4] = 31,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["Su-24MR"]
+                    }, -- end of ["C-130"]
                     ["Su-34"] = 
                     {
                         ["wsType"] = 
@@ -1563,17 +1574,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["F-4E"]
-                    ["F-15E"] = 
+                    ["M-2000C"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
                             [3] = 1,
-                            [4] = 59,
+                            [4] = 275,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["F-15E"]
+                    }, -- end of ["M-2000C"]
                 }, -- end of ["planes"]
             }, -- end of ["aircrafts"]
             ["weapons"] = 
@@ -6330,6 +6341,215 @@ warehouses =
                     }, -- end of ["wsType"]
                     ["initialAmount"] = 100,
                 }, -- end of [432]
+                [433] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 270,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [433]
+                [434] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 271,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [434]
+                [435] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 272,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [435]
+                [436] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 290,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [436]
+                [437] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 30,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [437]
+                [438] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 31,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [438]
+                [439] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 313,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [439]
+                [440] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 316,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [440]
+                [441] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 317,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [441]
+                [442] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 318,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [442]
+                [443] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 32,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [443]
+                [444] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 327,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [444]
+                [445] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 328,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [445]
+                [446] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 329,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [446]
+                [447] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 33,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [447]
+                [448] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 330,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [448]
+                [449] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 34,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [449]
+                [450] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 35,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [450]
+                [451] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 37,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [451]
             }, -- end of ["weapons"]
             ["OperatingLevel_Fuel"] = 10,
             ["unlimitedAircrafts"] = false,
@@ -6645,17 +6865,6 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["L-39ZA"]
-                    ["B-17G"] = 
-                    {
-                        ["wsType"] = 
-                        {
-                            [1] = 1,
-                            [2] = 1,
-                            [3] = 4,
-                            [4] = 287,
-                        }, -- end of ["wsType"]
-                        ["initialAmount"] = 100,
-                    }, -- end of ["B-17G"]
                     ["MiG-19P"] = 
                     {
                         ["wsType"] = 
@@ -6667,6 +6876,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["MiG-19P"]
+                    ["M2000D"] = 
+                    {
+                        ["wsType"] = 
+                        {
+                            [1] = 1,
+                            [2] = 1,
+                            [3] = 1,
+                            [4] = 287,
+                        }, -- end of ["wsType"]
+                        ["initialAmount"] = 100,
+                    }, -- end of ["M2000D"]
                     ["I-16"] = 
                     {
                         ["wsType"] = 
@@ -6722,17 +6942,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["MiG-29S"]
-                    ["Su-33"] = 
+                    ["Su-24MR"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
                             [3] = 1,
-                            [4] = 4,
+                            [4] = 51,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["Su-33"]
+                    }, -- end of ["Su-24MR"]
                     ["MiG-23MLD"] = 
                     {
                         ["wsType"] = 
@@ -6821,17 +7041,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["Tu-142"]
-                    ["M-2000C"] = 
+                    ["F-15E"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
                             [3] = 1,
-                            [4] = 275,
+                            [4] = 59,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["M-2000C"]
+                    }, -- end of ["F-15E"]
                     ["B-52H"] = 
                     {
                         ["wsType"] = 
@@ -6854,6 +7074,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["F-117A"]
+                    ["A-4E-C"] = 
+                    {
+                        ["wsType"] = 
+                        {
+                            [1] = 1,
+                            [2] = 1,
+                            [3] = 1,
+                            [4] = 288,
+                        }, -- end of ["wsType"]
+                        ["initialAmount"] = 100,
+                    }, -- end of ["A-4E-C"]
                     ["AJS37"] = 
                     {
                         ["wsType"] = 
@@ -6909,17 +7140,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["IL-78M"]
-                    ["JF-17"] = 
+                    ["MiG-15bis"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
                             [3] = 1,
-                            [4] = 266,
+                            [4] = 277,
                         }, -- end of ["wsType"]
-                        ["initialAmount"] = 100,
-                    }, -- end of ["JF-17"]
+                        ["initialAmount"] = 0,
+                    }, -- end of ["MiG-15bis"]
                     ["Su-30"] = 
                     {
                         ["wsType"] = 
@@ -6931,6 +7162,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["Su-30"]
+                    ["C-101CC"] = 
+                    {
+                        ["wsType"] = 
+                        {
+                            [1] = 1,
+                            [2] = 1,
+                            [3] = 6,
+                            [4] = 265,
+                        }, -- end of ["wsType"]
+                        ["initialAmount"] = 0,
+                    }, -- end of ["C-101CC"]
                     ["An-26B"] = 
                     {
                         ["wsType"] = 
@@ -6942,17 +7184,6 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["An-26B"]
-                    ["Christen Eagle II"] = 
-                    {
-                        ["wsType"] = 
-                        {
-                            [1] = 1,
-                            [2] = 1,
-                            [3] = 1,
-                            [4] = 267,
-                        }, -- end of ["wsType"]
-                        ["initialAmount"] = 0,
-                    }, -- end of ["Christen Eagle II"]
                     ["MiG-25RBT"] = 
                     {
                         ["wsType"] = 
@@ -7063,17 +7294,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["FW-190A8"]
-                    ["F-16A MLU"] = 
+                    ["Su-33"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
                             [3] = 1,
-                            [4] = 52,
+                            [4] = 4,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["F-16A MLU"]
+                    }, -- end of ["Su-33"]
                     ["KC-135"] = 
                     {
                         ["wsType"] = 
@@ -7173,17 +7404,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["C-17A"]
-                    ["Tu-95MS"] = 
+                    ["F-16A MLU"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
-                            [3] = 4,
-                            [4] = 21,
+                            [3] = 1,
+                            [4] = 52,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["Tu-95MS"]
+                    }, -- end of ["F-16A MLU"]
                     ["Su-24M"] = 
                     {
                         ["wsType"] = 
@@ -7228,28 +7459,28 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["MiG-29A"]
-                    ["Bf-109K-4"] = 
+                    ["F-16C bl.52d"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
                             [3] = 1,
-                            [4] = 257,
+                            [4] = 7,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["Bf-109K-4"]
-                    ["C-130"] = 
+                    }, -- end of ["F-16C bl.52d"]
+                    ["Christen Eagle II"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
-                            [3] = 5,
-                            [4] = 31,
+                            [3] = 1,
+                            [4] = 267,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["C-130"]
+                    }, -- end of ["Christen Eagle II"]
                     ["Su-25T"] = 
                     {
                         ["wsType"] = 
@@ -7272,17 +7503,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["E-3A"]
-                    ["J-11A"] = 
+                    ["MQ-9 Reaper"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
                             [3] = 1,
-                            [4] = 66,
+                            [4] = 276,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["J-11A"]
+                    }, -- end of ["MQ-9 Reaper"]
                     ["Hawk"] = 
                     {
                         ["wsType"] = 
@@ -7448,17 +7679,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["MiG-29G"]
-                    ["MiG-15bis"] = 
+                    ["JF-17"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
                             [3] = 1,
-                            [4] = 277,
+                            [4] = 266,
                         }, -- end of ["wsType"]
-                        ["initialAmount"] = 0,
-                    }, -- end of ["MiG-15bis"]
+                        ["initialAmount"] = 100,
+                    }, -- end of ["JF-17"]
                     ["MiG-29K"] = 
                     {
                         ["wsType"] = 
@@ -7481,28 +7712,28 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["MiG-31"]
-                    ["F-16C bl.52d"] = 
+                    ["J-11A"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
                             [3] = 1,
-                            [4] = 7,
+                            [4] = 66,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["F-16C bl.52d"]
-                    ["C-101CC"] = 
+                    }, -- end of ["J-11A"]
+                    ["Tu-95MS"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
-                            [3] = 6,
-                            [4] = 265,
+                            [3] = 4,
+                            [4] = 21,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["C-101CC"]
+                    }, -- end of ["Tu-95MS"]
                     ["F-5E"] = 
                     {
                         ["wsType"] = 
@@ -7514,17 +7745,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["F-5E"]
-                    ["MQ-9 Reaper"] = 
+                    ["Bf-109K-4"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
                             [3] = 1,
-                            [4] = 276,
+                            [4] = 257,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["MQ-9 Reaper"]
+                    }, -- end of ["Bf-109K-4"]
                     ["A-50"] = 
                     {
                         ["wsType"] = 
@@ -7558,17 +7789,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["IL-76MD"]
-                    ["Su-24MR"] = 
+                    ["C-130"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
-                            [3] = 1,
-                            [4] = 51,
+                            [3] = 5,
+                            [4] = 31,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["Su-24MR"]
+                    }, -- end of ["C-130"]
                     ["Su-34"] = 
                     {
                         ["wsType"] = 
@@ -7591,17 +7822,17 @@ warehouses =
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
                     }, -- end of ["F-4E"]
-                    ["F-15E"] = 
+                    ["M-2000C"] = 
                     {
                         ["wsType"] = 
                         {
                             [1] = 1,
                             [2] = 1,
                             [3] = 1,
-                            [4] = 59,
+                            [4] = 275,
                         }, -- end of ["wsType"]
                         ["initialAmount"] = 0,
-                    }, -- end of ["F-15E"]
+                    }, -- end of ["M-2000C"]
                 }, -- end of ["planes"]
             }, -- end of ["aircrafts"]
             ["weapons"] = 
@@ -12358,6 +12589,215 @@ warehouses =
                     }, -- end of ["wsType"]
                     ["initialAmount"] = 100,
                 }, -- end of [432]
+                [433] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 270,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [433]
+                [434] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 271,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [434]
+                [435] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 272,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [435]
+                [436] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 290,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [436]
+                [437] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 30,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [437]
+                [438] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 31,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [438]
+                [439] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 313,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [439]
+                [440] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 316,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [440]
+                [441] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 317,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [441]
+                [442] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 318,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [442]
+                [443] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 32,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [443]
+                [444] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 327,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [444]
+                [445] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 328,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [445]
+                [446] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 329,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [446]
+                [447] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 33,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [447]
+                [448] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 330,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [448]
+                [449] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 34,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [449]
+                [450] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 35,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [450]
+                [451] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 37,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [451]
             }, -- end of ["weapons"]
             ["OperatingLevel_Fuel"] = 0,
             ["unlimitedAircrafts"] = false,
@@ -17148,6 +17588,215 @@ warehouses =
                     }, -- end of ["wsType"]
                     ["initialAmount"] = 100,
                 }, -- end of [432]
+                [433] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 270,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [433]
+                [434] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 271,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [434]
+                [435] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 272,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [435]
+                [436] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 290,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [436]
+                [437] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 30,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [437]
+                [438] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 31,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [438]
+                [439] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 313,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [439]
+                [440] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 316,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [440]
+                [441] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 317,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [441]
+                [442] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 318,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [442]
+                [443] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 32,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [443]
+                [444] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 327,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [444]
+                [445] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 328,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [445]
+                [446] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 329,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [446]
+                [447] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 33,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [447]
+                [448] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 330,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [448]
+                [449] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 34,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [449]
+                [450] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 35,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [450]
+                [451] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 37,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [451]
             }, -- end of ["weapons"]
             ["OperatingLevel_Fuel"] = 10,
             ["unlimitedAircrafts"] = true,
@@ -21938,6 +22587,215 @@ warehouses =
                     }, -- end of ["wsType"]
                     ["initialAmount"] = 100,
                 }, -- end of [432]
+                [433] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 270,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [433]
+                [434] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 271,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [434]
+                [435] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 272,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [435]
+                [436] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 290,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [436]
+                [437] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 30,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [437]
+                [438] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 31,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [438]
+                [439] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 313,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [439]
+                [440] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 316,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [440]
+                [441] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 317,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [441]
+                [442] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 318,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [442]
+                [443] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 32,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [443]
+                [444] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 327,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [444]
+                [445] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 328,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [445]
+                [446] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 329,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [446]
+                [447] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 33,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [447]
+                [448] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 330,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [448]
+                [449] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 34,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [449]
+                [450] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 35,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [450]
+                [451] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 37,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [451]
             }, -- end of ["weapons"]
             ["OperatingLevel_Fuel"] = 10,
             ["unlimitedAircrafts"] = true,
@@ -26918,6 +27776,215 @@ warehouses =
                     }, -- end of ["wsType"]
                     ["initialAmount"] = 100,
                 }, -- end of [432]
+                [433] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 270,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [433]
+                [434] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 271,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [434]
+                [435] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 272,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [435]
+                [436] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 290,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [436]
+                [437] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 30,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [437]
+                [438] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 31,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [438]
+                [439] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 313,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [439]
+                [440] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 316,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [440]
+                [441] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 317,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [441]
+                [442] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 318,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [442]
+                [443] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 32,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [443]
+                [444] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 327,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [444]
+                [445] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 328,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [445]
+                [446] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 329,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [446]
+                [447] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 33,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [447]
+                [448] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 330,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [448]
+                [449] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 34,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [449]
+                [450] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 35,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [450]
+                [451] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 37,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [451]
             }, -- end of ["weapons"]
             ["OperatingLevel_Fuel"] = 10,
             ["unlimitedAircrafts"] = true,
@@ -27082,6 +28149,239 @@ warehouses =
             ["OperatingLevel_Fuel"] = 10,
             ["unlimitedAircrafts"] = true,
         }, -- end of [999324]
+        [999321] = 
+        {
+            ["gasoline"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["gasoline"]
+            ["unlimitedMunitions"] = true,
+            ["methanol_mixture"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["methanol_mixture"]
+            ["OperatingLevel_Air"] = 10,
+            ["diesel"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["diesel"]
+            ["speed"] = 16.666666,
+            ["size"] = 100,
+            ["periodicity"] = 30,
+            ["suppliers"] = 
+            {
+                [1] = 
+                {
+                    ["Id"] = 29,
+                    ["type"] = "airports",
+                }, -- end of [1]
+            }, -- end of ["suppliers"]
+            ["coalition"] = "blue",
+            ["jet_fuel"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["jet_fuel"]
+            ["OperatingLevel_Eqp"] = 10,
+            ["unlimitedFuel"] = true,
+            ["aircrafts"] = 
+            {
+            }, -- end of ["aircrafts"]
+            ["weapons"] = 
+            {
+            }, -- end of ["weapons"]
+            ["OperatingLevel_Fuel"] = 10,
+            ["unlimitedAircrafts"] = true,
+        }, -- end of [999321]
+        [999122] = 
+        {
+            ["gasoline"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["gasoline"]
+            ["unlimitedMunitions"] = true,
+            ["methanol_mixture"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["methanol_mixture"]
+            ["OperatingLevel_Air"] = 10,
+            ["diesel"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["diesel"]
+            ["speed"] = 16.666666,
+            ["size"] = 100,
+            ["periodicity"] = 30,
+            ["suppliers"] = 
+            {
+            }, -- end of ["suppliers"]
+            ["coalition"] = "blue",
+            ["jet_fuel"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["jet_fuel"]
+            ["OperatingLevel_Eqp"] = 10,
+            ["unlimitedFuel"] = true,
+            ["aircrafts"] = 
+            {
+            }, -- end of ["aircrafts"]
+            ["weapons"] = 
+            {
+            }, -- end of ["weapons"]
+            ["OperatingLevel_Fuel"] = 10,
+            ["unlimitedAircrafts"] = true,
+        }, -- end of [999122]
+        [999112] = 
+        {
+            ["gasoline"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["gasoline"]
+            ["unlimitedMunitions"] = true,
+            ["methanol_mixture"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["methanol_mixture"]
+            ["OperatingLevel_Air"] = 10,
+            ["diesel"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["diesel"]
+            ["speed"] = 16.666666,
+            ["size"] = 100,
+            ["periodicity"] = 30,
+            ["suppliers"] = 
+            {
+            }, -- end of ["suppliers"]
+            ["coalition"] = "blue",
+            ["jet_fuel"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["jet_fuel"]
+            ["OperatingLevel_Eqp"] = 10,
+            ["unlimitedFuel"] = true,
+            ["aircrafts"] = 
+            {
+            }, -- end of ["aircrafts"]
+            ["weapons"] = 
+            {
+            }, -- end of ["weapons"]
+            ["OperatingLevel_Fuel"] = 10,
+            ["unlimitedAircrafts"] = true,
+        }, -- end of [999112]
+        [999123] = 
+        {
+            ["gasoline"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["gasoline"]
+            ["unlimitedMunitions"] = true,
+            ["methanol_mixture"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["methanol_mixture"]
+            ["OperatingLevel_Air"] = 10,
+            ["diesel"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["diesel"]
+            ["speed"] = 16.666666,
+            ["size"] = 100,
+            ["periodicity"] = 30,
+            ["suppliers"] = 
+            {
+            }, -- end of ["suppliers"]
+            ["coalition"] = "blue",
+            ["jet_fuel"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["jet_fuel"]
+            ["OperatingLevel_Eqp"] = 10,
+            ["unlimitedFuel"] = true,
+            ["aircrafts"] = 
+            {
+            }, -- end of ["aircrafts"]
+            ["weapons"] = 
+            {
+            }, -- end of ["weapons"]
+            ["OperatingLevel_Fuel"] = 10,
+            ["unlimitedAircrafts"] = true,
+        }, -- end of [999123]
+        [999113] = 
+        {
+            ["gasoline"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["gasoline"]
+            ["unlimitedMunitions"] = true,
+            ["methanol_mixture"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["methanol_mixture"]
+            ["OperatingLevel_Air"] = 10,
+            ["diesel"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["diesel"]
+            ["speed"] = 16.666666,
+            ["size"] = 100,
+            ["periodicity"] = 30,
+            ["suppliers"] = 
+            {
+            }, -- end of ["suppliers"]
+            ["coalition"] = "blue",
+            ["jet_fuel"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["jet_fuel"]
+            ["OperatingLevel_Eqp"] = 10,
+            ["unlimitedFuel"] = true,
+            ["aircrafts"] = 
+            {
+            }, -- end of ["aircrafts"]
+            ["weapons"] = 
+            {
+            }, -- end of ["weapons"]
+            ["OperatingLevel_Fuel"] = 10,
+            ["unlimitedAircrafts"] = true,
+        }, -- end of [999113]
+        [999124] = 
+        {
+            ["gasoline"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["gasoline"]
+            ["unlimitedMunitions"] = true,
+            ["methanol_mixture"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["methanol_mixture"]
+            ["OperatingLevel_Air"] = 10,
+            ["diesel"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["diesel"]
+            ["speed"] = 16.666666,
+            ["size"] = 100,
+            ["periodicity"] = 30,
+            ["suppliers"] = 
+            {
+            }, -- end of ["suppliers"]
+            ["coalition"] = "blue",
+            ["jet_fuel"] = 
+            {
+                ["InitFuel"] = 100,
+            }, -- end of ["jet_fuel"]
+            ["OperatingLevel_Eqp"] = 10,
+            ["unlimitedFuel"] = true,
+            ["aircrafts"] = 
+            {
+            }, -- end of ["aircrafts"]
+            ["weapons"] = 
+            {
+            }, -- end of ["weapons"]
+            ["OperatingLevel_Fuel"] = 10,
+            ["unlimitedAircrafts"] = true,
+        }, -- end of [999124]
         [999111] = 
         {
             ["gasoline"] = 
@@ -31868,242 +33168,218 @@ warehouses =
                     }, -- end of ["wsType"]
                     ["initialAmount"] = 100,
                 }, -- end of [432]
+                [433] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 270,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [433]
+                [434] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 271,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [434]
+                [435] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 272,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [435]
+                [436] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 290,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [436]
+                [437] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 30,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [437]
+                [438] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 31,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [438]
+                [439] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 313,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [439]
+                [440] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 316,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [440]
+                [441] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 317,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [441]
+                [442] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 318,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [442]
+                [443] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 32,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [443]
+                [444] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 327,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [444]
+                [445] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 328,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [445]
+                [446] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 329,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [446]
+                [447] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 33,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [447]
+                [448] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 330,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [448]
+                [449] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 34,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [449]
+                [450] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 35,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [450]
+                [451] = 
+                {
+                    ["wsType"] = 
+                    {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 37,
+                    }, -- end of ["wsType"]
+                    ["initialAmount"] = 100,
+                }, -- end of [451]
             }, -- end of ["weapons"]
             ["OperatingLevel_Fuel"] = 10,
             ["unlimitedAircrafts"] = true,
         }, -- end of [999111]
-        [999122] = 
-        {
-            ["gasoline"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["gasoline"]
-            ["unlimitedMunitions"] = true,
-            ["methanol_mixture"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["methanol_mixture"]
-            ["OperatingLevel_Air"] = 10,
-            ["diesel"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["diesel"]
-            ["speed"] = 16.666666,
-            ["size"] = 100,
-            ["periodicity"] = 30,
-            ["suppliers"] = 
-            {
-            }, -- end of ["suppliers"]
-            ["coalition"] = "blue",
-            ["jet_fuel"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["jet_fuel"]
-            ["OperatingLevel_Eqp"] = 10,
-            ["unlimitedFuel"] = true,
-            ["aircrafts"] = 
-            {
-            }, -- end of ["aircrafts"]
-            ["weapons"] = 
-            {
-            }, -- end of ["weapons"]
-            ["OperatingLevel_Fuel"] = 10,
-            ["unlimitedAircrafts"] = true,
-        }, -- end of [999122]
-        [999112] = 
-        {
-            ["gasoline"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["gasoline"]
-            ["unlimitedMunitions"] = true,
-            ["methanol_mixture"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["methanol_mixture"]
-            ["OperatingLevel_Air"] = 10,
-            ["diesel"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["diesel"]
-            ["speed"] = 16.666666,
-            ["size"] = 100,
-            ["periodicity"] = 30,
-            ["suppliers"] = 
-            {
-            }, -- end of ["suppliers"]
-            ["coalition"] = "blue",
-            ["jet_fuel"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["jet_fuel"]
-            ["OperatingLevel_Eqp"] = 10,
-            ["unlimitedFuel"] = true,
-            ["aircrafts"] = 
-            {
-            }, -- end of ["aircrafts"]
-            ["weapons"] = 
-            {
-            }, -- end of ["weapons"]
-            ["OperatingLevel_Fuel"] = 10,
-            ["unlimitedAircrafts"] = true,
-        }, -- end of [999112]
-        [999123] = 
-        {
-            ["gasoline"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["gasoline"]
-            ["unlimitedMunitions"] = true,
-            ["methanol_mixture"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["methanol_mixture"]
-            ["OperatingLevel_Air"] = 10,
-            ["diesel"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["diesel"]
-            ["speed"] = 16.666666,
-            ["size"] = 100,
-            ["periodicity"] = 30,
-            ["suppliers"] = 
-            {
-            }, -- end of ["suppliers"]
-            ["coalition"] = "blue",
-            ["jet_fuel"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["jet_fuel"]
-            ["OperatingLevel_Eqp"] = 10,
-            ["unlimitedFuel"] = true,
-            ["aircrafts"] = 
-            {
-            }, -- end of ["aircrafts"]
-            ["weapons"] = 
-            {
-            }, -- end of ["weapons"]
-            ["OperatingLevel_Fuel"] = 10,
-            ["unlimitedAircrafts"] = true,
-        }, -- end of [999123]
-        [999113] = 
-        {
-            ["gasoline"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["gasoline"]
-            ["unlimitedMunitions"] = true,
-            ["methanol_mixture"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["methanol_mixture"]
-            ["OperatingLevel_Air"] = 10,
-            ["diesel"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["diesel"]
-            ["speed"] = 16.666666,
-            ["size"] = 100,
-            ["periodicity"] = 30,
-            ["suppliers"] = 
-            {
-            }, -- end of ["suppliers"]
-            ["coalition"] = "blue",
-            ["jet_fuel"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["jet_fuel"]
-            ["OperatingLevel_Eqp"] = 10,
-            ["unlimitedFuel"] = true,
-            ["aircrafts"] = 
-            {
-            }, -- end of ["aircrafts"]
-            ["weapons"] = 
-            {
-            }, -- end of ["weapons"]
-            ["OperatingLevel_Fuel"] = 10,
-            ["unlimitedAircrafts"] = true,
-        }, -- end of [999113]
-        [999124] = 
-        {
-            ["gasoline"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["gasoline"]
-            ["unlimitedMunitions"] = true,
-            ["methanol_mixture"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["methanol_mixture"]
-            ["OperatingLevel_Air"] = 10,
-            ["diesel"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["diesel"]
-            ["speed"] = 16.666666,
-            ["size"] = 100,
-            ["periodicity"] = 30,
-            ["suppliers"] = 
-            {
-            }, -- end of ["suppliers"]
-            ["coalition"] = "blue",
-            ["jet_fuel"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["jet_fuel"]
-            ["OperatingLevel_Eqp"] = 10,
-            ["unlimitedFuel"] = true,
-            ["aircrafts"] = 
-            {
-            }, -- end of ["aircrafts"]
-            ["weapons"] = 
-            {
-            }, -- end of ["weapons"]
-            ["OperatingLevel_Fuel"] = 10,
-            ["unlimitedAircrafts"] = true,
-        }, -- end of [999124]
-        [999321] = 
-        {
-            ["gasoline"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["gasoline"]
-            ["unlimitedMunitions"] = true,
-            ["methanol_mixture"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["methanol_mixture"]
-            ["OperatingLevel_Air"] = 10,
-            ["diesel"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["diesel"]
-            ["speed"] = 16.666666,
-            ["size"] = 100,
-            ["periodicity"] = 30,
-            ["suppliers"] = 
-            {
-                [1] = 
-                {
-                    ["Id"] = 29,
-                    ["type"] = "airports",
-                }, -- end of [1]
-            }, -- end of ["suppliers"]
-            ["coalition"] = "blue",
-            ["jet_fuel"] = 
-            {
-                ["InitFuel"] = 100,
-            }, -- end of ["jet_fuel"]
-            ["OperatingLevel_Eqp"] = 10,
-            ["unlimitedFuel"] = true,
-            ["aircrafts"] = 
-            {
-            }, -- end of ["aircrafts"]
-            ["weapons"] = 
-            {
-            }, -- end of ["weapons"]
-            ["OperatingLevel_Fuel"] = 10,
-            ["unlimitedAircrafts"] = true,
-        }, -- end of [999321]
     }, -- end of ["warehouses"]
 } -- end of warehouses
