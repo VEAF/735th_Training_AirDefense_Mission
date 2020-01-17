@@ -1,211 +1,194 @@
 options = 
 {
-    ["playerName"] = "Nouveau Surnom",
-    ["miscellaneous"] = 
-    {
-        ["allow_server_screenshots"] = false,
-        ["headmove"] = false,
-        ["TrackIR_external_views"] = true,
-        ["f5_nearest_ac"] = true,
-        ["f11_free_camera"] = true,
-        ["F2_view_effects"] = 1,
-        ["f10_awacs"] = true,
-        ["Coordinate_Display"] = "Lat Long",
-        ["accidental_failures"] = false,
-        ["autologin"] = false,
-        ["force_feedback_enabled"] = true,
-        ["collect_stat"] = false,
-        ["chat_window_at_start"] = true,
-        ["synchronize_controls"] = false,
-        ["show_pilot_body"] = false,
-    }, -- end of ["miscellaneous"]
-    ["difficulty"] = 
-    {
-        ["fuel"] = false,
-        ["compassTape"] = true,
-        ["miniHUD"] = false,
-        ["optionsView"] = "optview_all",
-        ["setGlobal"] = true,
-        ["avionicsLanguage"] = "native",
-        ["cockpitVisualRM"] = false,
-        ["map"] = true,
-        ["spectatorExternalViews"] = true,
-        ["userSnapView"] = true,
-        ["iconsTheme"] = "nato",
-        ["weapons"] = false,
-        ["padlock"] = false,
-        ["birds"] = 0,
-        ["permitCrash"] = false,
-        ["immortal"] = false,
-        ["cockpitStatusBarAllowed"] = false,
-        ["wakeTurbulence"] = true,
-        ["geffect"] = "realistic",
-        ["easyFlight"] = false,
-        ["hideStick"] = false,
-        ["radio"] = false,
-        ["reports"] = true,
-        ["tips"] = true,
-        ["unrestrictedSATNAV"] = false,
-        ["easyRadar"] = false,
-        ["units"] = "imperial",
-        ["externalViews"] = true,
-        ["autoTrimmer"] = false,
-        ["controlsIndicator"] = true,
-        ["RBDAI"] = true,
-        ["userMarks"] = true,
-        ["aircraftMode"] = true,
-        ["easyCommunication"] = false,
-        ["labels"] = 0,
-    }, -- end of ["difficulty"]
-    ["VR"] = 
-    {
-        ["use_mouse"] = false,
-        ["hand_controllers"] = true,
-        ["custom_IPD"] = 63.5,
-        ["custom_IPD_enable"] = false,
-        ["enable"] = true,
-        ["prefer_built_in_audio"] = true,
-        ["box_mouse_cursor"] = true,
-        ["pixel_density"] = 1,
-    }, -- end of ["VR"]
-    ["graphics"] = 
-    {
-        ["messagesFontScale"] = 1,
-        ["rainDroplets"] = false,
-        ["LensEffects"] = 3,
-        ["heatBlr"] = 0,
-        ["anisotropy"] = 4,
-        ["water"] = 2,
-        ["motionBlur"] = 0,
-        ["outputGamma"] = 2.2,
-        ["treesVisibility"] = 6000,
-        ["aspect"] = 1.7708333333333,
-        ["lights"] = 2,
-        ["shadows"] = 2,
-        ["MSAA"] = 2,
-        ["SSAA"] = 0,
-        ["height"] = 768,
-        ["forestDistanceFactor"] = 0.5,
-        ["cockpitGI"] = 1,
-        ["terrainTextures"] = "min",
-        ["multiMonitorSetup"] = "1camera",
-        ["shadowTree"] = false,
-        ["chimneySmokeDensity"] = 4,
-        ["fullScreen"] = false,
-        ["DOF"] = 0,
-        ["clouds"] = 1,
-        ["flatTerrainShadows"] = 0,
-        ["width"] = 1360,
-        ["useDeferredShading"] = 1,
-        ["effects"] = 3,
-        ["SSAO"] = 0,
-        ["textures"] = 0,
-        ["sync"] = false,
-        ["preloadRadius"] = 150000,
-        ["visibRange"] = "High",
-        ["scaleGui"] = false,
-        ["civTraffic"] = "",
-        ["clutterMaxDistance"] = 0,
-    }, -- end of ["graphics"]
-    ["plugins"] = 
-    {
-        ["Su-25T"] = 
-        {
-            ["CPLocalList"] = "default",
-        }, -- end of ["Su-25T"]
-        ["M-2000C"] = 
-        {
-            ["UNI_ALIGNED"] = false,
-            ["CPLocalList"] = "default",
-            ["PPA_TOTPAR"] = false,
-            ["UNI_NODRIFT"] = false,
-        }, -- end of ["M-2000C"]
-        ["F-16C"] = 
-        {
-            ["abDetent"] = 0,
-            ["CPLocalList"] = "default",
-            ["hmdEye"] = 1,
-        }, -- end of ["F-16C"]
-        ["A-4E-C"] = 
-        {
-            ["hideControlStick"] = 0,
-            ["rwrType"] = 0,
-            ["trimSpeed"] = 0,
-        }, -- end of ["A-4E-C"]
-        ["Tacview"] = 
-        {
-            ["tacviewProfilingPeriod"] = 600,
-            ["tacviewHostTelemetryPassword"] = "",
-            ["tacviewRemoteControlPort"] = "42675",
-            ["tacviewDataRecordingEnabled"] = true,
-            ["tacviewTerrainExport"] = 0,
-            ["tacviewRecordClientsSessionsEnabled"] = false,
-            ["tacviewPlaybackDelay"] = 600,
-            ["tacviewRealTimeTelemetryPort"] = "42674",
-            ["tacviewBookmarkShortcut"] = 0,
-            ["tacviewCompressionLevel"] = 1,
-            ["tacviewDebugModeEnabled"] = false,
-            ["tacviewClientTelemetryPassword"] = "",
-            ["tacviewRemoteControlPassword"] = "",
-        }, -- end of ["Tacview"]
-        ["F-14B"] = 
-        {
-            ["JESTER_HeadMenu"] = true,
-            ["RadioMenuPttOptions"] = 0,
-            ["JESTER_LandingCallouts"] = true,
-            ["JESTER_SwitchToPSTT"] = true,
-            ["JESTER_Camera"] = true,
-            ["CPLocalList"] = "default",
-            ["WEAP_OFF_GUN"] = false,
-            ["TID_A2G"] = false,
-        }, -- end of ["F-14B"]
-        ["TF-51D"] = 
-        {
-            ["assistance"] = 100,
-            ["CPLocalList"] = "default",
-            ["autoRudder"] = false,
-        }, -- end of ["TF-51D"]
-        ["CaptoGlove"] = 
-        {
-            ["enable"] = false,
-            ["armBending"] = 60,
-            ["mouseClickSrc"] = 0,
-        }, -- end of ["CaptoGlove"]
-        ["DCS-SRS"] = 
-        {
-            ["srsAutoLaunchEnabled"] = true,
-            ["srsOverlayEnabled"] = true,
-        }, -- end of ["DCS-SRS"]
-    }, -- end of ["plugins"]
-    ["format"] = 1,
-    ["sound"] = 
-    {
-        ["main_output"] = "",
-        ["volume"] = 65,
-        ["headphones_on_external_views"] = true,
-        ["subtitles"] = true,
-        ["world"] = 75,
-        ["hear_in_helmet"] = false,
-        ["hp_output"] = "",
-        ["switches"] = 100,
-        ["voice_chat_output"] = "",
-        ["cockpit"] = 20,
-        ["voice_chat"] = false,
-        ["GBreathEffect"] = true,
-        ["microphone_use"] = 2,
-        ["radioSpeech"] = true,
-        ["headphones"] = 100,
-        ["music"] = 3,
-        ["voice_chat_input"] = "",
-        ["gui"] = 100,
-    }, -- end of ["sound"]
-    ["views"] = 
-    {
-        ["cockpit"] = 
-        {
-            ["mirrors"] = false,
-            ["reflections"] = false,
-            ["avionics"] = 0,
-        }, -- end of ["cockpit"]
-    }, -- end of ["views"]
-} -- end of options
+    difficulty = {
+        aircraftMode = true,
+        autoTrimmer = false,
+        avionicsLanguage = "native",
+        birds = 0,
+        cockpitStatusBarAllowed = false,
+        cockpitVisualRM = false,
+        compassTape = true,
+        controlsIndicator = true,
+        easyCommunication = false,
+        easyFlight = false,
+        easyRadar = false,
+        externalViews = true,
+        fuel = false,
+        geffect = "realistic",
+        hideStick = false,
+        iconsTheme = "nato",
+        immortal = false,
+        labels = 0,
+        map = true,
+        miniHUD = false,
+        optionsView = "optview_all",
+        padlock = false,
+        permitCrash = false,
+        radio = false,
+        RBDAI = true,
+        reports = true,
+        setGlobal = true,
+        spectatorExternalViews = true,
+        tips = true,
+        units = "imperial",
+        unrestrictedSATNAV = false,
+        userMarks = true,
+        userSnapView = true,
+        wakeTurbulence = true,
+        weapons = false
+    },
+    format = 1,
+    graphics = {
+        anisotropy = 4,
+        aspect = 1.7708333333333,
+        chimneySmokeDensity = 4,
+        civTraffic = "",
+        clouds = 1,
+        clutterMaxDistance = 0,
+        cockpitGI = 1,
+        DOF = 0,
+        effects = 3,
+        flatTerrainShadows = 0,
+        forestDistanceFactor = 0.5,
+        fullScreen = false,
+        heatBlr = 0,
+        height = 768,
+        LensEffects = 3,
+        lights = 2,
+        messagesFontScale = 1,
+        motionBlur = 0,
+        MSAA = 2,
+        multiMonitorSetup = "1camera",
+        outputGamma = 2.2000000000000002,
+        preloadRadius = 150000,
+        rainDroplets = false,
+        scaleGui = false,
+        shadows = 2,
+        shadowTree = false,
+        SSAA = 0,
+        SSAO = 0,
+        sync = false,
+        terrainTextures = "min",
+        textures = 0,
+        treesVisibility = 6000,
+        useDeferredShading = 1,
+        visibRange = "High",
+        water = 2,
+        width = 1360
+    },
+    miscellaneous = {
+        accidental_failures = false,
+        allow_server_screenshots = false,
+        autologin = false,
+        chat_window_at_start = true,
+        collect_stat = false,
+        Coordinate_Display = "Lat Long",
+        F2_view_effects = 1,
+        f5_nearest_ac = true,
+        f10_awacs = true,
+        f11_free_camera = true,
+        force_feedback_enabled = true,
+        headmove = false,
+        show_pilot_body = false,
+        synchronize_controls = false,
+        TrackIR_external_views = true
+    },
+    playerName = "Nouveau Surnom",
+    plugins = {
+        ["A-4E-C"] = {
+            hideControlStick = 0,
+            rwrType = 0,
+            trimSpeed = 0
+        },
+        CaptoGlove = {
+            armBending = 60,
+            enable = false,
+            mouseClickSrc = 0
+        },
+        ["DCS-SRS"] = {
+            srsAutoLaunchEnabled = true,
+            srsOverlayEnabled = true
+        },
+        ["F-14B"] = {
+            CPLocalList = "default",
+            JESTER_Camera = true,
+            JESTER_HeadMenu = true,
+            JESTER_LandingCallouts = true,
+            JESTER_SwitchToPSTT = true,
+            RadioMenuPttOptions = 0,
+            TID_A2G = false,
+            WEAP_OFF_GUN = false
+        },
+        ["F-16C"] = {
+            abDetent = 0,
+            CPLocalList = "default",
+            hmdEye = 1
+        },
+        ["M-2000C"] = {
+            CPLocalList = "default",
+            PPA_TOTPAR = false,
+            UNI_ALIGNED = false,
+            UNI_NODRIFT = false
+        },
+        ["Su-25T"] = {
+            CPLocalList = "default"
+        },
+        Tacview = {
+            tacviewBookmarkShortcut = 0,
+            tacviewClientTelemetryPassword = "",
+            tacviewCompressionLevel = 1,
+            tacviewDataRecordingEnabled = true,
+            tacviewDebugModeEnabled = false,
+            tacviewHostTelemetryPassword = "",
+            tacviewPlaybackDelay = 600,
+            tacviewProfilingPeriod = 600,
+            tacviewRealTimeTelemetryPort = "42674",
+            tacviewRecordClientsSessionsEnabled = false,
+            tacviewRemoteControlPassword = "",
+            tacviewRemoteControlPort = "42675",
+            tacviewTerrainExport = 0
+        },
+        ["TF-51D"] = {
+            assistance = 100,
+            autoRudder = false,
+            CPLocalList = "default"
+        }
+    },
+    sound = {
+        cockpit = 20,
+        GBreathEffect = true,
+        gui = 100,
+        headphones = 100,
+        headphones_on_external_views = true,
+        hear_in_helmet = false,
+        hp_output = "",
+        main_output = "",
+        microphone_use = 2,
+        music = 3,
+        radioSpeech = true,
+        subtitles = true,
+        switches = 100,
+        voice_chat = false,
+        voice_chat_input = "",
+        voice_chat_output = "",
+        volume = 65,
+        world = 75
+    },
+    views = {
+        cockpit = {
+            avionics = 0,
+            mirrors = false,
+            reflections = false
+        }
+    },
+    VR = {
+        box_mouse_cursor = true,
+        custom_IPD = 63.5,
+        custom_IPD_enable = false,
+        enable = true,
+        hand_controllers = true,
+        pixel_density = 1,
+        prefer_built_in_audio = true,
+        use_mouse = false
+    }
+}
