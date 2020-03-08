@@ -53,7 +53,7 @@ echo current value is "%MISSION_FILE_SUFFIX%"
 echo ----------------------------------------
 echo SEVENZIP (a string) points to the 7za executable
 echo defaults "7za", so it needs to be in the path
-IF [%SEVENZIP%] == [] GOTO DefineDefaultSEVENZIP
+IF ["%SEVENZIP%"] == [""] GOTO DefineDefaultSEVENZIP
 goto DontDefineDefaultSEVENZIP
 :DefineDefaultSEVENZIP
 set SEVENZIP=7za
@@ -63,7 +63,7 @@ echo current value is "%SEVENZIP%"
 echo ----------------------------------------
 echo LUA (a string) points to the lua executable
 echo defaults "lua", so it needs to be in the path
-IF [%LUA%] == [] GOTO DefineDefaultLUA
+IF ["%LUA%"] == [""] GOTO DefineDefaultLUA
 goto DontDefineDefaultLUA
 :DefineDefaultLUA
 set LUA=lua
@@ -85,12 +85,13 @@ mkdir .\build\tempsrc
 echo building the mission
 rem -- copy all the source mission files and mission-specific scripts
 xcopy /y /e src\mission .\build\tempsrc\ >nul 2>&1
+xcopy /y src\options .\build\tempsrc\  >nul 2>&1
 xcopy /y /e src\scripts\mission-specific\*.lua .\build\tempsrc\l10n\Default\  >nul 2>&1
 
 rem -- set the radio presets according to the settings file
 echo set the radio presets according to the settings file
 pushd node_modules\veaf-mission-creation-tools\scripts\veaf
-%LUA% veafMissionRadioPresetsEditor.lua  ..\..\..\..\build\tempsrc ..\..\..\..\src\radioSettings.lua %LUA_SCRIPTS_DEBUG_PARAMETER%
+"%LUA%" veafMissionRadioPresetsEditor.lua  ..\..\..\..\build\tempsrc ..\..\..\..\src\radioSettings.lua %LUA_SCRIPTS_DEBUG_PARAMETER%
 popd
 
 rem -- copy the documentation images to the kneeboard
