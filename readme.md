@@ -17,6 +17,7 @@ If you want to contribute to this mission project, or simply want to edit and bu
 2. [download](https://www.7-zip.org/download.html) **7za.exe** (in *7-Zip Extra: standalone console version, 7z DLL, Plugin for Far Manager* package), install it, and either add it to your PATH, or copy it in the root of this repository.
 3. install npm - for that install [node.js](https://nodejs.org/en/download/)
 4. execute `npm install` in order to install dependencies ( [VEAF-Mission-Creation-Tools](https://github.com/VEAF/VEAF-Mission-Creation-Tools) )
+5. install [LUA for windows](https://github.com/rjpcomputing/luaforwindows/releases)
 
 At this stage, you're ready to build your own TRAD mission (use the *build.cmd* command).
 Happy editing :-).
