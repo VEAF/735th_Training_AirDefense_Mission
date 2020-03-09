@@ -94,9 +94,6 @@ pushd node_modules\veaf-mission-creation-tools\scripts\veaf
 "%LUA%" veafMissionRadioPresetsEditor.lua  ..\..\..\..\build\tempsrc ..\..\..\..\src\radioSettings.lua %LUA_SCRIPTS_DEBUG_PARAMETER%
 popd
 
-rem -- copy the documentation images to the kneeboard
-xcopy /y /e doc\*.png .\build\tempsrc\KNEEBOARD\IMAGES\ >nul 2>&1
-
 rem -- copy all the community scripts
 copy .\src\scripts\community\*.lua .\build\tempsrc\l10n\Default  >nul 2>&1
 copy .\node_modules\veaf-mission-creation-tools\scripts\community\*.lua .\build\tempsrc\l10n\Default  >nul 2>&1
