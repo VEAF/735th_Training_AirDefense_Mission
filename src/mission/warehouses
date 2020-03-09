@@ -578,6 +578,15 @@ warehouses = {
                             [4] = 267,
                         }, -- end of ["wsType"]
                     }, -- end of ["Christen Eagle II"]
+                    ["CN235"] = {
+                        ["initialAmount"] = 100,
+                        ["wsType"] = {
+                            [1] = 1,
+                            [2] = 1,
+                            [3] = 5,
+                            [4] = 287,
+                        }, -- end of ["wsType"]
+                    }, -- end of ["CN235"]
                     ["E-2C"] = {
                         ["initialAmount"] = 0,
                         ["wsType"] = {
@@ -893,6 +902,15 @@ warehouses = {
                             [4] = 275,
                         }, -- end of ["wsType"]
                     }, -- end of ["M-2000C"]
+                    ["M20005"] = {
+                        ["initialAmount"] = 100,
+                        ["wsType"] = {
+                            [1] = 1,
+                            [2] = 1,
+                            [3] = 1,
+                            [4] = 288,
+                        }, -- end of ["wsType"]
+                    }, -- end of ["M20005"]
                     ["M2000D"] = {
                         ["initialAmount"] = 100,
                         ["wsType"] = {
@@ -5688,6 +5706,15 @@ warehouses = {
                             [4] = 267,
                         }, -- end of ["wsType"]
                     }, -- end of ["Christen Eagle II"]
+                    ["CN235"] = {
+                        ["initialAmount"] = 100,
+                        ["wsType"] = {
+                            [1] = 1,
+                            [2] = 1,
+                            [3] = 5,
+                            [4] = 287,
+                        }, -- end of ["wsType"]
+                    }, -- end of ["CN235"]
                     ["E-2C"] = {
                         ["initialAmount"] = 0,
                         ["wsType"] = {
@@ -6003,6 +6030,15 @@ warehouses = {
                             [4] = 275,
                         }, -- end of ["wsType"]
                     }, -- end of ["M-2000C"]
+                    ["M20005"] = {
+                        ["initialAmount"] = 100,
+                        ["wsType"] = {
+                            [1] = 1,
+                            [2] = 1,
+                            [3] = 1,
+                            [4] = 288,
+                        }, -- end of ["wsType"]
+                    }, -- end of ["M20005"]
                     ["M2000D"] = {
                         ["initialAmount"] = 100,
                         ["wsType"] = {
