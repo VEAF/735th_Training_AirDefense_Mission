@@ -1,7 +1,8 @@
 mapResource = {
+    ["ResKey_Action_1111"] = "veafInterpreter.lua",
+    ["ResKey_Action_1112"] = "veafShortcuts.lua",
     ["ResKey_Action_17"] = "TR_AD_Caucasus_RedAirs.lua",
     ["ResKey_Action_350"] = "mist.lua",
-    ["ResKey_Action_351"] = "veafAutogftConfig.lua",
     ["ResKey_Action_352"] = "CTLD.lua",
     ["ResKey_Action_353"] = "veafCTLDConfig.lua",
     ["ResKey_Action_356"] = "WeatherMark.lua",
@@ -19,7 +20,6 @@ mapResource = {
     ["ResKey_Action_376"] = "veafAssetsConfig.lua",
     ["ResKey_Action_377"] = "veafCombatZone.lua",
     ["ResKey_Action_378"] = "veafSecurityConfig.lua",
-    ["ResKey_Action_52"] = "autogft-1_12.lua",
     ["ResKey_Action_53"] = "veaf.lua",
     ["ResKey_Action_54"] = "veafRadio.lua",
     ["ResKey_Action_55"] = "veafCarrierOperations.lua",
