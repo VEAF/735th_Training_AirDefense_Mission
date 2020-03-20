@@ -151,10 +151,16 @@ local function BFM_Bomber_Activate_Scenario4()
 end
 
 -- Menu creation
+local Menu_Blue_Coalition_BFM_RedAirs = veafRadio.addMenu("BFM Area RedAir Activations" )
 local Menu_Blue_Coalition_ALPHA_RedAirs = veafRadio.addMenu("ALPHA RedAir Activations" )
 local Menu_Blue_Coalition_BRAVO_RedAirs = veafRadio.addMenu("BRAVO RedAir Activations" )
 local Menu_Blue_Coalition_CHARLIE_RedAirs = veafRadio.addMenu("CHARLIE RedAir Activations" )
-local Menu_Blue_Coalition_BFM_RedAirs = veafRadio.addMenu("BFM Area RedAir Activations" )
+
+-- Menu Command to activate RedAirs BFM Area
+veafRadio.addCommandToSubmenu("BFM Area Bomber Scenario 1 - passive Tu-95", Menu_Blue_Coalition_BFM_RedAirs, BFM_Bomber_Activate_Scenario1, nil, veafRadio.USAGE_ForAll)
+veafRadio.addCommandToSubmenu("BFM Area Bomber Scenario 2 - defensive Tu-95", Menu_Blue_Coalition_BFM_RedAirs, BFM_Bomber_Activate_Scenario2, nil, veafRadio.USAGE_ForAll)
+veafRadio.addCommandToSubmenu("BFM Area Bomber Scenario 3 - guns only Su-25", Menu_Blue_Coalition_BFM_RedAirs, BFM_Bomber_Activate_Scenario3, nil, veafRadio.USAGE_ForAll)
+veafRadio.addCommandToSubmenu("BFM Area Bomber Scenario 2 - R-60M Su-25", Menu_Blue_Coalition_BFM_RedAirs, BFM_Bomber_Activate_Scenario4, nil, veafRadio.USAGE_ForAll)
 
 -- Menu Command to activate RedAirs ALPHA
 veafRadio.addCommandToSubmenu("ALPHA Interceptors Scenario 1 - 10min", Menu_Blue_Coalition_ALPHA_RedAirs, ALPHA_Interceptors_Activate_Scenario1_10, nil, veafRadio.USAGE_ForAll)
@@ -167,9 +173,3 @@ veafRadio.addCommandToSubmenu("BRAVO Interceptors Scenario 1 - 5min", Menu_Blue_
 -- Menu Command to activate RedAirs CHARLIE
 veafRadio.addCommandToSubmenu("CHARLIE Interceptors Scenario 1 - 10min", Menu_Blue_Coalition_CHARLIE_RedAirs, CHARLIE_Interceptors_Activate_Scenario1_10, nil, veafRadio.USAGE_ForAll)
 veafRadio.addCommandToSubmenu("CHARLIE Interceptors Scenario 1 - 5min", Menu_Blue_Coalition_CHARLIE_RedAirs, CHARLIE_Interceptors_Activate_Scenario1_5, nil, veafRadio.USAGE_ForAll)
-
--- Menu Command to activate RedAirs BFM Area
-veafRadio.addCommandToSubmenu("BFM Area Bomber Scenario 1 - passive Tu-95", Menu_Blue_Coalition_BFM_RedAirs, BFM_Bomber_Activate_Scenario1, nil, veafRadio.USAGE_ForAll)
-veafRadio.addCommandToSubmenu("BFM Area Bomber Scenario 2 - defensive Tu-95", Menu_Blue_Coalition_BFM_RedAirs, BFM_Bomber_Activate_Scenario2, nil, veafRadio.USAGE_ForAll)
-veafRadio.addCommandToSubmenu("BFM Area Bomber Scenario 3 - guns only Su-25", Menu_Blue_Coalition_BFM_RedAirs, BFM_Bomber_Activate_Scenario3, nil, veafRadio.USAGE_ForAll)
-veafRadio.addCommandToSubmenu("BFM Area Bomber Scenario 2 - R-60M Su-25", Menu_Blue_Coalition_BFM_RedAirs, BFM_Bomber_Activate_Scenario4, nil, veafRadio.USAGE_ForAll)
