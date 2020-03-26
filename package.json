@@ -10,6 +10,6 @@
     "url": "git+https://github.com/VEAF/735th_Training_AirDefense_Mission.git"
   },
   "dependencies": {
-    "veaf-mission-creation-tools": "^1.4.1"
+    "veaf-mission-creation-tools": "^1.4.2"
   }
 }

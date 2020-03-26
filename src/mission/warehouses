@@ -4719,6 +4719,78 @@ warehouses = {
                         [4] = 37,
                     }, -- end of ["wsType"]
                 }, -- end of [451]
+                [452] = {
+                    ["initialAmount"] = 100,
+                    ["wsType"] = {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 333,
+                    }, -- end of ["wsType"]
+                }, -- end of [452]
+                [453] = {
+                    ["initialAmount"] = 100,
+                    ["wsType"] = {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 334,
+                    }, -- end of ["wsType"]
+                }, -- end of [453]
+                [454] = {
+                    ["initialAmount"] = 100,
+                    ["wsType"] = {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 335,
+                    }, -- end of ["wsType"]
+                }, -- end of [454]
+                [455] = {
+                    ["initialAmount"] = 100,
+                    ["wsType"] = {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 34,
+                    }, -- end of ["wsType"]
+                }, -- end of [455]
+                [456] = {
+                    ["initialAmount"] = 100,
+                    ["wsType"] = {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 35,
+                    }, -- end of ["wsType"]
+                }, -- end of [456]
+                [457] = {
+                    ["initialAmount"] = 100,
+                    ["wsType"] = {
+                        [1] = 4,
+                        [2] = 7,
+                        [3] = 33,
+                        [4] = 37,
+                    }, -- end of ["wsType"]
+                }, -- end of [457]
+                [458] = {
+                    ["initialAmount"] = 100,
+                    ["wsType"] = {
+                        [1] = 4,
+                        [2] = 8,
+                        [3] = 10,
+                        [4] = 255,
+                    }, -- end of ["wsType"]
+                }, -- end of [458]
+                [459] = {
+                    ["initialAmount"] = 100,
+                    ["wsType"] = {
+                        [1] = 4,
+                        [2] = 8,
+                        [3] = 10,
+                        [4] = 311,
+                    }, -- end of ["wsType"]
+                }, -- end of [459]
             }, -- end of ["weapons"]
         }, -- end of [999111]
         [999112] = {
