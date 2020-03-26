@@ -147,7 +147,7 @@ end
 -- Function to activate BFM Area Su-25 Bomber Wave 2 / 4 R-60M defensive Su-25
 local function BFM_Bomber_Activate_Scenario4()
   MESSAGE:New( "Su-25 Bomber wave scenario 2 - activated",  25):ToAll()
-  local Wave11 = SPAWN:New("Red Su-25 Target Wave1-2"):Spawn()
+  local Wave11 = SPAWN:New("Red Su-25 Target Wave2-1"):Spawn()
 end
 
 -- Menu creation
