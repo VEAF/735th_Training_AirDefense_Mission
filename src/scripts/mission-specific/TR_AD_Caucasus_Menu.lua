@@ -11,9 +11,17 @@
 --            Menu functions for BFM Area Redairs
 -- =======================================================
 
+-- store the schedule for this scenario
+BFM_Bomber_Activate_Scenario1_schedule = nil
 
 -- Function to activate BFM Area Tu-160 Bomber Wave 1 / 9 slow Tu-160
 local function BFM_Bomber_Activate_Scenario1()
+
+  -- clear schedule if it is still running (i.e. the scenario was ended without triggering the schedule)
+  if BFM_Bomber_Activate_Scenario1_schedule then 
+    mist.removeFunction(BFM_Bomber_Activate_Scenario1_schedule)
+  end
+
   MESSAGE:New( "Tu-160 Bomber wave scenario 1 - activated",  25):ToAll()
   MESSAGE:New( "You have 10 minutes to destroy bombers",  25):ToAll()
   local BFM_Wave11 = SPAWN:New("Red Tu-160 Bomber Wave1-1"):Spawn()
@@ -25,7 +33,7 @@ local function BFM_Bomber_Activate_Scenario1()
   local BFM_Wave17 = SPAWN:New("Red Tu-160 Bomber Wave1-7"):Spawn()
   local BFM_Wave18 = SPAWN:New("Red Tu-160 Bomber Wave1-8"):Spawn()
   local BFM_Wave19 = SPAWN:New("Red Tu-160 Bomber Wave1-9"):Spawn()
-  SCHEDULER:New( nil,
+  BFM_Bomber_Activate_Scenario1_schedule = mist.scheduleFunction(
     function()
       MESSAGE:New( "Tu-160 Bomber wave scenario 1 - terminated",  10):ToAll()
       BFM_Wave11:Destroy()
@@ -37,11 +45,20 @@ local function BFM_Bomber_Activate_Scenario1()
       BFM_Wave17:Destroy()
       BFM_Wave18:Destroy()
       BFM_Wave19:Destroy()
-    end, {}, 605)
+    end, {}, timer.getTime()+605)
 end
+
+-- store the schedule for this scenario
+BFM_Bomber_Activate_Scenario2 = nil
 
 -- Function to activate BFM Area Tu-160 Bomber Wave 2 / 9 supersonic Tu-160
 local function BFM_Bomber_Activate_Scenario2()
+
+  -- clear schedule if it is still running (i.e. the scenario was ended without triggering the schedule)
+  if BFM_Bomber_Activate_Scenario2 then 
+    mist.removeFunction(BFM_Bomber_Activate_Scenario2)
+  end
+
   MESSAGE:New( "Tu-160 Bomber wave scenario 2 - activated",  25):ToAll()
   MESSAGE:New( "You have 5 minutes to destroy bombers",  25):ToAll()
   local BFM_Wave21 = SPAWN:New("Red Tu-160 Bomber Wave2-1"):Spawn()
@@ -53,7 +70,7 @@ local function BFM_Bomber_Activate_Scenario2()
   local BFM_Wave27 = SPAWN:New("Red Tu-160 Bomber Wave2-7"):Spawn()
   local BFM_Wave28 = SPAWN:New("Red Tu-160 Bomber Wave2-8"):Spawn()
   local BFM_Wave29 = SPAWN:New("Red Tu-160 Bomber Wave2-9"):Spawn()
-  SCHEDULER:New( nil,
+  BFM_Bomber_Activate_Scenario2 = mist.scheduleFunction(
     function()
       MESSAGE:New( "Tu-160 Bomber wave scenario 2 - terminated",  10):ToAll()
       BFM_Wave21:Destroy()
@@ -65,31 +82,49 @@ local function BFM_Bomber_Activate_Scenario2()
       BFM_Wave27:Destroy()
       BFM_Wave28:Destroy()
       BFM_Wave29:Destroy()
-    end, {}, 305)
+    end, {}, timer.getTime()+305)
 end
+
+-- store the schedule for this scenario
+BFM_Bomber_Activate_Scenario3 = nil
 
 -- Function to activate BFM Area Su-25 Bomber Wave 1 / 4 passive Su-25
 local function BFM_Bomber_Activate_Scenario3()
+
+  -- clear schedule if it is still running (i.e. the scenario was ended without triggering the schedule)
+  if BFM_Bomber_Activate_Scenario3 then 
+    mist.removeFunction(BFM_Bomber_Activate_Scenario3)
+  end
+
   MESSAGE:New( "Su-25 Bomber wave scenario 1 - activated",  25):ToAll()
   MESSAGE:New( "You have 8 minutes to destroy bombers",  25):ToAll()
   local BFM_Wave31 = SPAWN:New("Red Su-25 Target Wave1-1"):Spawn()
-  SCHEDULER:New( nil,
+  BFM_Bomber_Activate_Scenario3 = mist.scheduleFunction(
     function()
       MESSAGE:New( "Su-25 Bomber wave scenario 1 - terminated",  10):ToAll()
       BFM_Wave31:Destroy()
-    end, {}, 480)
+    end, {}, timer.getTime()+480)
 end
+
+-- store the schedule for this scenario
+BFM_Bomber_Activate_Scenario4 = nil
 
 -- Function to activate BFM Area Su-25 Bomber Wave 2 / 4 R-60M defensive Su-25
 local function BFM_Bomber_Activate_Scenario4()
+
+  -- clear schedule if it is still running (i.e. the scenario was ended without triggering the schedule)
+  if BFM_Bomber_Activate_Scenario4 then 
+    mist.removeFunction(BFM_Bomber_Activate_Scenario4)
+  end
+
   MESSAGE:New( "Su-25 Bomber wave scenario 2 - activated",  25):ToAll()
   MESSAGE:New( "You have 8 minutes to destroy bombers",  25):ToAll()
   local BFM_Wave41 = SPAWN:New("Red Su-25 Target Wave2-1"):Spawn()
-  SCHEDULER:New( nil,
+  BFM_Bomber_Activate_Scenario4 = mist.scheduleFunction(
     function()
       MESSAGE:New( "Su-25 Bomber wave scenario 2 - terminated",  10):ToAll()
       BFM_Wave41:Destroy()
-    end, {}, 480)
+    end, {}, timer.getTime()+480)
 end
 
 --- =========================================================================================================
