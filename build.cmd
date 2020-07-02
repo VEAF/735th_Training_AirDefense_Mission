@@ -69,47 +69,99 @@ goto DontDefineDefaultLUA
 set LUA=lua
 :DontDefineDefaultLUA
 echo current value is "%LUA%"
+
+echo ----------------------------------------
+echo DYNAMIC_MISSION_PATH (a string) points to folder where this mission is located
+echo defaults this folder
+IF ["%DYNAMIC_MISSION_PATH%"] == [""] GOTO DefineDefaultDYNAMIC_MISSION_PATH
+goto DontDefineDefaultDYNAMIC_MISSION_PATH
+:DefineDefaultDYNAMIC_MISSION_PATH
+set DYNAMIC_MISSION_PATH=%~dp0
+:DontDefineDefaultDYNAMIC_MISSION_PATH
+echo current value is "%DYNAMIC_MISSION_PATH%"
+
+echo ----------------------------------------
+echo DYNAMIC_SCRIPTS_PATH (a string) points to folder where the VEAF-mission-creation-tools are located
+echo defaults this folder
+IF ["%DYNAMIC_SCRIPTS_PATH%"] == [""] GOTO DefineDefaultDYNAMIC_SCRIPTS_PATH
+goto DontDefineDefaultDYNAMIC_SCRIPTS_PATH
+:DefineDefaultDYNAMIC_SCRIPTS_PATH
+set DYNAMIC_SCRIPTS_PATH=%~dp0node_modules\veaf-mission-creation-tools\
+:DontDefineDefaultDYNAMIC_SCRIPTS_PATH
+echo current value is "%DYNAMIC_SCRIPTS_PATH%"
+
 echo ----------------------------------------
 
 echo.
-echo fetching the veaf-mission-creation-tools package
+echo prepare the folders
+rd /s /q .\build
+mkdir .\build
+
+echo.
+echo fetch the veaf-mission-creation-tools package
 call npm update
 rem echo on
 
-rem -- prepare the folders
-echo preparing the folders
-rd /s /q .\build
-mkdir .\build
-mkdir .\build\tempsrc
+echo.
+echo prepare the veaf-mission-creation-tools scripts
+rem -- copy the scripts folder
+xcopy /s /y /e .\node_modules\veaf-mission-creation-tools\src\scripts\* .\build\tempscripts\ >nul 2>&1
+
+rem -- set the flags in the scripts according to the options
+echo set the flags in the scripts according to the options
+powershell -Command "(gc .\build\tempscripts\veaf\veaf.lua) -replace 'veaf.Development = false', 'veaf.Development = %VERBOSE_LOG_FLAG%' | sc .\build\tempscripts\veaf\veaf.lua" >nul 2>&1
+powershell -Command "(gc .\build\tempscripts\veaf\veaf.lua) -replace 'veaf.SecurityDisabled = false', 'veaf.SecurityDisabled = %SECURITY_DISABLED_FLAG%' | sc .\build\tempscripts\veaf\veaf.lua" >nul 2>&1
+
+rem -- comment all the trace and debug code
+echo comment all the trace and debug code
+FOR %%f IN (.\build\tempscripts\veaf\*.lua) DO powershell -Command "(gc %%f) -replace '(^\s*)(veaf.*\.[^\(^\s]*log(Trace|Debug))', '$1--$2' | sc %%f" >nul 2>&1
 
 echo building the mission
 rem -- copy all the source mission files and mission-specific scripts
 xcopy /y /e src\mission .\build\tempsrc\ >nul 2>&1
 xcopy /y src\options .\build\tempsrc\  >nul 2>&1
-xcopy /y /e src\scripts\mission-specific\*.lua .\build\tempsrc\l10n\Default\  >nul 2>&1
+xcopy /y /e src\scripts\*.lua .\build\tempsrc\l10n\Default\  >nul 2>&1
 
 rem -- set the radio presets according to the settings file
 echo set the radio presets according to the settings file
-pushd node_modules\veaf-mission-creation-tools\scripts\veaf
-"%LUA%" veafMissionRadioPresetsEditor.lua  ..\..\..\..\build\tempsrc ..\..\..\..\src\radio\radioSettings.lua %LUA_SCRIPTS_DEBUG_PARAMETER%
+pushd node_modules\veaf-mission-creation-tools\src\scripts\veaf
+"%LUA%" veafMissionRadioPresetsEditor.lua  ..\..\..\..\..\build\tempsrc ..\..\..\..\..\src\radio\radioSettings.lua %LUA_SCRIPTS_DEBUG_PARAMETER% >nul 2>&1
 popd
+
+rem -- set the dynamic load variables in the dictionary
+echo set the dynamic load variables in the dictionary
+powershell -Command "$temp='VEAF_DYNAMIC_PATH = [[' + [regex]::escape('%DYNAMIC_SCRIPTS_PATH%') + ']]'; (gc .\build\tempsrc\l10n\DEFAULT\dictionary) -replace 'VEAF_DYNAMIC_PATH(\s*)=(\s*)\[\[.*\]\]', $temp | sc .\build\tempsrc\l10n\DEFAULT\dictionary" >nul 2>&1
+powershell -Command "$temp='VEAF_DYNAMIC_MISSIONPATH = [[' + [regex]::escape('%DYNAMIC_MISSION_PATH%') + ']]'; (gc .\build\tempsrc\l10n\DEFAULT\dictionary) -replace 'VEAF_DYNAMIC_MISSIONPATH(\s*)=(\s*)\[\[.*\]\]', $temp | sc .\build\tempsrc\l10n\DEFAULT\dictionary" >nul 2>&1
+
+rem -- copy the documentation images to the kneeboard
+xcopy /y /e doc\*.jpg .\build\tempsrc\KNEEBOARD\IMAGES\ >nul 2>&1
 
 rem -- copy all the community scripts
 copy .\src\scripts\community\*.lua .\build\tempsrc\l10n\Default  >nul 2>&1
-copy .\node_modules\veaf-mission-creation-tools\scripts\community\*.lua .\build\tempsrc\l10n\Default  >nul 2>&1
+copy .\build\tempscripts\community\*.lua .\build\tempsrc\l10n\Default >nul 2>&1
 
 rem -- copy all the common scripts
-copy .\node_modules\veaf-mission-creation-tools\scripts\veaf\*.lua .\build\tempsrc\l10n\Default  >nul 2>&1
+copy .\build\tempscripts\veaf\*.lua .\build\tempsrc\l10n\Default >nul 2>&1
 
-rem -- set the flags in the scripts according to the options
-powershell -Command "(gc .\build\tempsrc\l10n\Default\veaf.lua) -replace 'veaf.Development = false', 'veaf.Development = %VERBOSE_LOG_FLAG%' | sc .\build\tempsrc\l10n\Default\veaf.lua" >nul 2>&1
-powershell -Command "(gc .\build\tempsrc\l10n\Default\veaf.lua) -replace 'veaf.SecurityDisabled = false', 'veaf.SecurityDisabled = %SECURITY_DISABLED_FLAG%' | sc .\build\tempsrc\l10n\Default\veaf.lua" >nul 2>&1
+rem -- normalize the mission files
+pushd node_modules\veaf-mission-creation-tools\src\scripts\veaf
+"%LUA%" veafMissionNormalizer.lua ..\..\..\..\..\build\tempsrc %LUA_SCRIPTS_DEBUG_PARAMETER%
+popd
 
-rem -- normalize and prepare the weather and time version
-FOR %%f IN (.\src\weatherAndTime\*.lua) DO call normalize.cmd %%~nf
+rem -- compile the mission
+"%SEVENZIP%" a -r -tzip %MISSION_FILE%.miz .\build\tempsrc\* -mem=AES256 >nul 2>&1
 
-rem -- cleanup
+rem -- cleanup the mission files
 rd /s /q .\build\tempsrc
+
+rem -- cleanup the veaf-mission-creation-tools scripts
+rd /s /q .\build\tempscripts
+
+rem -- generate the time and weather versions
+rem echo generate the time and weather versions
+rem echo ----------------------------------------
+rem we'll do it on the server
+rem node node_modules\veaf-mission-creation-tools\src\nodejs\app.js injectall --quiet "%MISSION_FILE%.miz" "%MISSION_FILE%-${version}.miz" src\weatherAndTime\versions.json
 
 echo.
 echo ----------------------------------------
